@@ -1,37 +1,3 @@
-/* 
-yellow #EFC81A
-bg #E5E5E5
-user default bg #C4C4C4
-button edit profile #E7E7E7
-pinky bg #FAF7ED
-navbar active bg #6D61F2;
-search efefef
-*/
-
-.mobile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* max-width: 28rem; */
-}
-
-.container {
-  padding: 0 2rem;
-}
-
-.main {
-  padding: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #d2f4ea;
-  
-  min-height: 100vh;
-  min-width: 480px;
-}
 
 /* .title a:hover,
 .title a:focus,

@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function DetailRecipe() {
   return (
     <div className={styles.mobile}>
       <Head>
@@ -14,8 +14,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>home or landing page</h1>
-        <i className="bi bi-emoji-smile"></i>
+        <h1>detail recipe by id recipe</h1>
 
 
 

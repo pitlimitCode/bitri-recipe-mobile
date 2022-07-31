@@ -1,4 +1,70 @@
-html,
+/* 
+yellow #EFC81A
+bg #E5E5E5
+user default bg #C4C4C4
+button edit profile #E7E7E7
+pinky bg #FAF7ED
+navbar active bg #6D61F2;
+search efefef
+.text-dark
+.text-body
+.text-secondary
+.text-muted
+.text-light
+.text-white
+.text-black-50
+.text-white-50
+*/
+
+.tes{
+  background-color: red;
+  color: green;
+}
+
+.main-text-cl{
+  color: #EFC81A;
+}
+.main-bg-cl{
+  background-color: #EFC81A;
+}
+
+.mobile {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-width: 480px; */
+}
+
+.container {
+  padding: 0 40rem;
+  margin: 0 40rem;
+}
+
+.main {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFEFEF;
+  
+  min-height: 100vh;
+  width: 480px;
+}
+
+.main .Link{
+  text-decoration: none;
+}
+
+.button{
+  background-color: #EFC81A;
+  color: #fff;
+}
+
+
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -23,4 +89,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */

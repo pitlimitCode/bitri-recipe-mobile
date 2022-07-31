@@ -25,63 +25,43 @@ be_deploy_url=...
 - [ ] REDUX (opsional)
 - [ ] Realtime chat user (+ opsional)
 - [ ] Forgot password (+ opsional)
-
 - [x] checklist example
 
+### routes :
+	/login
+		/forgot-password
+	/register
+		/code
+	/(home)
+	/popular:type(recipe) [!+ backend]
+	/detail:id(recipe)
+	/search:name(recipe)
+	/profile:id(user)
+		/edit
+		/my-recipes
+		/saved-recipes
+		/liked-recipes
+	/chat:id(users)
+	/add-recipe
 
 ### documentation :
 create nextJS: npx create-next-app folder-name  
 running nextJS: npm run dev
 package+ :
-1.env: 
+1. .env: 
     install: npm install dotenv
     import in file: require('dotenv').config();
-2.bootstrap:
+2. bootstrap:
     install: npm install bootstrap
     import in file: import 'bootstrap/dist/css/bootstrap.css'
-    install icon: npm i bootstrap-icons
-    import icon?: ...?
+    install icons: npm i bootstrap-icons
+    import icons in file: import 'bootstrap-icons/font/bootstrap-icons.css'
 
+note:
+1. 60% zoom web, 77% zoom figma
+2. ...
 
-DS: (catatan se-nyata-nyata-nya)
-SENIN:
-done: 
-    buat repo
-    install env, bootstrap, bootstrap-logo
-kendala:
-do after ds: ...
-?:
-    perlu pakai package mobile? atau cukup max-width/media query?
-    responsive nya seperti apa?, kan udah mobile
-
-
-developing with:
-	slicing for mobile device, like UI figma
-	reusable component / atomic design
-	use english named on: class, id, and function
-	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
-	
-Objektif ku sebelum DS senin pagi (yang masuk akal dikerjakan):
-	mapping all route page
-	Navigasi next component: next router & next link (jgn react router & react link)
-	
-	slicing + atomic design: 
-		slicing: login, register, 
-		slicing: password
-		slicing: ?top icon: realtime, network local, network wifi, baterai.
-		slicing: navigation navbar in bottom
-		slicing: Home page v1.0 [Sort, Pagination(slide until newest 10)]
-		slicing: searching
-		slicing: detail recipe
-			navbar: ingredients
-			navbar: video step(youtube video)]
-		slicing: add recipe
-		slicing: user profile
-			slicing: edit profile (edit profile picture quickly)
-			slicing: change biodata
-		slicing: popular menu
-        
-
+...
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
