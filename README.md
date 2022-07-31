@@ -29,9 +29,30 @@ be_deploy_url=...
 - [x] checklist example
 
 
-documentation:  
-create next js: npx create-next-app folder-name  
+### documentation :
+create nextJS: npx create-next-app folder-name  
+running nextJS: npm run dev
+package+ :
+1.env: 
+    install: npm install dotenv
+    import in file: require('dotenv').config();
+2.bootstrap:
+    install: npm install bootstrap
+    import in file: import 'bootstrap/dist/css/bootstrap.css'
+    install icon: npm i bootstrap-icons
+    import icon?: ...?
 
+
+DS: (catatan se-nyata-nyata-nya)
+SENIN:
+done: 
+    buat repo
+    install env, bootstrap, bootstrap-logo
+kendala:
+do after ds: ...
+?:
+    perlu pakai package mobile? atau cukup max-width/media query?
+    responsive nya seperti apa?, kan udah mobile
 
 
 developing with:
@@ -40,13 +61,7 @@ developing with:
 	use english named on: class, id, and function
 	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
 	
-1: yang masuk akal dikerjakan sebelum DS senin pagi:
-	name repo (private): bitri-recipe-mobile
-	install and config:
-		env
-		bootstrap
-		mobile-device-detect/responsive
-		bootstrap-logo?
+Objektif ku sebelum DS senin pagi (yang masuk akal dikerjakan):
 	mapping all route page
 	Navigasi next component: next router & next link (jgn react router & react link)
 	
