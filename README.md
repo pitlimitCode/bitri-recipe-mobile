@@ -23,9 +23,8 @@ be_deploy_url=...
 - [ ] Authentification (optional)
 - [ ] SSR (optional)
 - [ ] REDUX (opsional)
-
-- [ ] Realtime chat user
-- [ ] Forgot password
+- [ ] Realtime chat user (+ opsional)
+- [ ] Forgot password (+ opsional)
 
 - [x] checklist example
 
