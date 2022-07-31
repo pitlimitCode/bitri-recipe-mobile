@@ -1,3 +1,74 @@
+# bitri-recipe-mobile
+Recipes sharing web app by Bitri Recipe, for Mobile Device Users.
+
+### .env example:  
+this_host=...  
+be_deploy_url=...  
+      
+### Requirements:  
+- [ ] Gunakan Bahasa Inggris untuk nama class, id, fungsi, dan komponen
+- [ ] Buat semirip mungkin sesuai figma
+- [ ] UI
+- [ ] Responsive
+- [ ] Reusable Component
+- [ ] ENV
+- [ ] Next component
+- [ ] Navigation
+- [ ] CRUD
+- [ ] Search, sort, pagination
+- [ ] Deploy
+- [ ] Upload/push ke github dan gunakan nama yang profesional
+- [ ] Presentasikan
+- [ ] Teori (NextJS, SSR, & CSR)
+- [ ] Authentification (optional)
+- [ ] SSR (optional)
+- [ ] REDUX (opsional)
+
+- [ ] Realtime chat user
+- [ ] Forgot password
+
+- [x] checklist example
+
+
+documentation:  
+create next js: npx create-next-app folder-name  
+
+
+
+developing with:
+	slicing for mobile device, like UI figma
+	reusable component / atomic design
+	use english named on: class, id, and function
+	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
+	
+1: yang masuk akal dikerjakan sebelum DS senin pagi:
+	name repo (private): bitri-recipe-mobile
+	install and config:
+		env
+		bootstrap
+		mobile-device-detect/responsive
+		bootstrap-logo?
+	mapping all route page
+	Navigasi next component: next router & next link (jgn react router & react link)
+	
+	slicing + atomic design: 
+		slicing: login, register, 
+		slicing: password
+		slicing: ?top icon: realtime, network local, network wifi, baterai.
+		slicing: navigation navbar in bottom
+		slicing: Home page v1.0 [Sort, Pagination(slide until newest 10)]
+		slicing: searching
+		slicing: detail recipe
+			navbar: ingredients
+			navbar: video step(youtube video)]
+		slicing: add recipe
+		slicing: user profile
+			slicing: edit profile (edit profile picture quickly)
+			slicing: change biodata
+		slicing: popular menu
+        
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
