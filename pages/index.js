@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 // import Image from 'next/image'
-
+import NavHome from './components/organism/navHome'
 export default function Home() {
   return (
     <div className="mobile" >
@@ -14,25 +14,48 @@ export default function Home() {
       </Head>
 
       <main className="main bg-light">
-
-
-        
         <div className="container">
-
           <div className="row">
             <div className="col" />
 
             <div className="col-10">
+
               <div>Home Page Figma v.1.1</div>
+
               <input type="search" className="form-control mb-3" id="search" placeholder="Cari Resep: Sayur, Daging, dll" />
               
-              <div>Rekomendasi Resep Untuk Kamu</div>
-              <div className='tes'>TAMPILAN 4 REKOMENDASI RESEP UNTUK USER</div>
+              <div className="p3 bold">Populer Resep Untuk Kamu</div>
+              <div className='recommend'>
+                {/* TAMPILKAN 4 REKOMENDASI RESEP UNTUK USER */}
+                <div className="row text-center">
+                  <div className="col-3 popular tes">
+                    <Link href="detail/1">
+                      <div className='p3'>recipe id:1</div>
+                    </Link>
+                  </div>
+                  <div className="col-3 popular tes">
+                    <Link href="detail/2">
+                      <div className='p3'>recipe id:2</div>
+                    </Link>
+                  </div>
+                  <div className="col-3 popular tes">
+                    <Link href="detail/3">
+                      <div className='p3'>recipe id:3</div>
+                    </Link>
+                  </div>
+                  <div className="col-3 popular tes">
+                    <Link href="detail/4">
+                      <div className='p3'>recipe id:4</div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
               
-              <div>Resep Terbaru</div>
+
+              <div className="p3 bold">Resep Terbaru</div>
               <div className='tes'>TAMPILAN SLIDE YANG BISA DIGESER KEKANAN DAN KEKIRI OLEH USER</div>
               
-              <div>Resep Populer</div>
+              <div className="p3 bold">Resep-Resep Populer</div>
 
               {/* <div className="row" > */}
 
@@ -60,17 +83,22 @@ export default function Home() {
         {/* <div className="navbar">Resep Populer</div> */}
         
       </main>
-      <nav className="nav">
+      <NavHome />
+      {/* <nav className="nav nav-pills nav-fill">
         <Link href="/">
-          <a className="nav-link active" aria-current="page">Active</a></Link>
+          <a className="nav-link active" aria-current="page">Home</a>
+        </Link>
         <Link href="/add-recipe">
-          <a className="nav-link">Link</a></Link>
+          <a className="nav-link">+Recipe</a>
+        </Link>
         <Link href="/chat">
-          <a className="nav-link">Link</a></Link>
+          <a className="nav-link">Chat</a>
+        </Link>
         <Link href="/profile/:id/">
-          <a className="nav-link">Link</a></Link>
+          <a className="nav-link">Profile</a>
+        </Link>
+      </nav> */}
 
-      </nav>
     </div>
   )
 }

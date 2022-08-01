@@ -13,7 +13,7 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main auth-bg">
+      <main className="main auth">
         <div className="container">
 
           {/* IMAGE AVATAR */}
@@ -32,8 +32,8 @@ export default function Login() {
             <div className="col" />
             <div className="col-10">
             
-              <div className="text-center main-text-cl">Selamat Datang !</div>
-              <div className="text-center">Silahkan masuk ke akun anda.</div>
+              <div className="text-center main-text-cl p3">Selamat Datang !</div>
+              <div className="text-center text-1-cl p5">Silahkan masuk ke akun anda.</div>
               
               <form action="/" method="post">
                 <input type="email" className="formtype form-control mb-3" id="email" placeholder="contoh@mail.com" />
@@ -41,7 +41,7 @@ export default function Login() {
                 
                 <div className="text-end">
                   <Link href="login/forgot-password">
-                    <a className="aStyle"> Lupa Kata Kunci ?</a>
+                    <a className="aStyle text-1-cl p4"> Lupa Kata Kunci ?</a>
                   </Link>
                 </div>
 
@@ -50,7 +50,7 @@ export default function Login() {
                 </div>
               </form>
 
-              <div className="text-center">Belum punya akun? 
+              <div className="text-center text-1-cl p4">Belum punya akun? 
                 <Link href="register">
                   <a className="main-text-cl aStyle"> Daftar</a>
                 </Link>

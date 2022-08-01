@@ -12,7 +12,7 @@ export default function RegisterCode() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main auth-bg">
+      <main className="main auth">
         <h1>6 number code</h1>
 
 

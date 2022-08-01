@@ -64,13 +64,26 @@ note:
 	1 dev: 60% : 77%
 	2 dev: 100% : 127%
 2. revisi: tidak ada resep populer dari tipe resep, resep popular ditampilkan berdasarkan banyak yang like
-3. cari family-font
+3. figma copas:
+		cari family-font nya
+		4 logo di home page
 
 
 REPORT DS ! :
-done: ...
-kendala: ...
-do after ds:  ...
+done: 
+	hard slicing register, navbar home page
+	get id params
+kendala: 
+	pemakaian bootstrap
+	bootstrap swipe right di home page
+do after ds:  
+	hard slicing: home, detail recipe, add recipe 
+	bisa fetch ke api express: login, register, home, detail recipe, add recipe
+?:
+	default profile di auth untuk apa?
+	6 code pin setelah register wajib?
+	home page, popular, ikut logonya atau tampilin gambar degnan ukuran kecl?
+	cara navbar yang static
 	
 	
 Developing rules:
@@ -84,10 +97,10 @@ Developing rules:
 	slicing + atomic design: 
 		slicing: login, register, 
 		slicing: password
-		slicing: ?top icon: realtime, network local, network wifi, baterai.
 		slicing: navigation navbar in bottom
 		slicing: Home page v1.1 [Sort, Pagination(slide until newest 10)]
 		slicing: searching
+		
 		slicing: detail recipe
 			navbar: ingredients
 			navbar: video step(youtube video)]

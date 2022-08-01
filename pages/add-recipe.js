@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Link from 'next/link'
 // import Image from 'next/image'
+import NavHome from './components/organism/navHome'
 
 export default function AddRecipe() {
   return (
@@ -22,21 +22,7 @@ export default function AddRecipe() {
 
 
       </main>
-
-      <nav className="nav">
-        <Link href="/">
-          <a className="nav-link">Link</a>
-        </Link>
-        <Link href="/add-recipe">
-          <a className="nav-link active" aria-current="page">Active</a>
-        </Link>
-        <Link href="/chat">
-          <a className="nav-link">Link</a>
-        </Link>
-        <Link href="/profile/:id/">
-          <a className="nav-link">Link</a>
-        </Link>
-      </nav>
+      <NavHome />
     </div>
   )
 }

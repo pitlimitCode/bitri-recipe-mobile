@@ -12,15 +12,15 @@ export default function Register() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main auth-bg">
+      <main className="main auth">
         <div className="container">
 
           <div className="row">
             <div className="col" />
             <div className="col-10">
             
-              <div className="text-center main-text-cl">Ayo Mulai !</div>
-              <div className="text-center">Buat Akun Baru Anda Untuk Mengakses Semua Fitur.</div>
+              <div className="text-center main-text-cl p2">Ayo Mulai !</div>
+              <div className="text-center text-1-cl p5">Buat Akun Baru Anda Untuk Mengakses Semua Fitur.</div>
 
               <form action="/" method="post">
                 <input type="text" className="form-control mb-3" id="name" placeholder="Nama" />
@@ -34,7 +34,7 @@ export default function Register() {
                 </div>
               </form>
 
-              <div className="text-center">Sudah punya akun? 
+              <div className="text-center text-1-cl p4">Sudah punya akun? 
                 <Link href="login">
                   <a className="main-text-cl aStyle"> Masuk di Sini</a>
                 </Link>

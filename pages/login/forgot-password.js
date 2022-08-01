@@ -12,7 +12,7 @@ export default function ForgotPassword() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main auth-bg">
+      <main className="main auth">
         <h1>forgot password page</h1>
 
 
