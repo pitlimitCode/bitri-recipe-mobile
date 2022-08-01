@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 // import Image from 'next/image'
+// import styles from '../styles/Home.module.css'
 
 export default function Login() {
   return (
@@ -12,38 +13,52 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main">
+      <main className="main auth-bg">
         <div className="container">
-          <div className="align-content-center">
-            <i className="bi bi-person"></i>
-            {/* <i className="bi bi-person-fill"></i> */}
-          </div>
-          <div className="text-center main-text-cl">Selamat Datang</div>
-          <div className="text-center">Silahkan masuk ke akun anda</div>
 
-          <form action="/" method="post">
-
-            <input type="email" className="form-control mb-3" id="email" placeholder="contoh@mail.com" />
-            <input type="text" className="form-control mb-3" id="password" placeholder="kata kunci" />
-
-            <div className="text-end">
-              <Link href="login/forgot-password">
-                <a> Lupa Kata Kunci ?</a>
-              </Link>
+          {/* IMAGE AVATAR */}
+          <div className="row">
+            <div className="col"/>
+            <div className="col-6">
+              <div>
+                <i className="bi bi-person defAva"></i>
+              </div>
             </div>
-
-            <div className="d-grid gap-2">
-              <button type="submit" className="button">Masuk</button>
-            </div>
-
-          </form>
-
-          <div className="text-center">Belum punya akun? 
-            <Link href="register">
-              <a className="main-text-cl"> Daftar</a>
-            </Link>
+            <div className="col" />
           </div>
 
+          {/* FORM LOGIN */}
+          <div className="row">
+            <div className="col" />
+            <div className="col-10">
+            
+              <div className="text-center main-text-cl">Selamat Datang !</div>
+              <div className="text-center">Silahkan masuk ke akun anda.</div>
+              
+              <form action="/" method="post">
+                <input type="email" className="formtype form-control mb-3" id="email" placeholder="contoh@mail.com" />
+                <input type="password" className="form-control mb-3" id="password" placeholder="kata kunci" />
+                
+                <div className="text-end">
+                  <Link href="login/forgot-password">
+                    <a className="aStyle"> Lupa Kata Kunci ?</a>
+                  </Link>
+                </div>
+
+                <div className="d-grid gap-2">
+                  <button type="submit" className="button">Masuk</button>
+                </div>
+              </form>
+
+              <div className="text-center">Belum punya akun? 
+                <Link href="register">
+                  <a className="main-text-cl aStyle"> Daftar</a>
+                </Link>
+              </div>
+
+            </div>
+            <div className="col" />
+          </div>
 
         </div>
       </main>

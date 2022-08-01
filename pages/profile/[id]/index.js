@@ -1,12 +1,10 @@
 import Head from 'next/head'
+import Link from 'next/link'
 // import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
 
 export default function Profile() {
   return (
-    <div
-      // className={styles.mobile}
-    >
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -14,19 +12,25 @@ export default function Profile() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main>
+      <main className="main bg-light">
         <h1>user profile</h1>
 
 
 
 
 
-
-        {/* <a href="#">
-          <i className='bi bi-linkedin'></i> linkedin
-        </a> */}
       </main>
 
+    <nav className="nav">
+      <Link href="/">
+        <a className="nav-link">Link</a></Link>
+      <Link href="/add-recipe">
+        <a className="nav-link">Link</a></Link>
+      <Link href="/chat">
+        <a className="nav-link">Link</a></Link>
+      <Link href="/profile/:id/">
+        <a className="nav-link active" aria-current="page">Active</a></Link>
+    </nav>
     </div>
   )
 }

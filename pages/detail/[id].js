@@ -2,9 +2,9 @@ import Head from 'next/head'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Chat() {
+export default function DetailRecipe() {
   return (
-    <div className={styles.mobile}>
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -12,9 +12,9 @@ export default function Chat() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-
-      <main className={styles.main}>
-        <h1>chat to user by id user</h1>
+      
+      <main className="main bg-light">
+        <h1>detail recipe by id recipe</h1>
 
 
 

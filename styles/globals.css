@@ -19,13 +19,39 @@ search efefef
 .tes{
   background-color: red;
   color: green;
+  align-items: center;
 }
+
+
+
 
 .main-text-cl{
   color: #EFC81A;
 }
 .main-bg-cl{
   background-color: #EFC81A;
+}
+.auth-bg{
+  /* background-color: #EFEFEF; */
+  border: 1px dashed black;
+}
+
+.defAva{
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 50%;
+  /* height: 20rem;
+  width: 20rem; */
+  /* line-height: 90px; */
+
+}
+
+.navbar {
+  z-index: 1;
+  background-color: white;
+  position: relative;
 }
 
 .mobile {
@@ -45,24 +71,47 @@ search efefef
   padding: 0;
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  /* justify-content: center; */
   align-items: center;
-  background-color: #EFEFEF;
   
-  min-height: 100vh;
+  min-height: 90vh;
   width: 480px;
 }
 
-.main .Link{
-  text-decoration: none;
+.formtype{
+  background-color: #EFC81A;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border-style: none;
 }
-
 .button{
   background-color: #EFC81A;
-  color: #fff;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border-style: none;
+}
+.aStyle{
+  text-decoration: none;
+}
+.aStyle:hover{
+  color: #EFC81A;
+  text-decoration:underline;
+
 }
 
+
+/* Input type=number no arrow */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* html,
 body {

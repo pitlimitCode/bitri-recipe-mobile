@@ -1,12 +1,10 @@
 import Head from 'next/head'
+import Link from 'next/link'
 // import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Register() {
   return (
-    <div
-      // className={styles.mobile}
-    >
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -14,17 +12,39 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main>
-        <h1>register</h1>
+      <main className="main auth-bg">
+        <div className="container">
 
+          <div className="row">
+            <div className="col" />
+            <div className="col-10">
+            
+              <div className="text-center main-text-cl">Ayo Mulai !</div>
+              <div className="text-center">Buat Akun Baru Anda Untuk Mengakses Semua Fitur.</div>
 
+              <form action="/" method="post">
+                <input type="text" className="form-control mb-3" id="name" placeholder="Nama" />
+                <input type="email" className="form-control mb-3" id="email" placeholder="E-Mail" />
+                <input type="number" className="form-control mb-3" id="phone" placeholder="Nomor Telepon" />
+                <input type="password" className="form-control mb-3" id="pass1" placeholder="Buat Kata Kunci Baru" />
+                <input type="password" className="form-control mb-3" id="pass2" placeholder="Ulangi Kata Kunci Baru" />
 
+                <div className="d-grid gap-2">
+                  <button type="submit" className="button">Buat Akun</button>
+                </div>
+              </form>
 
+              <div className="text-center">Sudah punya akun? 
+                <Link href="login">
+                  <a className="main-text-cl aStyle"> Masuk di Sini</a>
+                </Link>
+              </div>
 
+            </div>
+            <div className="col" />
+          </div>
 
-        {/* <a href="#">
-          <i className='bi bi-linkedin'></i> linkedin
-        </a> */}
+        </div>
       </main>
 
     </div>

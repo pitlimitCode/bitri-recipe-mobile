@@ -1,10 +1,10 @@
 import Head from 'next/head'
+import Link from 'next/link'
 // import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.mobile}>
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -13,20 +13,64 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className={styles.main}>
-        <h1>home or landing page</h1>
-        <i className="bi bi-emoji-smile"></i>
+      <main className="main bg-light">
+
+
+        
+        <div className="container">
+
+          <div className="row">
+            <div className="col" />
+
+            <div className="col-10">
+              <div>Home Page Figma v.1.1</div>
+              <input type="search" className="form-control mb-3" id="search" placeholder="Cari Resep: Sayur, Daging, dll" />
+              
+              <div>Rekomendasi Resep Untuk Kamu</div>
+              <div className='tes'>TAMPILAN 4 REKOMENDASI RESEP UNTUK USER</div>
+              
+              <div>Resep Terbaru</div>
+              <div className='tes'>TAMPILAN SLIDE YANG BISA DIGESER KEKANAN DAN KEKIRI OLEH USER</div>
+              
+              <div>Resep Populer</div>
+
+              {/* <div className="row" > */}
+
+                {/* tampilkan resep resep populer */}
+                <div className='tes'>TAMPILAN .. DIGESER KEBAWAH OLEH USER</div>
+                {/* <div className="col-4" ></div>
+                <div className="" ></div> */}
+
+              {/* </div> */}
 
 
 
 
+            </div>
+            
+            <div className="col" />
+          </div>
 
 
-        {/* <a href="#">
-          <i className='bi bi-linkedin'></i> linkedin
-        </a> */}
+
+
+        </div>
+
+
+        {/* <div className="navbar">Resep Populer</div> */}
+        
       </main>
+      <nav className="nav">
+        <Link href="/">
+          <a className="nav-link active" aria-current="page">Active</a></Link>
+        <Link href="/add-recipe">
+          <a className="nav-link">Link</a></Link>
+        <Link href="/chat">
+          <a className="nav-link">Link</a></Link>
+        <Link href="/profile/:id/">
+          <a className="nav-link">Link</a></Link>
 
+      </nav>
     </div>
   )
 }

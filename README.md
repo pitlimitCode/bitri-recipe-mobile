@@ -36,12 +36,14 @@ be_deploy_url=...
 	/popular:type(recipe) [!+ backend]
 	/detail:id(recipe)
 	/search:name(recipe)
-	/profile:id(user)
-		/edit
-		/my-recipes
-		/saved-recipes
-		/liked-recipes
-	/chat:id(users)
+	/profile
+		/:id(user)
+			/edit
+			/my-recipes
+			/saved-recipes
+			/liked-recipes
+	/chat
+		/:id(users)
 	/add-recipe
 
 ### documentation :
@@ -58,10 +60,48 @@ package+ :
     import icons in file: import 'bootstrap-icons/font/bootstrap-icons.css'
 
 note:
-1. 60% zoom web, 77% zoom figma
-2. ...
+1. zooming web% vs zooming figma%
+	1 dev: 60% : 77%
+	2 dev: 100% : 127%
+2. revisi: tidak ada resep populer dari tipe resep, resep popular ditampilkan berdasarkan banyak yang like
+3. cari family-font
 
-...
+
+REPORT DS ! :
+done: ...
+kendala: ...
+do after ds:  ...
+	
+	
+Developing rules:
+	slicing for mobile device, like UI figma
+	reusable component / atomic design
+	use english named on: class, id, and function
+	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
+	
+
+1: to do list for tomorrow DS:
+	slicing + atomic design: 
+		slicing: login, register, 
+		slicing: password
+		slicing: ?top icon: realtime, network local, network wifi, baterai.
+		slicing: navigation navbar in bottom
+		slicing: Home page v1.1 [Sort, Pagination(slide until newest 10)]
+		slicing: searching
+		slicing: detail recipe
+			navbar: ingredients
+			navbar: video step(youtube video)]
+		slicing: add recipe
+		slicing: user profile
+			slicing: edit profile (edit profile picture quickly)
+			slicing: change biodata
+		slicing: popular menu
+	Navigasi next component: next router & next link
+		https://nextjs.org/docs/api-reference/next/router
+ 
+
+
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

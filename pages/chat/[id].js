@@ -1,10 +1,10 @@
 import Head from 'next/head'
+// import Link from 'next/link'
 // import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
-export default function DetailRecipe() {
+export default function ChatId() {
   return (
-    <div className={styles.mobile}>
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -13,19 +13,14 @@ export default function DetailRecipe() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className={styles.main}>
-        <h1>detail recipe by id recipe</h1>
+      <main className="main bg-light">
+        <h1>chat to user by its id</h1>
 
 
 
 
 
-
-        {/* <a href="#">
-          <i className='bi bi-linkedin'></i> linkedin
-        </a> */}
       </main>
-
     </div>
   )
 }

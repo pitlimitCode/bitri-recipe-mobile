@@ -4,9 +4,7 @@ import Head from 'next/head'
 
 export default function ForgotPassword() {
   return (
-    <div
-      // className={styles.mobile}
-    >
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -14,8 +12,8 @@ export default function ForgotPassword() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main>
-        <h1>forgon password in login</h1>
+      <main className="main auth-bg">
+        <h1>forgot password page</h1>
 
 
 

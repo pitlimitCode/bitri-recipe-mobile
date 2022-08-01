@@ -2,11 +2,9 @@ import Head from 'next/head'
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function RegisterCode() {
   return (
-    <div
-      // className={styles.mobile}
-    >
+    <div className="mobile" >
       <Head>
         <title>Bitri Recipe</title>
         <meta charSet="utf-8"/>
@@ -14,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main>
+      <main className="main auth-bg">
         <h1>6 number code</h1>
 
 
