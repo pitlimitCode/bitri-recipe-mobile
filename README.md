@@ -63,10 +63,20 @@ note:
 1. zooming web% vs zooming figma%
 	1 dev: 60% : 77%
 	2 dev: 100% : 127%
-2. revisi: tidak ada resep populer dari tipe resep, resep popular ditampilkan berdasarkan banyak yang like
-3. figma copas:
-		cari family-font nya
-		4 logo di home page
+2. revisi: 
+	popular recipe: urutan dari like terbanyak seluruh user
+	recommend recipe: urutan recipe dari yang nama resepnya dengan like an dari user yang aktiv, 
+   *handle sementara, PopRes random array id; RecRec dari id:1-end
+3. 
+
+
+
+
+figma copas:
+		cari family-font nya = Airbnb Cereal App
+		4 logo di home page = ok
+		active navbar icon color = #EEC302;
+
 
 
 REPORT DS ! :
@@ -79,12 +89,7 @@ kendala:
 do after ds:  
 	hard slicing: home, detail recipe, add recipe 
 	bisa fetch ke api express: login, register, home, detail recipe, add recipe
-?:
-	default profile di auth untuk apa?
-	6 code pin setelah register wajib?
-	home page, popular, ikut logonya atau tampilin gambar degnan ukuran kecl?
-	cara navbar yang static
-	
+?:	...
 	
 Developing rules:
 	slicing for mobile device, like UI figma

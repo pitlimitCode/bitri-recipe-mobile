@@ -3,6 +3,7 @@ import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import {useRouter} from "next/router";
 
+// params id not number? invalid url
 export default function DetailRecipe() {
   const { query } = useRouter();
   

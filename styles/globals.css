@@ -55,12 +55,17 @@ search efefef
   border-radius: 1rem 1rem 0 0;
 }
 
+.nav-link{
+  /* background-color: #EFC81A; */
+  border-radius: 2rem;
+  color: white;
+}
 .nav-link:hover{
-  background-color: purple;
-  color: aqua;
+  background-color: #EFC81A;
+  color: white;
 }
 .nav-link:active{
-  background-color: purple;
+  background-color: #EFC81A;
   color: aqua;
 }
 

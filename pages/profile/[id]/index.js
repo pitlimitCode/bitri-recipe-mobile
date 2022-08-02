@@ -4,6 +4,7 @@ import Head from 'next/head'
 import {useRouter} from "next/router";
 import NavHome from '../../components/organism/navHome'
 
+// params id not number? invalid url
 export default function Profile() {
   const { query } = useRouter();
   return (
