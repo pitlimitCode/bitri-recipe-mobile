@@ -22,7 +22,7 @@ export default function Home() {
 
               <div>Home Page Figma v.1.1</div>
 
-              <input type="search" className="form-control mb-3" id="search" placeholder="Cari Resep: Sayur, Daging, dll" />
+              <input type="search" id="search" placeholder="Cari Resep: Sayur, Daging, dll" />
               
               <div className="p3 bold">Populer Resep Untuk Kamu</div>
               <div className='recommend'>

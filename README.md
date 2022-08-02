@@ -98,25 +98,34 @@ Developing rules:
 	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
 	
 
-1: to do list for tomorrow DS:
-	slicing + atomic design: 
-		slicing: login, register, 
-		slicing: password
-		slicing: navigation navbar in bottom
-		slicing: Home page v1.1 [Sort, Pagination(slide until newest 10)]
-		slicing: searching
-		
-		slicing: detail recipe
-			navbar: ingredients
-			navbar: video step(youtube video)]
-		slicing: add recipe
-		slicing: user profile
-			slicing: edit profile (edit profile picture quickly)
-			slicing: change biodata
-		slicing: popular menu
-	Navigasi next component: next router & next link
-		https://nextjs.org/docs/api-reference/next/router
- 
+slicing + atomic design: 
+	slicing: searching
+	slicing: detail recipe
+		navbar: ingredients
+		navbar: video step(youtube video)]
+	slicing: add recipe
+	slicing: user profile
+		slicing: edit profile (edit profile picture quickly)
+		slicing: change biodata
+	slicing: popular menu
+Learn and practice: nextJS, SSR, CSR, Redux
+slide PPT:
+	Teori: nextJS, SSR, dan CSR (ada gambar/flowchar seperti ngajar)
+	Demo aplikasi web + dev tools (F12)
+terapkan CRUD REDUX
+server side rendering / getServerSideProps dataFetching
+Deploy pakai Versel (*materi tambahan)
+
+non-mandatory/optional:
+	learn and practice: deploy frontend in Versel
+	authentification
+	slicing: forgot/reset password
+	slicing: change password (like reset password)
+	api popular menu
+	slicing realtime chat
+	realtime chat (socket.io) (*materi tambahan?)
+	SSR server side rendering (*materi tambahan?)
+
 
 
 

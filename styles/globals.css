@@ -69,6 +69,12 @@ search efefef
   color: aqua;
 }
 
+#search {
+  width: 100%;
+  padding: 12px 200px;
+  margin: 80px 0;
+  box-sizing: border-box;
+}
 
 .main-bg-cl{background-color: #EFC81A;}
 .auth{
