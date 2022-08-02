@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 export default function navHome() {
   return (
-  <nav className="nav nav-fill">
+  <nav className="nav-fill">
     <Link href="/" className="nav-item" >
       {/* <a className="nav-link active" aria-current="page">Home</a> */}
-      <a className="nav-link">Home</a>
+      <a className="nav-link active">Home</a>
     </Link>
     <Link href="/add-recipe" className="nav-item">
       <a className="nav-link">+Recipe</a>

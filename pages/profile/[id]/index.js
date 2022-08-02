@@ -16,7 +16,7 @@ export default function Profile() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main bg-light">
+      <main>
         <h1>user profile id= {query.id}</h1>
 
 
@@ -26,20 +26,6 @@ export default function Profile() {
       </main>
 
       <NavHome />
-      {/* <nav className="nav nav-pills nav-fill">
-        <Link href="/">
-          <a className="nav-link">Home</a>
-        </Link>
-        <Link href="/add-recipe">
-          <a className="nav-link">+Recipe</a>
-        </Link>
-        <Link href="/chat">
-          <a className="nav-link">Chat</a>
-        </Link>
-        <Link href="/profile/:id/">
-          <a className="nav-link active" aria-current="page">Profile</a>
-        </Link>
-      </nav> */}
     </div>
   )
 }

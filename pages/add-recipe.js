@@ -13,7 +13,7 @@ export default function AddRecipe() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="main bg-light">
+      <main>
         <h1>add recipe page</h1>
 
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); /* font-family: 'inter'; */
 html,body 
 {
   padding: 0;
@@ -5,8 +6,6 @@ html,body
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 /* 
@@ -28,23 +27,27 @@ search efefef
 .tes{background-color: red; color: green;}
 
 .mobile {
+  font-family: 'inter';
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 480px;
 }
-.main {
-  padding: 0 0 0 1rem;
+main {
   flex: 1;
   display: flex;
   width: 100%;
+  padding-bottom: 7.5rem;
   min-height: 100vh; /* temporary height */
+  background-color:palevioletred;  /* important to edit bg color */
 }
-
-.nav {
+section {
+  margin-bottom: 2rem;
+}
+nav {
   z-index: 1;
-  background-color: blue;
+  background-color: white;
   position: fixed;
   bottom: 0;
   right: 50;
@@ -54,32 +57,35 @@ search efefef
   width: 480px;
   border-radius: 1rem 1rem 0 0;
 }
+.container {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
 
 .nav-link{
-  /* background-color: #EFC81A; */
   border-radius: 2rem;
-  color: white;
+  color: gray !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+  border: 1px solid white;
 }
 .nav-link:hover{
-  background-color: #EFC81A;
-  color: white;
+  /* background-color: #EFC81A; */
+  color: #EFC81A !important;
+  border: 1px solid #EFC81A;
 }
 .nav-link:active{
   background-color: #EFC81A;
-  color: aqua;
+  color: white !important;
 }
-
-#search {
-  width: 100%;
-  padding: 12px 200px;
-  margin: 80px 0;
-  box-sizing: border-box;
-}
+/* .nav-link .active{
+  background-color: #EFC81A;
+  color: white !important;
+} */
 
 .main-bg-cl{background-color: #EFC81A;}
 .auth{
   background-color: #f5f5f5;
-  /* border: 1px dashed black; */
   align-items: center;
 }
 .main-text-cl{color: #EFC81A;}
@@ -90,29 +96,25 @@ search efefef
 .p4{font-size: 14px; }
 .bold{font-weight: bold;}
 
-.defAva{
-  font-size: 10rem;
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-  border-radius: 50%;
-  /* height: 20rem;
-  width: 20rem; */
-  /* line-height: 90px; */
+/* INPUT STYLE */
+.input-group{
+  height: 50px;
+}
+#logoinput {
+  background-color: #f5f5f5;
+  border-right: none;
+  border: none;
+}
+#input {
+  background-color: #f5f5f5;
+  border: none;
+  padding-left: 0;
+}
+#input:focus {
+  border: none ;
+  box-shadow: none ;
 }
 
-/* .container {
-  padding: 0 40rem;
-  margin: 0 40rem;
-} */
-
-/* .formtype{
-  background-color: #EFC81A;
-  color: #ffffff;
-  padding: 14px 20px;
-  border-radius: 12px;
-  border-style: none;
-} */
 .button{
   padding: 14px 20px;
   border-radius: 12px;
@@ -125,21 +127,28 @@ search efefef
   color: #EFC81A;
   transition: 1s;
 }
+
 .aStyle{
   text-decoration: none;
 }
 .aStyle:hover{
   color: #EFC81A;
   text-decoration:underline;
-
 }
 
-.popular{
-  height: 5rem;
-
+.defAva{
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 50%;
 }
 
-/* Input type=number no arrow */
+#poplogo:hover{
+  cursor: pointer;
+}
+
+/* Number Type Input for No Arrow Style */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 

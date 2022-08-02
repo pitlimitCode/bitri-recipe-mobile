@@ -14,7 +14,7 @@ export default function Chat() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="main bg-light">
+      <main>
         <h1>chat to user by id user</h1>
       </main>
       <NavHome />
