@@ -1,11 +1,11 @@
 import Head from 'next/head'
 // import Link from 'next/link'
 
-import NavHome from './components/organism/navHome'
 import Home1 from './components/organism/home/sect1'
 import Home2 from './components/organism/home/sect2'
 import Home3 from './components/organism/home/sect3'
 import Home4 from './components/organism/home/sect4'
+import NavHome from './components/organism/navHome'
 
 export default function Home() {
   return (
@@ -21,22 +21,22 @@ export default function Home() {
         <div className="container">
 
           {/* SEARCH RECIPES - HOME */}
-          <section className="mt-5">
+          <section className="mt-5 ">
             <Home1 />
           </section>
 
           {/* POPULAR RECIPES FOR USER - HOME */}
-          <section className="mb-4">
+          <section >
             <Home2 />
           </section>
           
           {/* NEWEST RECIPES - HOME */}
-          <section className="mb-4">
+          <section >
             <Home3 />
           </section>
 
           {/* ALL POPULAR RECIPES - HOME */}
-          <section className="mb-5" >
+          <section  >
             <Home4 />
           </section>
 

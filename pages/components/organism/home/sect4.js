@@ -1,7 +1,7 @@
 // import Link from 'next/link'
 import Image from 'next/image'
 
-import poplogo1 from '../../../../styles/default_image/reclogo01.png'
+import poplogo1 from '../../../../public/default_image/reclogo01.png'
 
 export default function Home4() {
   return (
@@ -23,7 +23,7 @@ export default function Home4() {
         </div>
       </div>
 
-      <div class="d-flex flex-column">
+      <div className="d-flex flex-column">
         <div className="mb-3 bg-white rounded">
           Flex item 1
         </div>
@@ -66,11 +66,11 @@ export default function Home4() {
                 <h6>Lotek mba ni'mah</h6>
                 <p>Spicy, Salted, Tasty</p>
                 <div className="d-flex gap-1 align-items-center">
-                  <img
+                  {/* <img
                     src="/images/star.png"
                     alt="star"
                     height="12px"
-                  />
+                  /> */}
                   <span>4.7</span>
                 </div>
               </div>

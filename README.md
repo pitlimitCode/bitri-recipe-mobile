@@ -18,24 +18,32 @@ be_deploy_url=...
 - [ ] Search, sort, pagination
 - [ ] Deploy
 - [ ] Upload/push ke github dan gunakan nama yang profesional
-- [ ] Presentasikan
+- [x] Presentasikan
 - [ ] Teori (NextJS, SSR, & CSR)
 - [ ] Authentification (optional)
 - [ ] SSR (optional)
 - [ ] REDUX (opsional)
+- [ ] Refresh token (opsional)
+- [ ] User activation via email (opsional)
+- [ ] Unit testing (opsional)
 - [ ] Realtime chat user (+ opsional)
 - [ ] Forgot password (+ opsional)
-- [x] checklist example
+
+https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe-Mobile?node-id=0%3A1
 
 ### routes :
 	/login
+		/index
 		/forgot-password
 	/register
+		/index
 		/code
 	/(home)
 	/popular:type(recipe) [!+ backend]
-	/detail:id(recipe)
-	/search:name(recipe)
+	/detail
+		/:id(recipe)
+	/search
+		/:name(recipe)
 	/profile
 		/:id(user)
 			/edit
@@ -43,6 +51,7 @@ be_deploy_url=...
 			/saved-recipes
 			/liked-recipes
 	/chat
+		/index
 		/:id(users)
 	/add-recipe
 
@@ -70,26 +79,27 @@ note:
 3. 
 
 
+do:
+active button navbar
+postitioning navbar
+gambar logo di home, sizenya x2, x3 atau svg
+
 
 
 figma copas:
-		cari family-font nya = Airbnb Cereal App
-		4 logo di home page = ok
-		active navbar icon color = #EEC302;
-
-
 
 REPORT DS ! :
 done: 
-	hard slicing register, navbar home page
-	get id params
+	slicing home page
+	family-font yg mirip Airbnb Cereal App = 'inter'
+	active navbar sesuai url nya
 kendala: 
-	pemakaian bootstrap
-	bootstrap swipe right di home page
+	...
 do after ds:  
-	hard slicing: home, detail recipe, add recipe 
-	bisa fetch ke api express: login, register, home, detail recipe, add recipe
-?:	...
+	navbar, posisi jarak antar logo
+	integrasi home page, login, dan register
+?:	
+	form feedback mas bilkis isi week 10 atau 11 atau ...
 	
 Developing rules:
 	slicing for mobile device, like UI figma

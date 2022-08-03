@@ -18,7 +18,7 @@ export default function DetailRecipe() {
       
       <main className="main bg-light">
         <h1>detail recipe by id recipe= {query.id} </h1>
-        bukan fixed position, hany scroll biasa
+        
       </main>
     </div>
   )
