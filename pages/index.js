@@ -1,6 +1,5 @@
 import Head from 'next/head'
 // import Link from 'next/link'
-
 import Home1 from '../components/organism/home/sect1'
 import Home2 from '../components/organism/home/sect2'
 import Home3 from '../components/organism/home/sect3'
@@ -8,7 +7,7 @@ import Home4 from '../components/organism/home/sect4'
 import NavHome from '../components/organism/navHome'
 
 export default function Home(props) {
-  console.log(props);
+  // console.log(props);
   
   return (
     <div className="mobile" >
@@ -21,13 +20,10 @@ export default function Home(props) {
 
       <main>
         <div className="container">
-
-          
           <section className="mt-5 "> <Home1 /> </section> {/* SEARCH RECIPES - HOME */}
           <section> <Home2 /> </section> {/* POPULAR RECIPES FOR USER - HOME */}
           <section> <Home3 /> </section> {/* NEWEST RECIPES - HOME */}
           <section> <Home4 data={props.request.data} /> </section> {/* ALL POPULAR RECIPES - HOME */}
-
         </div>
       </main>
       <NavHome />
@@ -37,9 +33,8 @@ export default function Home(props) {
 
 export async function getServerSideProps(context){
   const request = await fetch(
-    "http://localhost:8000/users/show/id?id=11"
+    "http://localhost:8000/recipes/show/new"
   ).then((response) => response.json());
-  console.log(request);
    
   return {
     props: {

@@ -86,20 +86,12 @@ do:
 gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
 
 REPORT DS ! :
-done: 
-	pilih font-family yg mirip 'Airbnb Cereal App' = 'inter'
-	slicing home page
-	desain navbar sesuai figma
-	active navbar sesuai url nya yang active
+done: ...
 kendala: 
 	...
-do after ds:  
-	lanjut desain login dan register page sesuai figma
-	integrasi home page, login, dan register
-	slicing detail recipe dan add recipe
-?:	
-	form feedback mas bilkis isi week 10 atau 11 atau ...
-	harus buat tabel like dan saved menu?, untuk tampilan sistem rating di home juga harus?
+do after ds:  ...
+?:	...
+
 
 Developing rules:
 	slicing for mobile device, like UI figma
@@ -107,7 +99,6 @@ Developing rules:
 	use english named on: class, id, and function
 	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
 	
-
 slicing + atomic design: 
 	slicing: searching
 	slicing: detail recipe
@@ -125,6 +116,10 @@ slide PPT:
 terapkan CRUD REDUX
 server side rendering / getServerSideProps dataFetching
 Deploy pakai Versel (*materi tambahan)
+
+
+recipe type: soup meat seafood desert
+
 
 non-mandatory/optional:
 	learn and practice: deploy frontend in Versel
