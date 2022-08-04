@@ -31,6 +31,8 @@ be_deploy_url=...
 
 https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe-Mobile?node-id=0%3A1
 
+
+
 ### routes :
 	/login
 		/index
@@ -72,6 +74,7 @@ note:
 1. zooming web% vs zooming figma%
 	1 dev: 60% : 77%
 	2 dev: 100% : 127%
+	myVer1: ...
 2. revisi: 
 	popular recipe: urutan dari like terbanyak seluruh user
 	recommend recipe: urutan recipe dari yang nama resepnya dengan like an dari user yang aktiv, 
@@ -80,27 +83,24 @@ note:
 
 
 do:
-active button navbar
-postitioning navbar
-gambar logo di home, sizenya x2, x3 atau svg
-
-
-
-figma copas:
+gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
 
 REPORT DS ! :
 done: 
+	pilih font-family yg mirip 'Airbnb Cereal App' = 'inter'
 	slicing home page
-	family-font yg mirip Airbnb Cereal App = 'inter'
-	active navbar sesuai url nya
+	desain navbar sesuai figma
+	active navbar sesuai url nya yang active
 kendala: 
 	...
 do after ds:  
-	navbar, posisi jarak antar logo
+	lanjut desain login dan register page sesuai figma
 	integrasi home page, login, dan register
+	slicing detail recipe dan add recipe
 ?:	
 	form feedback mas bilkis isi week 10 atau 11 atau ...
-	
+	harus buat tabel like dan saved menu?, untuk tampilan sistem rating di home juga harus?
+
 Developing rules:
 	slicing for mobile device, like UI figma
 	reusable component / atomic design
@@ -138,6 +138,12 @@ non-mandatory/optional:
 
 
 
+### Change nextJS port :
+(in package.json:)  
+	"scripts": {  
+		"dev": "next dev -p 8080", // for dev   
+		"start": "next start -p 8080" // for prod  
+},  
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

@@ -3,6 +3,7 @@ import {useRouter} from "next/router";
 
 
 export default function navHome() {
+  // fetch
   const router = useRouter();
   return (
   <nav>

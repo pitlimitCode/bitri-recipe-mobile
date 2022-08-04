@@ -1,11 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import poplogo1 from '../../../../public/default_image/reclogo01.png'
-import poplogo2 from '../../../../public/default_image/reclogo02.png'
-import poplogo3 from '../../../../public/default_image/reclogo03.png'
+import poplogo1 from '../../../public/default_image/reclogo01.png'
+import poplogo2 from '../../../public/default_image/reclogo02.png'
+import poplogo3 from '../../../public/default_image/reclogo03.png'
 
 export default function Home2() {
+  // const tes = await fetch('http://localhost:8000/users/show/all')
+	// .then(response => response.json())
+	// .then(data => console.log(data));
+
   return (
     <>
     <div className="p3 bold mb-3">Resep Populer Untuk Kamu</div>

@@ -1,12 +1,23 @@
+import React from 'react'
 // import Link from 'next/link'
 import Image from 'next/image'
+import poplogo1 from '../../../public/default_image/reclogo01.png'
 
-import poplogo1 from '../../../../public/default_image/reclogo01.png'
+export async function getServerSideProps(context){
+  const request = await fetch(
+    "http://localhost:8000/recipes/show/new"
+  ).then((response) => response.json());
+  return {
+    props: { request }
+  }
+};
 
-export default function Home4() {
+
+function Home4(props) {
+  console.log(props); 
   return (
     <>
-
+      {/* <div>{{props}} </div> */}
       <div className="p3 bold mb-3">Semua Resep Populer</div>
                 
       <div className="card mb-3" style={{width:"100%"}}>
@@ -43,9 +54,9 @@ export default function Home4() {
             borderRadius: "15px",
             padding: "10px",
             border: "none",
-            "box-shadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
-            "-webkit-box-shadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
-            "-moz-box-shadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+            "boxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+            "WebkitBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+            "MozBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
             marginBottom: "20px",
             cursor: "pointer",
           }}
@@ -82,3 +93,5 @@ export default function Home4() {
     </>
   )
 }
+
+export default Home4;

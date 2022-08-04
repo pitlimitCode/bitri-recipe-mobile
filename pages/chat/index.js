@@ -1,7 +1,7 @@
 import Head from 'next/head'
 // import Link from 'next/link'
 // import Image from 'next/image'
-import NavHome from '../components/organism/navHome'
+import NavHome from '../../components/organism/navHome'
 
 export default function Chat() {
   return (

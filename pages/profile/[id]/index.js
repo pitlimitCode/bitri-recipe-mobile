@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import Link from 'next/link'
 // import Image from 'next/image'
 import {useRouter} from "next/router";
-import NavHome from '../../components/organism/navHome'
+import NavHome from '../../../components/organism/navHome'
 
 // params id not number? invalid url
 export default function Profile() {

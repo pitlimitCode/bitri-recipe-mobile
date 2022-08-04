@@ -1,13 +1,15 @@
 import Head from 'next/head'
 // import Link from 'next/link'
 
-import Home1 from './components/organism/home/sect1'
-import Home2 from './components/organism/home/sect2'
-import Home3 from './components/organism/home/sect3'
-import Home4 from './components/organism/home/sect4'
-import NavHome from './components/organism/navHome'
+import Home1 from '../components/organism/home/sect1'
+import Home2 from '../components/organism/home/sect2'
+import Home3 from '../components/organism/home/sect3'
+import Home4 from '../components/organism/home/sect4'
+import NavHome from '../components/organism/navHome'
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props);
+  
   return (
     <div className="mobile" >
       <Head>
@@ -20,31 +22,28 @@ export default function Home() {
       <main>
         <div className="container">
 
-          {/* SEARCH RECIPES - HOME */}
-          <section className="mt-5 ">
-            <Home1 />
-          </section>
-
-          {/* POPULAR RECIPES FOR USER - HOME */}
-          <section >
-            <Home2 />
-          </section>
           
-          {/* NEWEST RECIPES - HOME */}
-          <section >
-            <Home3 />
-          </section>
-
-          {/* ALL POPULAR RECIPES - HOME */}
-          <section  >
-            <Home4 />
-          </section>
+          <section className="mt-5 "> <Home1 /> </section> {/* SEARCH RECIPES - HOME */}
+          <section> <Home2 /> </section> {/* POPULAR RECIPES FOR USER - HOME */}
+          <section> <Home3 /> </section> {/* NEWEST RECIPES - HOME */}
+          <section> <Home4 data={props.request.data} /> </section> {/* ALL POPULAR RECIPES - HOME */}
 
         </div>
       </main>
-
       <NavHome />
-
     </div>
   )
 }
+
+export async function getServerSideProps(context){
+  const request = await fetch(
+    "http://localhost:8000/users/show/id?id=11"
+  ).then((response) => response.json());
+  console.log(request);
+   
+  return {
+    props: {
+      request,
+    }
+  }
+};
