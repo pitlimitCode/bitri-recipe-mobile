@@ -20,10 +20,18 @@ export default function Home(props) {
 
       <main>
         <div className="container">
-          <section className="mt-5 "> <Home1 /> </section> {/* SEARCH RECIPES - HOME */}
-          <section> <Home2 /> </section> {/* POPULAR RECIPES FOR USER - HOME */}
-          <section> <Home3 /> </section> {/* NEWEST RECIPES - HOME */}
-          <section> <Home4 data={props.request.data} /> </section> {/* ALL POPULAR RECIPES - HOME */}
+
+          {/* SEARCH RECIPES - HOME */}
+          <section className="mt-5 "> <Home1 /> </section> 
+
+          {/* CATEGORY RECIPE - HOME */}
+          <section> <Home2 /> </section> 
+
+          {/* NEWEST RECIPES - HOME */}
+          <section> <Home3 data3={props.dataHome3.data} /> </section> 
+
+          {/* ALL POPULAR RECIPES - HOME */}
+          <section> <Home4 data4={props.dataHome4.data} /> </section> 
         </div>
       </main>
       <NavHome />
@@ -32,13 +40,13 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context){
-  const request = await fetch(
-    "http://localhost:8000/recipes/show/new"
-  ).then((response) => response.json());
+  const dataHome3 = await fetch( "http://localhost:8000/recipes/show/all" ).then((response) => response.json());
+  const dataHome4 = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
    
   return {
     props: {
-      request,
+      dataHome3,
+      dataHome4,
     }
   }
 };

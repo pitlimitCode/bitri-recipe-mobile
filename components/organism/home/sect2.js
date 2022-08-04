@@ -6,13 +6,10 @@ import poplogo2 from '../../../public/default_image/reclogo02.png'
 import poplogo3 from '../../../public/default_image/reclogo03.png'
 
 export default function Home2() {
-  // const tes = await fetch('http://localhost:8000/users/show/all')
-	// .then(response => response.json())
-	// .then(data => console.log(data));
 
   return (
     <>
-    <div className="p3 bold mb-3">Resep Populer Untuk Kamu</div>
+    <div className="p3 bold mb-3">Kategori resep</div>
     
     {/* CUSTOM URL POPULAR RECIPE FOR USER, FOR NOW BY OLDER */}
     <div className="d-flex justify-content-between text-center">

@@ -70,27 +70,28 @@ package+ :
     install icons: npm i bootstrap-icons
     import icons in file: import 'bootstrap-icons/font/bootstrap-icons.css'
 
-note:
-1. zooming web% vs zooming figma%
-	1 dev: 60% : 77%
-	2 dev: 100% : 127%
-	myVer1: ...
-2. revisi: 
-	popular recipe: urutan dari like terbanyak seluruh user
-	recommend recipe: urutan recipe dari yang nama resepnya dengan like an dari user yang aktiv, 
-   *handle sementara, PopRes random array id; RecRec dari id:1-end
-3. 
-
-
-do:
-gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
 
 REPORT DS ! :
-done: ...
+done: 
+	bisa pakai env
+	bisa pakai swiper js
 kendala: 
-	...
-do after ds:  ...
+	cara gabungkan 2 varibael ke img src
+	pakai next/image, error: hostname "localhost" is not configured under images in your `next.config.js`, udah coba ikutin di documentasi tetap tidak bisa.
+	pemakaian card bootstrap
+do after ds:  
+	pembuatan katerori resep di DB
 ?:	...
+
+
+do porgress:
+gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
+
+database:
+	category recipe: | sup | daging | seafood | makanan ringan
+	like and saved
+	fitur rating bintang diganti menjadi jumlah like
+
 
 
 Developing rules:
@@ -116,10 +117,6 @@ slide PPT:
 terapkan CRUD REDUX
 server side rendering / getServerSideProps dataFetching
 Deploy pakai Versel (*materi tambahan)
-
-
-recipe type: soup meat seafood desert
-
 
 non-mandatory/optional:
 	learn and practice: deploy frontend in Versel
