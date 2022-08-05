@@ -86,6 +86,34 @@ do after ds:
 ?:	...
 
 
+
+
+NextJS, SSR, & CSR
+
+getServerSideProps (Server-Side Rendering
+
+two form pre rendering:
+-Static Generation (Recommended): The HTML is generated at build time and will be reused on each request. (perlu dirunning run build)
+-Server-side Rendering: The HTML is generated on each request.
+bisa digunakan secara hybrid juga, Static Generation for most pages and using Server-side Rendering for others.
+Static Generation lebih baik dalam performa,can be cached by CDN with no extra configuration to boost performance.
+dapat juga bersamaan dengan Client-side Rendering sebagai sisi client
+
+Some pages require fetching external data for pre-rendering. There are two scenarios, and one or both might apply. In each case, you can use these functions that Next.js provides:
+    Your page content depends on external data: Use getStaticProps.
+    Your page paths depend on external data: Use getStaticPaths (usually in addition to getStaticProps).
+
+
+getStaticProps (Static Site Generation)
+
+
+
+ssr lebih ringan
+
+login register: get static props
+
+
+
 do porgress:
 gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
 database:

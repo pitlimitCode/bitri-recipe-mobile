@@ -1,8 +1,15 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
-// import Image from 'next/image'
+
+import Inputs from '../../components/organism/atoms/inputs'
 
 export default function Register() {
+	const [Name, setName] = useState('');
+	const [Email, setEmail] = useState('');
+	const [PhoneNumber, setPhoneNumber] = useState('');
+	const [Password1, setPassword1] = useState('');
+	const [Password2, setPassword2] = useState('');
   return (
     <div className="mobile" >
       <Head>
@@ -14,35 +21,73 @@ export default function Register() {
 
       <main className="main auth">
         <div className="container">
-
-          <div className="row">
-            <div className="col" />
-            <div className="col-10">
-            
+          <div className='row'>
+            <div className='col-2'>
+              <div id="backarrow">
+                <Link href="/login">
+                  <i className="bi bi-arrow-left-short"></i>
+                </Link>
+              </div>
+            <div className='col-10'/>
+            <br/><br/>
+          </div>
+          </div>
               <div className="text-center main-text-cl p2">Ayo Mulai !</div>
-              <div className="text-center text-1-cl p5">Buat Akun Baru Anda Untuk Mengakses Semua Fitur.</div>
+              <div className="text-center text-1-cl p5 pb-4">Buat Akun Baru Anda Untuk Mengakses Semua Fitur.</div>
 
               <form action="/" method="post">
-                <input type="text" className="form-control mb-3" id="name" placeholder="Nama" />
+                <Inputs
+                  icon="bi-person"
+                  type="text"
+                  placeholder="Nama"
+                  onChange={(e) => setName(e.target.value)}
+                  value={Name}
+                />
+                <Inputs
+                  icon="bi-envelope"
+                  type="E-Mail"
+                  placeholder="contoh@mail.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={Email}
+                />
+                <Inputs
+                  icon="bi-telephone"
+                  type="Nomor Telepon"
+                  placeholder="Nomor Telepon"
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  value={PhoneNumber}
+                />
+                <Inputs
+                  icon="bi-lock"
+                  type="password1"
+                  placeholder="Buat Kata Kunci"
+                  onChange={(e) => setPassword1(e.target.value)}
+                  value={Password1}
+                />
+                <Inputs
+                  icon="bi-unlock"
+                  type="password2"
+                  placeholder="Ulangi Kata Kunci Baru"
+                  onChange={(e) => setPassword2(e.target.value)}
+                  value={Password2}
+                />
+                {/* <input type="text" className="form-control mb-3" id="name" placeholder="Nama" />
                 <input type="email" className="form-control mb-3" id="email" placeholder="E-Mail" />
                 <input type="number" className="form-control mb-3" id="phone" placeholder="Nomor Telepon" />
                 <input type="password" className="form-control mb-3" id="pass1" placeholder="Buat Kata Kunci Baru" />
-                <input type="password" className="form-control mb-3" id="pass2" placeholder="Ulangi Kata Kunci Baru" />
+                <input type="password" className="form-control mb-3" id="pass2" placeholder="Ulangi Kata Kunci Baru" /> */}
 
-                <div className="d-grid gap-2">
+                <div className="d-grid gap-2 pt-5 pb-3">
                   <button type="submit" className="button">Buat Akun</button>
                 </div>
               </form>
 
-              <div className="text-center text-1-cl p4">Sudah punya akun? 
+              <div className="text-center text-2-cl p4">Sudah punya akun? 
                 <Link href="login">
                   <a className="main-text-cl aStyle"> Masuk di Sini</a>
                 </Link>
               </div>
 
-            </div>
-            <div className="col" />
-          </div>
 
         </div>
       </main>

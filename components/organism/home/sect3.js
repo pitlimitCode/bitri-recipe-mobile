@@ -43,6 +43,8 @@ export default function Home3(props) {
                   src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
                   // className="picImagePages" 
                   alt="search pic"
+                  width="200px"
+                  height="200px"
                 />
               <div className="bottom-left-text">{data.name}</div>
             </div>

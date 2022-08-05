@@ -1,9 +1,13 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+
+import Inputs from '../../components/organism/atoms/inputs'
+
 
 export default function Login() {
+	const [Email, setEmail] = useState('');
+	const [Password, setPassword] = useState('');
   return (
     <div className="mobile">
       <Head>
@@ -28,37 +32,43 @@ export default function Login() {
           </div>
 
           {/* FORM LOGIN */}
-          <div className="row">
-            <div className="col" />
-            <div className="col-10">
             
               <div className="text-center main-text-cl p3">Selamat Datang !</div>
-              <div className="text-center text-1-cl p5">Silahkan masuk ke akun anda.</div>
+              <div className="text-center text-1-cl p5 mb-5">Silahkan masuk ke akun anda.</div>
               
               <form action="/" method="post">
-                <input type="email" className="formtype form-control mb-3" id="email" placeholder="contoh@mail.com" />
-                <input type="password" className="form-control mb-3" id="password" placeholder="kata kunci" />
+                <Inputs
+                  icon="bi-person"
+                  type="email"
+                  placeholder="contoh@mail.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={Email}
+                />
+                <Inputs
+                  icon="bi-lock"
+                  type="password"
+                  placeholder="kata kunci"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={Password}
+                />
                 
-                <div className="text-end">
+                <div className="text-end mb-4">
                   <Link href="login/forgot-password">
-                    <a className="aStyle text-1-cl p4"> Lupa Kata Kunci ?</a>
+                    <a className="aStyle text-2-cl p4"> Lupa Kata Kunci ?</a>
                   </Link>
                 </div>
 
-                <div className="d-grid gap-2">
+                <div className="d-grid gap-2 mb-4">
                   <button type="submit" className="button">Masuk</button>
                 </div>
               </form>
 
-              <div className="text-center text-1-cl p4">Belum punya akun? 
+              <div className="text-center text-2-cl p4">Belum punya akun? 
                 <Link href="register">
                   <a className="main-text-cl aStyle"> Daftar</a>
                 </Link>
               </div>
 
-            </div>
-            <div className="col" />
-          </div>
 
         </div>
       </main>
