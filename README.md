@@ -75,18 +75,19 @@ REPORT DS ! :
 done: 
 	bisa pakai env
 	bisa pakai swiper js
+	slicing kasar: searching, detail recipe (ingre n video jadi 1), ..
 kendala: 
-	cara gabungkan 2 varibael ke img src
-	pakai next/image, error: hostname "localhost" is not configured under images in your `next.config.js`, udah coba ikutin di documentasi tetap tidak bisa.
+	cara gabungkan 2 variabel ke img src
+	pakai next/image, error: hostname "localhost" is not configured under images in your `next.config.js`, udah coba ikutin di dokumentasi nextjs tapi tetap tidak bisa.
 	pemakaian card bootstrap
-do after ds:  
-	pembuatan katerori resep di DB
+do after ds:
+	cari bantuan penggunaan next/image dan next.config.js, dan cara atau alternativ lain untuk 2 variabel kedalam 1 src image dalam return-an function
+	buat tabel: 1 kategori resep, like, dan saved
 ?:	...
 
 
 do porgress:
 gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
-
 database:
 	category recipe: | sup | daging | seafood | makanan ringan
 	like and saved
@@ -101,10 +102,6 @@ Developing rules:
 	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
 	
 slicing + atomic design: 
-	slicing: searching
-	slicing: detail recipe
-		navbar: ingredients
-		navbar: video step(youtube video)]
 	slicing: add recipe
 	slicing: user profile
 		slicing: edit profile (edit profile picture quickly)

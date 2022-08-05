@@ -40,8 +40,12 @@ main {
   display: flex;
   width: 100%;
   padding-bottom: 7.5rem;
-  min-height: 100vh; /* temporary height */
-  background-color:palevioletred;  /* important to edit bg color */
+  
+  /* temporary height */
+  min-height: 100vh; 
+  
+  /* important to edit bg color */
+  background-color:palevioletred;  
 }
 
 section {
@@ -53,7 +57,7 @@ section {
   padding-right: 2rem !important;
 }
 
-nav {
+.navHome {
   z-index: 1;
   position: fixed;
   bottom: 0;
@@ -68,7 +72,7 @@ nav {
   justify-content: center;
   text-align: center;
 }
-.nav-link{
+.navHomeLink{
   color: gray !important;
   border-radius: 2rem;
   margin-left: auto;
@@ -76,16 +80,16 @@ nav {
   width: 80%;
   padding: 0.5rem 0 !important;
 }
-.nav-link:hover{
+.navHomeLink:hover{
   color: #EFC81A !important;
   border: 1px solid #EFC81A !important;
   transition: ease-in-out 1s;
 }
-.active{
+.navHomeActive{
   background-color: #EFC81A;
   color: white !important;
 }
-.active:hover{
+.navHomeActive:hover{
   background-color: #EFC81A;
   color: black !important;
 }
@@ -164,7 +168,6 @@ nav {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,6 +187,19 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#imagesection{
+  width: 100%;
+  max-height: 40vh;
+}
+#imagedetailrecipe{
+  width: 100%;
+  max-height: 40vh;
+}
+#descsection{
+  width: 100%;
+  min-height: 60vh;
 }
 
 /* Number Type Input for No Arrow Style */
