@@ -74,8 +74,9 @@ export default function SearchRecipe(props) {
             </form>
           </section>
 
-          {datas
-            ? datas?.map((data) => (
+          {!datas
+            ? <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named "{query.name}"</div>
+            : datas?.map((data) => (
                 <div
                   key={data.recipe_id}
                   className="card"
@@ -120,7 +121,6 @@ export default function SearchRecipe(props) {
                 </Link>
                 </div>
               ))
-            : <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named "{query.name}"</div>
           } 
 
 

@@ -18,7 +18,8 @@ import NavHome from '../components/organism/navHome'
 // };
 
 export default function AddRecipe(props) {
-  console.log(props);
+  // console.log(props);
+
 	// const [Name, setName] = useState('');
 	// const [Email, setEmail] = useState('');
 	// const [Password1, setPassword1] = useState('');

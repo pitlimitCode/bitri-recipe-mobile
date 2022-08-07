@@ -87,14 +87,20 @@ getStaticProps (Static Site Generation)
 login register: get static props
 
 
+?:
+token di header request
+Authentication
+next.js/image
+window.location.href gani ke navigate bawaan next js
 
 DOIT!!!:
+env port api
+?inputan video?
 
+LATER :
 batasi text inputan nama resep sampai 32
 batasi text inputan nama user sampai 16
 perbaiki tipe inputan ingredient harus tipe array
-?inputan video?
-
 
 
 database:

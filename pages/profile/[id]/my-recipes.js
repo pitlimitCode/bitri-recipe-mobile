@@ -2,17 +2,33 @@
 import Link from 'next/link'
 
 export async function getServerSideProps(context){
-  const popular = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
-   console.log(popular);
+  const api = 'http://localhost:8000/users/show/myrecipe?id=';
+  const params = context.query.id;
+
+  const myrecipe = await fetch(`${api}${params}`)
+    .then((response) => response.json())
+    .catch(() => null);
+
+  if(!myrecipe){
+    return {
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
+    }
+  }
+  
   return {
     props: {
-      popular,
+      myrecipe,
     }
   }
 };
 
 export default function ProfilSelfRecipe(props) {
-  const datas = props?.popular?.data;
+  const datas = props?.myrecipe?.data;
+  // console.log(datas);
+  const urlApi = 'http://localhost:8000/'
   return(
     <div className="mobile" >
       
@@ -37,7 +53,7 @@ export default function ProfilSelfRecipe(props) {
             </div>
           </div>
 
-            {/* {datas?.map((data) => (
+            {datas?.map((data) => (
               <div
                 key={data.id_recipe}
                 className="card"
@@ -51,18 +67,11 @@ export default function ProfilSelfRecipe(props) {
                   marginBottom: "20px",
                   cursor: "pointer",
                 }}
-              > */}
-              {/* <ul>
-                {names.map((name) => (
-                  <li key={name}>{name}</li>
-                ))}
-              </ul> */}
-                {/* <div className="row">
+              >
+                <div className="row">
                   <div className="col-2">
                     <img
-                      src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
-                      // src="/images/food_images/foodImage_11.jpeg"
-                      // src={data.image_recipe}
+                      src={`${urlApi}${data.image}`}
                       width="80px"
                       height="80px"
                       style={{ borderRadius: "16px", objectFit: "cover", marginTop: "7px" }}
@@ -83,7 +92,7 @@ export default function ProfilSelfRecipe(props) {
 
                 </div>
               </div>
-            ))} */}
+            ))}
 
         </div>
       </main>

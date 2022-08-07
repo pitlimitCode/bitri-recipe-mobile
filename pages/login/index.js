@@ -35,7 +35,7 @@ export default function Login() {
 
       // SET TOKEN
         // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
-        localStorage.setItem("token", `Bearer ${res?.data?.token}`);
+        localStorage.setItem("token", res?.data?.token);
         localStorage.setItem("name", res?.data?.name);
         window.location.href = "/";
         // <Navigate to="/" />

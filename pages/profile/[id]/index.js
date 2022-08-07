@@ -11,26 +11,33 @@ export async function getServerSideProps(context){
     .then((response) => response.json())
     .catch(() => null);
 
-    if(!dataprofile){
-      return {
-        redirect: {
-          destination: '/404',
-          permanent: false,
-        },
-      }
+  if(!dataprofile){
+    return {
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
     }
+  }
   
   return {
     props: {
       dataprofile,
+      params,
     }
   }
 };
 
-// params id not number? invalid url !
-
 export default function Profile(props) {
 
+  // (USER) ID PARAMS
+  const userId = props.params;
+  // console.log(userId);
+  const linkEdit = `${userId}/edit`
+  const linkMy = `${userId}/my-recipes`
+  const linkSaved = `${userId}/saved-recipes`
+  const linkLiked = `${userId}/liked-recipes`
+  
   // API IMAGE
   const data = props.dataprofile.data[0];
   const urlApi = 'http://localhost:8000/';
@@ -57,95 +64,79 @@ export default function Profile(props) {
       <div className="container">
         <div id="profileopt">
 
+          <Link href={linkEdit}>
             <div className="row pointercursor d-flex align-items-center pt-2 pb-3">
-              <Link href="/profile/2/edit">
                 <div className="col-2">
                   <i className="bi bi-person main-text-cl p2"></i>
                 </div>
-              </Link>
-              <Link href="/profile/2/edit">
                 <div className="col-8 p3">
                   Edit Profie
                 </div>
-              </Link>
-              <Link href="/profile/2/edit">
                 <div className="col-2">
                   <div id="backarrow2">
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
-              </Link>
             </div>
+          </Link>
             
+          <Link href={linkMy}>
             <div className="row pointercursor d-flex align-items-center pb-4">
-              <Link href="/profile/2/my-recipes">
                 <div className="col-2">
                   <i className="bi bi-award main-text-cl p2"></i>
                 </div>
-              </Link>
-              <Link href="/profile/2/my-recipes">
                 <div className="col-8 p3">
                   My Recipe
                 </div>
-              </Link>
-              <Link href="/profile/2/my-recipes">
                 <div className="col-2">
                   <div id="backarrow2">
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
-              </Link>
             </div>
+          </Link>
 
+          <Link href={linkSaved}>
             <div className="row pointercursor d-flex align-items-center pb-4">
-              <Link href="/profile/2/saved-recipes">
                 <div className="col-2">
                   <i className="bi bi-bookmark main-text-cl p2"></i>
                 </div>
-              </Link>
-              <Link href="/profile/2/saved-recipes">
                 <div className="col-8 p3">
                   Saved Recipe
                 </div>
-              </Link>
-              <Link href="/profile/2/saved-recipes">
                 <div className="col-2">
                   <div id="backarrow2">
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
-              </Link>
             </div>
+          </Link>
 
+          <Link href={linkLiked}>
             <div className="row pointercursor d-flex align-items-center pb-4">
-              <Link href="/profile/2/liked-recipes">
                 <div className="col-2">
                   <i className="bi bi-hand-thumbs-up main-text-cl p2"></i>
                 </div>
-              </Link>
-              <Link href="/profile/2/liked-recipes">
                 <div className="col-8 p3">
                   Liked Recipe
                 </div>
-              </Link>
-              <Link href="/profile/2/liked-recipes">
                 <div className="col-2">
                   <div id="backarrow2">
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
-              </Link>
             </div>
+          </Link>
 
-            <div className="row pointercursor d-flex align-items-center">
-                <div className="col-2" onClick={handleLogout}>
-                  <i className="bi bi-power text-danger p2"></i>
-                </div>
-                <div className="col-8 p3 text-danger" onClick={handleLogout}>
-                  Log Out
-                </div>
-                <div className="col-2" />
-            </div>
+          <div className="row pointercursor d-flex align-items-center">
+              <div className="col-2" onClick={handleLogout}>
+                <i className="bi bi-power text-danger p2"></i>
+              </div>
+              <div className="col-8 p3 text-danger" onClick={handleLogout}>
+                Log Out
+              </div>
+              <div className="col-2" />
+          </div>
 
         </div>
       </div>

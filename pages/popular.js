@@ -13,7 +13,7 @@ export async function getServerSideProps(context){
 
 export default function PopularRecipe(props) {
   const datas = props?.popular?.data;
-  console.log(datas);
+  // console.log(datas);
   const urlIdRecipe = 'http://localhost:3000/detail/'
   const urlApi = 'http://localhost:8000/'
   return (
