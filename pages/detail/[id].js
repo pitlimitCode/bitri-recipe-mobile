@@ -9,18 +9,29 @@ export async function getServerSideProps(context){
   const api = 'http://localhost:8000/recipes/show/id?id=';
   const params = context.query.id;
 
-  const datasearch = await fetch( `${api}${params}` )
-    .then((response) => response.json());
+  const datauser = await fetch( `${api}${params}` )
+    .then((response) => response.json())
+    .catch(() => null);
+
+  if(!datauser){
+    return {
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
+    }
+  }
+
   return {
     props: {
-      datasearch,
+      datauser,
     }
   }
 };
 
 // params id not number? invalid url
 export default function DetailRecipe(props) {
-  const data = props.datasearch[0];
+  const data = props.datauser[0];
   const imagerecipe = `http://localhost:8000/${data.image}`;
   // console.log(data);
   // console.log(api);

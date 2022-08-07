@@ -6,9 +6,8 @@ import axios from "axios";
 import Inputs from '../../components/atoms/inputs'
 
 export default function Register() {
-  // const [isError, setIsError] = React.useState(false);
-  // const [errorMsg, setErrorMsg] = React.useState("");
-  // const [isLoading, setIsLoading] = React.useState(false);
+  const [IsError, setIsError] = useState(false);
+	const [ErrorMsg, setErrorMsg] = useState('');
 
 	const [Name, setName] = useState('');
 	const [Email, setEmail] = useState('');
@@ -26,24 +25,20 @@ export default function Register() {
       password: Password1,
       password2: Password2,
     })
-      .then((res) => {
-        // setIsError(false);
+    .then((res) => {
+      setIsError(false);
 
-      // SET TOKEN
-        // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
-        window.location.href = "/login";
-        // <Navigate to="/" />
-      })
-      .catch((err) => {
-        console.log(err);
-        // setIsError(true);
-        // setErrorMsg(err?.response?.data);
-      })
-      // .finally(() => {
-      //   setIsLoading(false);
-      // });
+    // SET TOKEN
+      // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
+      window.location.href = "/login";
+      // <Navigate to="/" />
+    })
+    .catch((e) => {
+      console.log(e);
+      setIsError(true);
+      setErrorMsg(e.response.data)
+    });
   };
-  // console.log(login);
 
   return (
     <div className="mobile" >
@@ -70,6 +65,10 @@ export default function Register() {
               <div className="text-center main-text-cl p2">Let's Get Started</div>
               <div className="text-center text-1-cl p5 pb-4">Create new account to access all features.</div>
 
+              {IsError 
+                ? <div className='alert alert-danger text-center py-1 mx-5'>{ErrorMsg}</div>
+                : null
+              } 
               <form method="post" onSubmit={(e) => e.preventDefault()}>
                 <Inputs
                   icon="bi-person"

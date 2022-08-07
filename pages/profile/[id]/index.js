@@ -1,5 +1,4 @@
 // import Image from 'next/image'
-import {useRouter} from "next/router";
 import NavHome from '../../../components/organism/navHome'
 import Link from 'next/link'
 
@@ -9,8 +8,18 @@ export async function getServerSideProps(context){
   const api = 'http://localhost:8000/users/show/id?id='
   const params = context.query.id;
   const dataprofile = await fetch(`${api}${params}`)
-    .then((response) => response.json());
+    .then((response) => response.json())
+    .catch(() => null);
 
+    if(!dataprofile){
+      return {
+        redirect: {
+          destination: '/404',
+          permanent: false,
+        },
+      }
+    }
+  
   return {
     props: {
       dataprofile,

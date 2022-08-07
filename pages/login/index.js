@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from "axios";
 import Head from 'next/head'
 import Link from 'next/link'
@@ -22,16 +22,16 @@ import Inputs from '../../components/atoms/inputs'
 export default function Login() {
 	const [Email, setEmail] = useState('');
 	const [Password, setPassword] = useState('');
-  
-  const handleLogin = async () => {
-    // setIsLoading(true);
+  const [IsError, setIsError] = useState(false);
+	const [ErrorMsg, setErrorMsg] = useState('');
 
+  const handleLogin = async () => {
     axios.post("http://localhost:8000/users/login", {
       email: Email,
       password: Password,
     })
       .then((res) => {
-        // setIsError(false);
+        setIsError(false);
 
       // SET TOKEN
         // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
@@ -40,17 +40,11 @@ export default function Login() {
         window.location.href = "/";
         // <Navigate to="/" />
       })
-      .catch((err) => {
-        console.log(err);
-        // setIsError(true);
-        // setErrorMsg(err?.response?.data);
-      })
-      // .finally(() => {
-      //   setIsLoading(false);
-      // });
+      .catch((e) => {
+        setIsError(true);
+        setErrorMsg(e.response.data)
+      });
   };
-  // console.log(login);
-
 
   return (
     <div className="mobile">
@@ -79,7 +73,11 @@ export default function Login() {
             
           <div className="text-center main-text-cl p3">Welcome !</div>
           <div className="text-center text-1-cl p5 mb-5">Log in your exiting account.</div>
-          
+
+          {IsError 
+            ? <div className='alert alert-danger text-center py-1 mx-5'>{ErrorMsg}</div>
+            : null
+          } 
           <form onSubmit={(e) => e.preventDefault()}>
             <Inputs
               icon="bi-person"

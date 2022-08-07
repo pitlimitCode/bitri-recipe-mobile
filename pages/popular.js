@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 export async function getServerSideProps(context){
   const popular = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
-   console.log(popular);
   return {
     props: {
       popular,
@@ -14,6 +13,9 @@ export async function getServerSideProps(context){
 
 export default function PopularRecipe(props) {
   const datas = props?.popular?.data;
+  console.log(datas);
+  const urlIdRecipe = 'http://localhost:3000/detail/'
+  const urlApi = 'http://localhost:8000/'
   return (
     <div className="mobile">
       <Head>
@@ -64,10 +66,11 @@ export default function PopularRecipe(props) {
                   <li key={name}>{name}</li>
                 ))}
               </ul> */}
+        <Link href={`${urlIdRecipe}${data.id_recipe}`}>
                 <div className="row">
                   <div className="col-2">
                     <img
-                      src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
+                      src={`${urlApi}${data.image_recipe}`}
                       // src="/images/food_images/foodImage_11.jpeg"
                       // src={data.image_recipe}
                       width="80px"
@@ -101,6 +104,7 @@ export default function PopularRecipe(props) {
                   </div>
 
                 </div>
+                </Link>
               </div>
             ))}
 
