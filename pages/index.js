@@ -1,14 +1,38 @@
 import Head from 'next/head'
-// import Link from 'next/link'
-import Home1 from '../components/organism/home/sect1'
+import Link from 'next/link'
+// import Home1 from '../components/organism/home/sect1'
 import Home2 from '../components/organism/home/sect2'
 import Home3 from '../components/organism/home/sect3'
 import Home4 from '../components/organism/home/sect4'
 import NavHome from '../components/organism/navHome'
 
+import {useState} from "react";
+
+export async function getServerSideProps(context){
+  // const idUserActive = await fetch( "http://localhost:8000/users/getid" ).then((response) => response.json());
+
+
+  // const dataHome2 = await fetch( "http://localhost:8000/recipes/show/name" ).then((response) => response.json());
+  const dataHome3 = await fetch( "http://localhost:8000/recipes/show/all" ).then((response) => response.json());
+  const dataHome4 = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
+  
+  return {
+    props: {
+      // dataHome2,
+      dataHome3,
+      dataHome4,
+      // idUserActive,
+    }
+  }
+};
+
 export default function Home(props) {
   // console.log(props);
-  
+  const [Searching, setSearching] = useState([]);
+  const handleSearchingName = () => {
+    window.location.href=`http://localhost:3000/search/${Searching}`
+  };
+
   return (
     <div className="mobile" >
       <Head>
@@ -22,7 +46,43 @@ export default function Home(props) {
         <div className="container">
 
           {/* SEARCH RECIPES - HOME */}
-          <section className="mt-5 "> <Home1 /> </section> 
+          {/* <section className="mt-5 "> <Home1 
+          // data1={props.dataHome1.data} 
+          /> </section>  */}
+
+          {/* SEARCH RECIPES - HOME */}
+          <section className="mt-5 ">
+            <form>
+              <div className="row">
+                <div className="col-9">
+                  <div 
+                    className="input-group"
+                    style={{
+                      border: "none",
+                      "boxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                      "WebkitBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                      "MozBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                    }}
+                  >
+                    <i className="input-group-text bi bi-search bg-white" id="logosearch"></i>
+                    <input
+                      placeholder="Search Pasta, Bread, etc"
+                      type="search"
+                      className="form-control"
+                      id="searchinput"
+                      onChange={(e) => setSearching(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="col-3">
+                  <button id="searchbutton"
+                    type='button'
+                    onClick={handleSearchingName}
+                  >Search</button>
+                </div>
+              </div>
+            </form>
+          </section>
 
           {/* CATEGORY RECIPE - HOME */}
           <section> <Home2 /> </section> 
@@ -32,21 +92,10 @@ export default function Home(props) {
 
           {/* ALL POPULAR RECIPES - HOME */}
           <section> <Home4 data4={props.dataHome4.data} /> </section> 
+          
         </div>
       </main>
-      <NavHome />
+      <NavHome sendid={props.idUserActive}/>
     </div>
   )
 }
-
-export async function getServerSideProps(context){
-  const dataHome3 = await fetch( "http://localhost:8000/recipes/show/all" ).then((response) => response.json());
-  const dataHome4 = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
-   
-  return {
-    props: {
-      dataHome3,
-      dataHome4,
-    }
-  }
-};

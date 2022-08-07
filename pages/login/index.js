@@ -1,13 +1,57 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Inputs from '../../components/organism/atoms/inputs'
+import Inputs from '../../components/atoms/inputs'
 
+// const getBody = promisify(bodyParser.urlencoded());
+
+
+// export async function getServerSideProps(context){
+//   const login = await fetch( "http://localhost:8000/users/login" ).then((response) => response.json());
+//   console.log(login);
+  
+//   return {
+//     props: {
+//       login,
+//     }
+//   }
+// };
 
 export default function Login() {
 	const [Email, setEmail] = useState('');
 	const [Password, setPassword] = useState('');
+  
+  const handleLogin = async () => {
+    // setIsLoading(true);
+
+    axios.post("http://localhost:8000/users/login", {
+      email: Email,
+      password: Password,
+    })
+      .then((res) => {
+        // setIsError(false);
+
+      // SET TOKEN
+        // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
+        localStorage.setItem("token", `Bearer ${res?.data?.token}`);
+        localStorage.setItem("name", res?.data?.name);
+        window.location.href = "/";
+        // <Navigate to="/" />
+      })
+      .catch((err) => {
+        console.log(err);
+        // setIsError(true);
+        // setErrorMsg(err?.response?.data);
+      })
+      // .finally(() => {
+      //   setIsLoading(false);
+      // });
+  };
+  // console.log(login);
+
+
   return (
     <div className="mobile">
       <Head>
@@ -17,7 +61,7 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <main className="main auth">
+      <main className="auth">
         <div className="container">
 
           {/* IMAGE AVATAR */}
@@ -33,43 +77,41 @@ export default function Login() {
 
           {/* FORM LOGIN */}
             
-              <div className="text-center main-text-cl p3">Selamat Datang !</div>
-              <div className="text-center text-1-cl p5 mb-5">Silahkan masuk ke akun anda.</div>
-              
-              <form action="/" method="post">
-                <Inputs
-                  icon="bi-person"
-                  type="email"
-                  placeholder="contoh@mail.com"
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={Email}
-                />
-                <Inputs
-                  icon="bi-lock"
-                  type="password"
-                  placeholder="kata kunci"
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={Password}
-                />
-                
-                <div className="text-end mb-4">
-                  <Link href="login/forgot-password">
-                    <a className="aStyle text-2-cl p4"> Lupa Kata Kunci ?</a>
-                  </Link>
-                </div>
+          <div className="text-center main-text-cl p3">Welcome !</div>
+          <div className="text-center text-1-cl p5 mb-5">Log in your exiting account.</div>
+          
+          <form onSubmit={(e) => e.preventDefault()}>
+            <Inputs
+              icon="bi-person"
+              type="email"
+              placeholder="examplexxx@mail.com"
+              onChange={(e) => setEmail(e.target.value)}
+              value={Email}
+            />
+            <Inputs
+              icon="bi-lock"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={Password}
+            />
+            
+            <div className="text-end mb-4">
+              <Link href="login/forgot-password">
+                <a className="aStyle text-2-cl p4">Forgot Password ?</a>
+              </Link>
+            </div>
 
-                <div className="d-grid gap-2 mb-4">
-                  <button type="submit" className="button">Masuk</button>
-                </div>
-              </form>
+            <div className="d-grid gap-2 mb-4">
+              <button type="submit" className="button" onClick={handleLogin}>Log in</button>
+            </div>
+          </form>
 
-              <div className="text-center text-2-cl p4">Belum punya akun? 
-                <Link href="register">
-                  <a className="main-text-cl aStyle"> Daftar</a>
-                </Link>
-              </div>
-
-
+          <div className="text-center text-2-cl p4">Don't have account? 
+            <Link href="register">
+              <a className="main-text-cl aStyle"> Sign Up</a>
+            </Link>
+          </div>
         </div>
       </main>
     </div>

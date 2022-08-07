@@ -1,20 +1,30 @@
 import Head from 'next/head'
 // import Image from 'next/image'
-import Home1 from '../components/organism/home/sect1'
+import {useState} from "react";
+import Link from 'next/link'
 
 export async function getServerSideProps(context){
-  const search = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
-   console.log(search);
+  const api = 'http://localhost:8000/recipes/show/name?name='
+  const params = context.query.name;
+
+  const datasearch = await fetch( `${api}${params}` )
+    .then((response) => response.json());
   return {
     props: {
-      search,
+      datasearch,
     }
   }
 };
 
 export default function SearchRecipe(props) {
-  // console.log(props);
-  const datas = props.search.data;
+  const datas = props?.datasearch?.data;
+  const urlIdRecipe = 'http://localhost:3000/detail/'
+
+  const [Searching, setSearching] = useState([]);
+  const handleSearchingName = () => {
+    window.location.href=`http://localhost:3000/search/${Searching}`
+  };
+  
   return (
     <div className="mobile">
       <Head>
@@ -26,11 +36,43 @@ export default function SearchRecipe(props) {
 
       <main>
         <div className="container">
-          <section className="mt-5 "> <Home1 /> </section> 
+
+          <section className="mt-5 ">
+            <form>
+              <div className="row">
+                <div className="col-9">
+                  <div 
+                    className="input-group"
+                    style={{
+                      border: "none",
+                      "boxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                      "WebkitBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                      "MozBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                    }}
+                  >
+                    <i className="input-group-text bi bi-search bg-white" id="logosearch"></i>
+                    <input
+                      placeholder="Search Pasta, Bread, etc"
+                      type="search"
+                      className="form-control"
+                      id="searchinput"
+                      onChange={(e) => setSearching(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="col-3">
+                  <button id="searchbutton"
+                    type='button'
+                    onClick={handleSearchingName}
+                  >Search</button>
+                </div>
+              </div>
+            </form>
+          </section>
                     
           {datas?.map((data) => (
             <div
-              key={data.id_recipe}
+              key={data.recipe_id}
               className="card"
               style={{
                 borderRadius: "15px",
@@ -43,15 +85,10 @@ export default function SearchRecipe(props) {
                 cursor: "pointer",
               }}
             >
-            {/* <ul>
-              {names.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul> */}
+            <Link href={`${urlIdRecipe}${data.recipe_id}`}>
               <div className="row">
                 <div className="col-2">
                   
-
 
                   {/* TIDAK BISA PAKAI NEXT/IMAGE */} {/* CARA GABUNGKAN 2 VARIABEL KEDALAM 1 SRC */}
 
@@ -68,18 +105,14 @@ export default function SearchRecipe(props) {
                 <div className="col-10">
                   <div style={{ marginLeft: "20px" }}>
                     <h6>{data.name_recipe}</h6>
-                    <p>Spicy, Salted, Tasty</p>
+                    <p className='p4'>Spicy, Salted, Tasty</p>
                     <div className="d-flex gap-1 align-items-center">
-                      {/* <img
-                        src="/images/star.png"
-                        alt="star"
-                        height="12px"
-                      /> */}
-                      <span>4.7</span>
+                      <span className='p4'>4.7</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </Link>
             </div>
           ))}
         </div>

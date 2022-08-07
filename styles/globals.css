@@ -5,6 +5,7 @@ html,body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 /* 
@@ -32,20 +33,21 @@ search efefef
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 480px;
+  max-width: 420px;
 }
 
 main {
   flex: 1;
   display: flex;
-  width: 100%;
+  width: 420px;
   padding-bottom: 7.5rem;
   
   /* temporary height */
   min-height: 100vh; 
   
   /* important to edit bg color */
-  background-color:palevioletred;  
+  /* background-color:palevioletred;  */
+  border: 1px dotted #EFC81A; 
 }
 
 section {
@@ -58,15 +60,15 @@ section {
 }
 
 .navHome {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   bottom: 0;
   right: 50;
   display: flex;
   align-items: center;
   background-color: white;
-  height: 10vh;
-  width: 480px;
+  height: 15vh;
+  width: 420px;
   border-radius: 1rem 1rem 0 0;
   font-size: 1.8rem;
   justify-content: center;
@@ -107,22 +109,32 @@ section {
 .p3{font-size: 20px;}
 .p4{font-size: 14px; }
 .bold{font-weight: bold;}
+.pointercursor{cursor: pointer;}
 
 /* INPUT STYLE */
-.input-group-text{
+/* .input-group-text{
   border: none !important;
-}
+} */
 #logoInput {
   padding: auto 5px;
-  border: none;
+  border-right: none;
 }
 #idInput {
   padding: 14px 5px;
-  border: none;
+  border-left: none;
 }
 #idInput:focus {
   box-shadow: none ;
-  border: none;
+  /* border: none; */
+}
+#logosearch {
+  border-right: none !important;
+  background-color: #EFEFEF !important;
+}
+#searchinput {
+  box-shadow: none ;
+  border-left: none;
+  background-color: #EFEFEF;
 }
 
 .button{
@@ -194,7 +206,10 @@ section {
 }
 #imagedetailrecipe{
   width: 100%;
-  max-height: 40vh;
+  display: block;
+  /* margin-top: 30px; */
+  /* margin-bottom: auto; */
+  top: 40px;
 }
 #descsection{
   width: 100%;
@@ -203,14 +218,90 @@ section {
 
 #backarrow{
   padding: 0.1rem;
-  background-color: none;
-  border-radius: 5px;
+  background-color: #C4C4C4;
+  border-radius: 1.3rem;
   font-size: 2rem;
   text-align: center;
 }
 #backarrow:hover{
   background-color: #EFC81A;
   color: white;
+}
+#backarrow2{
+  padding: 0.1rem;
+  background-color: none;
+  border-radius: 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+}
+#backarrow2:hover{
+  padding: 0.1rem;
+  background-color: none;
+  border-radius: 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* PROFILE PAGE  */
+#profilepage{
+  width: 420px;
+  padding-top: 10vh;
+  height: 35vh;
+  background-color: #EFC81A;
+}
+#profileopt{
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 15vh;
+}
+#profilpic{
+  width: 100%;
+  border-radius: 50%;
+}
+
+#searchbutton{
+  margin-top: 5px;
+  border-radius: 12px;
+  /* border: 2px solid #EFC81A; */
+  background-color: #EFC81A;
+  color: #EFEFEF;
+}
+#searchbutton:hover{
+  background-color: #EFEFEF;
+  color: #EFC81A;
+}
+
+.likensave{
+  border: 1px solid #EFC81A;
+  border-radius: 1rem;
+  color: #EFC81A;
+  padding: 0.5rem;
+}
+.likensave:hover{
+  border: 3px solid #EFC81A;
+  font-weight: bold;
+}
+.likensave:active{
+  background-color: #EFC81A;
+  color: white;
+}
+
+.centerY{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.detailYlBg{
+  background-color: #FAF7ED;
+  padding:0.8rem;
+
+  border-radius: 1rem;
+}
+
+#bgtaxtarea {
+  background-color: #FAF7ED;
 }
 
 /* Number Type Input for No Arrow Style */

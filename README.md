@@ -1,9 +1,8 @@
 # bitri-recipe-mobile
 Recipes sharing web app by Bitri Recipe, for Mobile Device Users.
 
-### .env example:  
-this_host=...  
-be_deploy_url=...  
+### .env.local example:  
+BE_HOST=http://localhost:8000
       
 ### Requirements:  
 - [ ] Gunakan Bahasa Inggris untuk nama class, id, fungsi, dan komponen
@@ -16,18 +15,18 @@ be_deploy_url=...
 - [ ] Navigation
 - [ ] CRUD
 - [ ] Search, sort, pagination
-- [ ] Deploy
+- [ ] Deploy, VerCel
 - [ ] Upload/push ke github dan gunakan nama yang profesional
 - [x] Presentasikan
 - [ ] Teori (NextJS, SSR, & CSR)
-- [ ] Authentification (optional)
-- [ ] SSR (optional)
-- [ ] REDUX (opsional)
-- [ ] Refresh token (opsional)
-- [ ] User activation via email (opsional)
-- [ ] Unit testing (opsional)
-- [ ] Realtime chat user (+ opsional)
-- [ ] Forgot password (+ opsional)
+- [ ] Authentification (optional 1)
+- [ ] SSR (optional 2)
+- [ ] REDUX (opsional 2)
+- [ ] Refresh token (opsional 2)
+- [ ] User activation via email (opsional 2)
+- [ ] Unit testing (opsional 2)
+- [ ] Realtime chat user (opsional +)
+- [ ] Forgot password (opsional +)
 
 https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe-Mobile?node-id=0%3A1
 
@@ -60,32 +59,12 @@ https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe-Mobile?node-id=0%3
 ### documentation :
 create nextJS: npx create-next-app folder-name  
 running nextJS: npm run dev
-package+ :
-1. .env: 
-    install: npm install dotenv
-    import in file: require('dotenv').config();
-2. bootstrap:
-    install: npm install bootstrap
-    import in file: import 'bootstrap/dist/css/bootstrap.css'
-    install icons: npm i bootstrap-icons
-    import icons in file: import 'bootstrap-icons/font/bootstrap-icons.css'
-
 
 REPORT DS ! :
-done: 
-	bisa pakai env
-	bisa pakai swiper js
-	slicing kasar: searching, detail recipe (ingre n video jadi 1), ..
-kendala: 
-	cara gabungkan 2 variabel ke img src
-	pakai next/image, error: hostname "localhost" is not configured under images in your `next.config.js`, udah coba ikutin di dokumentasi nextjs tapi tetap tidak bisa.
-	pemakaian card bootstrap
-do after ds:
-	cari bantuan penggunaan next/image dan next.config.js, dan cara atau alternativ lain untuk 2 variabel kedalam 1 src image dalam return-an function
-	buat tabel: 1 kategori resep, like, dan saved
+done: ..
+kendala: ..
+do after ds: ..
 ?:	...
-
-
 
 
 NextJS, SSR, & CSR
@@ -103,24 +82,31 @@ Some pages require fetching external data for pre-rendering. There are two scena
     Your page content depends on external data: Use getStaticProps.
     Your page paths depend on external data: Use getStaticPaths (usually in addition to getStaticProps).
 
-
 getStaticProps (Static Site Generation)
-
-
-
-ssr lebih ringan
 
 login register: get static props
 
 
 
-do porgress:
-gambar logo di home page, dan logo kecil lainnya, sizenya x2, x3 atau svg
-database:
-	category recipe: | sup | daging | seafood | makanan ringan
-	like and saved
-	fitur rating bintang diganti menjadi jumlah like
+DOIT!!!:
 
+batasi text inputan nama resep sampai 32
+batasi text inputan nama user sampai 16
+perbaiki tipe inputan ingredient harus tipe array
+?inputan video?
+
+
+
+database:
+	category recipe: | sup | daging | makanan laut | makanan ringan |
+	table like : id menu relasi ke id user yang ngelike
+	table saved: id menu relasi ke id user yang ngesave
+	table star bintang 5
+	tabs di detail resep belum beres
+	cara rekomendasi resep popular untuk user yang sedang aktiv ????
+
+	opsi B:
+	fitur rating bintang diganti menjadi jumlah like
 
 
 Developing rules:
@@ -152,7 +138,6 @@ non-mandatory/optional:
 	slicing realtime chat
 	realtime chat (socket.io) (*materi tambahan?)
 	SSR server side rendering (*materi tambahan?)
-
 
 
 ### Change nextJS port :

@@ -1,15 +1,18 @@
 import React from 'react'
 // import Link from 'next/link'
 // import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function Home4(props) {
   const datas = props.data4;
+  const urlIdRecipe = 'http://localhost:3000/detail/'
+  const urlApi = 'http://localhost:8000/'
   // console.log("Console Home4 data:", datas); 
   // images/food_images/foodImage_11.jpeg
   return (
     <>
-      <div className="p3 bold mb-3">Semua Resep Populer</div>
+      <div className="p3 bold mb-3">Popular Recipes</div>
                 
       {datas?.map((data) => (
         <div
@@ -26,43 +29,30 @@ export default function Home4(props) {
             cursor: "pointer",
           }}
         >
-        {/* <ul>
-          {names.map((name) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul> */}
+        <Link href={`${urlIdRecipe}${data.id_recipe}`}>
           <div className="row">
             <div className="col-2">
-              
-
-
-              {/* TIDAK BISA PAKAI NEXT/IMAGE */} {/* CARA GABUNGKAN 2 VARIABEL KEDALAM 1 SRC */}
-
               <img
-                src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
-                // src="/images/food_images/foodImage_11.jpeg"
-                // src={data.image_recipe}
+                src={`${urlApi}${data.image_recipe}`}
                 width="80px"
                 height="80px"
                 style={{ borderRadius: "16px", objectFit: "cover", marginTop: "7px" }}
                 alt="image"
               />
             </div>
-            <div className="col-10">
+            <div className="col-1" />
+            <div className="col-9">
               <div style={{ marginLeft: "20px" }}>
-                <h6>{data.name_recipe}</h6>
-                <p>Spicy, Salted, Tasty</p>
-                <div className="d-flex gap-1 align-items-center">
-                  {/* <img
-                    src="/images/star.png"
-                    alt="star"
-                    height="12px"
-                  /> */}
+                <h6 className='p4 bold'>{data.name_recipe}</h6>
+                <p className='p4'>Spicy, Salted, Tasty</p>
+                <div className="d-flex gap-1 align-items-center p4">
+                  <i className='bi bi-star-fill text-warning'></i>
                   <span>4.7</span>
                 </div>
               </div>
             </div>
           </div>
+        </Link>
         </div>
       ))}
       

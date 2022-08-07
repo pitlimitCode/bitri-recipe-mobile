@@ -6,16 +6,19 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
+import Link from 'next/link'
 
 export default function Home3(props) {
-  const datas = props.data3;
+  const datas = props.data3.slice(0, 10);
+  const urlIdRecipe = 'http://localhost:3000/detail/'
+  const urlApi = 'http://localhost:8000/'
   // console.log("Console Home3 data:", datas); 
 
   // src="http://localhost:8000/images/food_images/foodImage_12.jpeg"
   return (
     <>
 
-      <div className="p3 bold mb-3">Resep Terbaru</div>
+      <div className="p3 bold mb-3">New Recipes</div>
 
       {/* <div className="col-3" key={index}>
         <div className="d-flex justify-center">
@@ -30,7 +33,7 @@ export default function Home3(props) {
       </div> */}
 
       <Swiper
-        slidesPerView={2.3}
+        slidesPerView={2.4}
         spaceBetween={10}
         freeMode={true}
         modules={[FreeMode]}
@@ -38,17 +41,26 @@ export default function Home3(props) {
       >
         {datas?.map((data) => (
           <SwiperSlide className="d-flex justify-center" key={data.id} >
-            <div className="card pic100">
+
+            <Link href={`${urlIdRecipe}${data.id}`}>
+              <div className="card pic100 mb-1"
+                style={{
+                  border: "none",
+                  "boxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                  "WebkitBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                  "MozBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                  cursor: "pointer",
+                }}
+              >
                 <img 
-                  src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
-                  // className="picImagePages" 
+                  src={`${urlApi}${data.image}`}
                   alt="search pic"
                   width="200px"
                   height="200px"
-                />
-              <div className="bottom-left-text">{data.name}</div>
-            </div>
-            
+                  />
+                <div className="bottom-left-text p4">{data.name}</div>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
