@@ -1,28 +1,34 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 import {useRouter} from "next/router";
 import {useState} from "react";
 import Link from 'next/link'
 
 export async function getServerSideProps(context){
-  const api = 'http://localhost:8000/recipes/show/name?name='
+  const api = process.env.API_DOMAIN;
+  const apiSearchRecipe = 'recipes/show/name?name='
   const params = context.query.name;
 
-  const datasearch = await fetch( `${api}${params}` )
+  const datasearch = await fetch( `${api}${apiSearchRecipe}${params}` )
     .then((response) => response.json())
     .catch(() => null);
 
   return {
     props: {
       datasearch,
+      api,
     }
   }
 };
 
 export default function SearchRecipe(props) {
   const datas = props?.datasearch?.data;
+  
   const urlIdRecipe = 'http://localhost:3000/detail/'
-
+  const api = props.api;
+  // console.log(`${api}${datas[0].image}`);
+  // console.log(datas);
+  
   const [Searching, setSearching] = useState([]);
   const handleSearchingName = () => {
     window.location.href=`http://localhost:3000/search/${Searching}`
@@ -91,34 +97,27 @@ export default function SearchRecipe(props) {
                     cursor: "pointer",
                   }}
                 >
-                <Link href={`${urlIdRecipe}${data.recipe_id}`}>
-                  <div className="row">
-                    <div className="col-2">
-                      
-
-                      {/* TIDAK BISA PAKAI NEXT/IMAGE */} {/* CARA GABUNGKAN 2 VARIABEL KEDALAM 1 SRC */}
-
-                      <img
-                        src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
-                        // src="/images/food_images/foodImage_11.jpeg"
-                        // src={data.image_recipe}
-                        width="80px"
-                        height="80px"
-                        style={{ borderRadius: "16px", objectFit: "cover", marginTop: "7px" }}
-                        alt="image"
-                      />
-                    </div>
-                    <div className="col-10">
-                      <div style={{ marginLeft: "20px" }}>
-                        <h6>{data.name_recipe}</h6>
-                        <p className='p4'>Spicy, Salted, Tasty</p>
-                        <div className="d-flex gap-1 align-items-center">
-                          <span className='p4'>4.7</span>
+                  <Link href={`${urlIdRecipe}${data.recipe_id}`}>
+                    <div className="row">
+                      <div className="col-3 mt-2">
+                        <Image
+                          src={`${api}${data.image_recipe}`}
+                          alt="image"
+                          width={75}
+                          height={75}
+                          style={{ borderRadius: "16px"}}
+                        />
+                      </div>
+                      <div className="col-9 mt-1">
+                        <div className='p4 bold pb-1'>{data.name_recipe}</div>
+                        <div className='p4'>Spicy, Salted, Tasty</div>
+                        <div className="d-flex gap-1 align-items-center p4">
+                          <i className='bi bi-star-fill text-warning'></i>
+                          <span>4.7</span>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
                 </div>
               ))
           } 

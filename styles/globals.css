@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); /* font-family: 'inter'; */
+
+/* font-family: 'inter'; */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
+
 html,body {
   padding: 0;
   margin: 0;
@@ -28,7 +31,7 @@ search efefef
 .tes{background-color: red; color: green;}
 
 .mobile {
-  font-family: 'inter';
+  /* font-family: 'inter'; */
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -166,10 +169,6 @@ section {
   border-radius: 50%;
 }
 
-#poplogo:hover{
-  cursor: pointer;
-}
-
 /* SWIPER IN HOME PAGE */
 .swiper {
   width: 100%;
@@ -200,6 +199,10 @@ section {
   object-fit: cover;
 }
 
+#image{
+  object-fit: none !important;
+}
+
 #imagesection{
   width: 100%;
   max-height: 40vh;
@@ -222,24 +225,22 @@ section {
   border-radius: 1.3rem;
   font-size: 2rem;
   text-align: center;
+  cursor: pointer
 }
 #backarrow:hover{
   background-color: #EFC81A;
   color: white;
 }
 #backarrow2{
-  padding: 0.1rem;
-  background-color: none;
-  border-radius: 1.3rem;
-  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
   text-align: center;
+  background-color: #EFEFEF;
+  cursor: pointer;
 }
 #backarrow2:hover{
-  padding: 0.1rem;
-  background-color: none;
-  border-radius: 1.3rem;
-  font-size: 1rem;
-  text-align: center;
+  background-color: #EFC81A;
 }
 
 /* PROFILE PAGE  */

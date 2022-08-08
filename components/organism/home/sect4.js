@@ -1,15 +1,14 @@
 import React from 'react'
 // import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 
 export default function Home4(props) {
   const datas = props.data4;
+  
   const urlIdRecipe = 'http://localhost:3000/detail/'
-  const urlApi = 'http://localhost:8000/'
-  // console.log("Console Home4 data:", datas); 
-  // images/food_images/foodImage_11.jpeg
+  const api = props.api;
   return (
     <>
       <div className="p3 bold mb-3">Popular Recipes</div>
@@ -29,30 +28,27 @@ export default function Home4(props) {
             cursor: "pointer",
           }}
         >
-        <Link href={`${urlIdRecipe}${data.id_recipe}`}>
-          <div className="row">
-            <div className="col-2">
-              <img
-                src={`${urlApi}${data.image_recipe}`}
-                width="80px"
-                height="80px"
-                style={{ borderRadius: "16px", objectFit: "cover", marginTop: "7px" }}
-                alt="image"
-              />
-            </div>
-            <div className="col-1" />
-            <div className="col-9">
-              <div style={{ marginLeft: "20px" }}>
-                <h6 className='p4 bold'>{data.name_recipe}</h6>
-                <p className='p4'>Spicy, Salted, Tasty</p>
+          <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+            <div className="row">
+              <div className="col-3 mt-2">
+                <Image
+                  src={`${api}${data.image_recipe}`}
+                  alt="image"
+                  width={75}
+                  height={75}
+                  style={{ borderRadius: "16px"}}
+                />
+              </div>
+              <div className="col-9 mt-1">
+                <div className='p4 bold pb-1'>{data.name_recipe}</div>
+                <div className='p4'>Spicy, Salted, Tasty</div>
                 <div className="d-flex gap-1 align-items-center p4">
                   <i className='bi bi-star-fill text-warning'></i>
                   <span>4.7</span>
                 </div>
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
         </div>
       ))}
       

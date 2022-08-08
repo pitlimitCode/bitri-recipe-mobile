@@ -1,12 +1,15 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export async function getServerSideProps(context){
-  const popular = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
+  const api = process.env.API_DOMAIN;
+
+  const popular = await fetch( `${api}recipes/show/new` ).then((response) => response.json());
   return {
     props: {
       popular,
+      api,
     }
   }
 };
@@ -15,7 +18,6 @@ export default function PopularRecipe(props) {
   const datas = props?.popular?.data;
   // console.log(datas);
   const urlIdRecipe = 'http://localhost:3000/detail/'
-  const urlApi = 'http://localhost:8000/'
   return (
     <div className="mobile">
       <Head>
@@ -30,13 +32,11 @@ export default function PopularRecipe(props) {
 
           <div className='row pb-4 pt-5'> 
           <div className='d-flex align-items-center'>
-            <div className='col-2'>
-              <div id="backarrow2">
-                <Link href="/">
+              <Link href="/">
+                <div className='col-2' id="backarrow2">
                   <i className="bi bi-chevron-left"></i>
-                </Link>
-              </div>
-            </div>
+                </div>
+              </Link>
             <div className='col-8'>
               <div className='text-center p3 bold main-text-cl'>
                 Popular Menu
@@ -66,28 +66,30 @@ export default function PopularRecipe(props) {
                   <li key={name}>{name}</li>
                 ))}
               </ul> */}
-        <Link href={`${urlIdRecipe}${data.id_recipe}`}>
                 <div className="row">
-                  <div className="col-2">
-                    <img
-                      src={`${urlApi}${data.image_recipe}`}
-                      // src="/images/food_images/foodImage_11.jpeg"
-                      // src={data.image_recipe}
-                      width="80px"
-                      height="80px"
-                      style={{ borderRadius: "16px", objectFit: "cover", marginTop: "7px" }}
+
+                <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+              <div className="col-3 mt-2">
+                    <Image
+                      src={`${props.api}${data.image_recipe}`}
                       alt="image"
+                      width={75}
+                      height={75}
+                      style={{ borderRadius: "16px"}}
                     />
                   </div>
-                  <div className="col-6">
-                    <div style={{ marginLeft: "20px" }}>
-                      <h6>{data.name_recipe}</h6>
-                      <div className='p4'>Spicy, Salted, Tasty</div>
-                      <div className="d-flex gap-1 align-items-center">
-                        <span className='p4'>4.7</span>
-                      </div>
+                </Link>
+                
+                <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+                  <div className="col-5 mt-1">
+                    <div className='p4 pb-2'>{data.name_recipe}</div>
+                    {/* <div className='p4'>Spicy, Salted, Tasty</div> */}
+                    <div className="d-flex gap-1 align-items-center p4">
+                      <i className='bi bi-star-fill text-warning'></i>
+                      <span>4.7</span>
                     </div>
                   </div>
+                </Link>
 
                   <div className="col-4">
                     <div className='row' style={{marginTop:"30%"}}>
@@ -104,7 +106,6 @@ export default function PopularRecipe(props) {
                   </div>
 
                 </div>
-                </Link>
               </div>
             ))}
 

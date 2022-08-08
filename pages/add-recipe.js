@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-// import Link from 'next/link'
 
 import Inputs from '../components/atoms/inputs'
 import NavHome from '../components/organism/navHome'
 
 // export async function getServerSideProps(context){
-//   const api = 'http://localhost:8000/recipes/add'
+//   const api = process.env.API_DOMAIN;
+//   const apiAddRecipe = `${api}recipes/add` //////
 //   const params = context.query.id;
 
-//   const datasearch = await fetch( `${api}${params}` )
+//   const addRecipe = await fetch( `${api}${params}` )
 //     .then((response) => response.json());
 //   return {
 //     props: {

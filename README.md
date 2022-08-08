@@ -2,7 +2,7 @@
 Recipes sharing web app by Bitri Recipe, for Mobile Device Users.
 
 ### .env.local example:  
-BE_HOST=http://localhost:8000
+API_DOMAIN=http://localhost:8000/
       
 ### Requirements:  
 - [ ] Gunakan Bahasa Inggris untuk nama class, id, fungsi, dan komponen
@@ -60,49 +60,6 @@ https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe-Mobile?node-id=0%3
 create nextJS: npx create-next-app folder-name  
 running nextJS: npm run dev
 
-REPORT DS ! :
-done: ..
-kendala: ..
-do after ds: ..
-?:	...
-
-
-NextJS, SSR, & CSR
-
-getServerSideProps (Server-Side Rendering
-
-two form pre rendering:
--Static Generation (Recommended): The HTML is generated at build time and will be reused on each request. (perlu dirunning run build)
--Server-side Rendering: The HTML is generated on each request.
-bisa digunakan secara hybrid juga, Static Generation for most pages and using Server-side Rendering for others.
-Static Generation lebih baik dalam performa,can be cached by CDN with no extra configuration to boost performance.
-dapat juga bersamaan dengan Client-side Rendering sebagai sisi client
-
-Some pages require fetching external data for pre-rendering. There are two scenarios, and one or both might apply. In each case, you can use these functions that Next.js provides:
-    Your page content depends on external data: Use getStaticProps.
-    Your page paths depend on external data: Use getStaticPaths (usually in addition to getStaticProps).
-
-getStaticProps (Static Site Generation)
-
-login register: get static props
-
-
-?:
-token di header request
-Authentication
-next.js/image
-window.location.href gani ke navigate bawaan next js
-
-DOIT!!!:
-env port api
-?inputan video?
-
-LATER :
-batasi text inputan nama resep sampai 32
-batasi text inputan nama user sampai 16
-perbaiki tipe inputan ingredient harus tipe array
-
-
 database:
 	category recipe: | sup | daging | makanan laut | makanan ringan |
 	table like : id menu relasi ke id user yang ngelike
@@ -121,20 +78,6 @@ Developing rules:
 	use english named on: class, id, and function
 	CRUD: REDUX (opti, but i'll try it) (?persist, thunk, ..., ect?)
 	
-slicing + atomic design: 
-	slicing: add recipe
-	slicing: user profile
-		slicing: edit profile (edit profile picture quickly)
-		slicing: change biodata
-	slicing: popular menu
-Learn and practice: nextJS, SSR, CSR, Redux
-slide PPT:
-	Teori: nextJS, SSR, dan CSR (ada gambar/flowchar seperti ngajar)
-	Demo aplikasi web + dev tools (F12)
-terapkan CRUD REDUX
-server side rendering / getServerSideProps dataFetching
-Deploy pakai Versel (*materi tambahan)
-
 non-mandatory/optional:
 	learn and practice: deploy frontend in Versel
 	authentification

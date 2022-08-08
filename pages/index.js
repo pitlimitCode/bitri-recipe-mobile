@@ -1,33 +1,32 @@
-import Head from 'next/head'
-import Link from 'next/link'
-// import Home1 from '../components/organism/home/sect1'
 import Home2 from '../components/organism/home/sect2'
 import Home3 from '../components/organism/home/sect3'
 import Home4 from '../components/organism/home/sect4'
 import NavHome from '../components/organism/navHome'
 
+import Head from 'next/head'
+// import Link from 'next/link'
 import {useState} from "react";
 
 export async function getServerSideProps(context){
-  // const idUserActive = await fetch( "http://localhost:8000/users/getid" ).then((response) => response.json());
-
-
-  // const dataHome2 = await fetch( "http://localhost:8000/recipes/show/name" ).then((response) => response.json());
-  const dataHome3 = await fetch( "http://localhost:8000/recipes/show/all" ).then((response) => response.json());
-  const dataHome4 = await fetch( "http://localhost:8000/recipes/show/new" ).then((response) => response.json());
+  const api = process.env.API_DOMAIN;
+  // const idUserActive = await fetch( `${api}users/getid` ).then((response) => response.json());
+  const dataHome3 = await fetch( `${api}recipes/show/all` ).then((response) => response.json());
+  const dataHome4 = await fetch( `${api}recipes/show/new` ).then((response) => response.json());
   
   return {
     props: {
+      api,
+      // idUserActive,
       // dataHome2,
       dataHome3,
       dataHome4,
-      // idUserActive,
     }
   }
 };
 
 export default function Home(props) {
   // console.log(props);
+  // console.log(process.env.API_DOMAIN);
   const [Searching, setSearching] = useState([]);
   const handleSearchingName = () => {
     window.location.href=`http://localhost:3000/search/${Searching}`
@@ -88,10 +87,10 @@ export default function Home(props) {
           <section> <Home2 /> </section> 
 
           {/* NEWEST RECIPES - HOME */}
-          <section> <Home3 data3={props.dataHome3.data} /> </section> 
+          <section> <Home3 data3={props.dataHome3.data} api={props.api}/> </section> 
 
           {/* ALL POPULAR RECIPES - HOME */}
-          <section> <Home4 data4={props.dataHome4.data} /> </section> 
+          <section> <Home4 data4={props.dataHome4.data} api={props.api} /> </section> 
           
         </div>
       </main>

@@ -7,7 +7,6 @@ import Inputs from '../../components/atoms/inputs'
 
 // const getBody = promisify(bodyParser.urlencoded());
 
-
 // export async function getServerSideProps(context){
 //   const login = await fetch( "http://localhost:8000/users/login" ).then((response) => response.json());
 //   console.log(login);
@@ -24,6 +23,8 @@ export default function Login() {
 	const [Password, setPassword] = useState('');
   const [IsError, setIsError] = useState(false);
 	const [ErrorMsg, setErrorMsg] = useState('');
+  const api = process.env.API_DOMAIN;
+  // console.log(api);
 
   const handleLogin = async () => {
     axios.post("http://localhost:8000/users/login", {

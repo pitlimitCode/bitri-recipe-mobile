@@ -6,10 +6,10 @@ import Link from 'next/link'
 import Comments from '../../components/organism/commentsinarecipe'
 
 export async function getServerSideProps(context){
-  const api = 'http://localhost:8000/recipes/show/id?id=';
+  const api = process.env.API_DOMAIN;
   const params = context.query.id;
 
-  const datauser = await fetch( `${api}${params}` )
+  const datauser = await fetch( `${api}recipes/show/id?id=${params}` )
     .then((response) => response.json())
     .catch(() => null);
 
@@ -25,6 +25,7 @@ export async function getServerSideProps(context){
   return {
     props: {
       datauser,
+      api,
     }
   }
 };
@@ -32,9 +33,7 @@ export async function getServerSideProps(context){
 // params id not number? invalid url
 export default function DetailRecipe(props) {
   const data = props.datauser[0];
-  const imagerecipe = `http://localhost:8000/${data.image}`;
   // console.log(data);
-  // console.log(api);
 
   const { query } = useRouter();
   
@@ -48,7 +47,7 @@ export default function DetailRecipe(props) {
       </Head>
       
       <div id='imagesection'>
-        <img src={imagerecipe} id="imagedetailrecipe" />
+        <img src={`${props.api}${data.image}`} id="imagedetailrecipe" />
       </div>
       
       <div id='descsection' className='bg-white'>
@@ -57,13 +56,11 @@ export default function DetailRecipe(props) {
           {/* BACK ICON, SAVED, AND LIKED */}
           <div className="row pt-3 pb-4">
             <div className='d-flex align-items-center'>
-              <div className='col-2'>
-                <div id="backarrow2">
-                  <Link href="javascript:history.back()">
-                    <i className="bi bi-chevron-left"></i>
-                  </Link>
+              <Link href="javascript:history.back()">
+                <div className='col-2' id="backarrow2">
+                  <i className="bi bi-chevron-left"></i>
                 </div>
-              </div>
+              </Link>
               <div className="col-6" />
 
               <div className="col-4">
@@ -81,9 +78,11 @@ export default function DetailRecipe(props) {
           </div>
 
           {/* NAME RECIPE AND ITS USERS */}
-          <div className='text-center bold detailYlBg'>
-            <div className='p3 main-text-cl'> {data.name} </div>
-            <div className='p4'>by {data.username} </div>
+          <div className='text-center detailYlBg'>
+            <div className='p3 main-text-cl bold'> {data.name} </div>
+            <Link href={`/profile/${data.id_user}`}>
+              <div className='p4' style={{cursor:"pointer"}}>by <span className='main-text-cl bold'>{data.username}</span> </div>
+            </Link>
           </div>
           {/* CONTENT OF INGREDIENTS, STEPS, AND VIDEO STEPS */}
           <div className='my-5'>

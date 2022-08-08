@@ -1,36 +1,40 @@
-import Link from 'next/link'
-// import {useRouter} from "next/router";
+
+import Image from 'next/image'
 
 export async function getServerSideProps(context){
     // console.log(context.sendid.id);
 
-    const apiid = 'http://localhost:8000/comments/new?id_recipe=';
-    const params = context.sendid.id;
-    const limitapi = '&limit=';
-    const limit = '10';
+    const api = process.env.API_DOMAIN;
+
+    // const apiid = 'http://localhost:8000/comments/new?id_recipe=';
+    // const params = context.sendid.id;
+    // const limitapi = '&limit=';
+    // const limit = '10';
     // console.log( `${apiid}${params}${limitapi}${limit}` )
   
-    const datasearch = await fetch( `${apiid}${params}${limitapi}${limit}` )
-      .then((response) => response.json());
+    // const commenOnRecipe = await fetch( `${apiid}${params}${limitapi}${limit}` )
+    //   .then((response) => response.json());
     return {
       props: {
-        datasearch,
+        // commenOnRecipe,
       }
     }
 };
   
 export default function commentsinarecipe(props) {
 
-    // console.log(props);
+    console.log(props);
     // BELUM ADA DUMMY COMMENTS DATA IN TABLE
     
   return (
     <>
     {/* <div className='row my-4'>
       <div className='col-2'>
-        <img 
+        <Image 
           src='http://localhost:8000/images/food_images/foodImage_4.jpeg'
-          style={{borderRadius: "50%", width:'3rem', height:'3rem'}}
+          width={50}
+          height={50}
+          style={{borderRadius: "50%"}}
         />
       </div>
       <div className='col-10'>
@@ -40,9 +44,11 @@ export default function commentsinarecipe(props) {
     </div> */}
     <div className='row my-4'>
       <div className='col-2'>
-        <img 
+        <Image 
           src='http://localhost:8000/images/food_images/foodImage_3.jpeg'
-          style={{borderRadius: "50%", width:'3rem', height:'3rem'}}
+          width={50}
+          height={50}
+          style={{borderRadius: "50%"}}
         />
       </div>
       <div className='col-10'>
@@ -52,9 +58,11 @@ export default function commentsinarecipe(props) {
     </div>
     <div className='row my-4'>
       <div className='col-2'>
-        <img 
+        <Image 
           src='http://localhost:8000/images/food_images/foodImage_11.jpeg'
-          style={{borderRadius: "50%", width:'3rem', height:'3rem'}}
+          width={50}
+          height={50}
+          style={{borderRadius: "50%"}}
         />
       </div>
       <div className='col-10'>

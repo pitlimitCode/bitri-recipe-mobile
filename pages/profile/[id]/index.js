@@ -1,13 +1,13 @@
-// import Image from 'next/image'
+import Image from 'next/image'
 import NavHome from '../../../components/organism/navHome'
 import Link from 'next/link'
 
 export async function getServerSideProps(context){
+  const api = process.env.API_DOMAIN;
 
   // PROFILE DATA USER BY ID
-  const api = 'http://localhost:8000/users/show/id?id='
   const params = context.query.id;
-  const dataprofile = await fetch(`${api}${params}`)
+  const dataprofile = await fetch(`${api}users/show/id?id=${params}`)
     .then((response) => response.json())
     .catch(() => null);
 
@@ -24,6 +24,7 @@ export async function getServerSideProps(context){
     props: {
       dataprofile,
       params,
+      api,
     }
   }
 };
@@ -32,7 +33,8 @@ export default function Profile(props) {
 
   // (USER) ID PARAMS
   const userId = props.params;
-  // console.log(userId);
+
+  // USER PROFILE LINK TO 
   const linkEdit = `${userId}/edit`
   const linkMy = `${userId}/my-recipes`
   const linkSaved = `${userId}/saved-recipes`
@@ -40,7 +42,6 @@ export default function Profile(props) {
   
   // API IMAGE
   const data = props.dataprofile.data[0];
-  const urlApi = 'http://localhost:8000/';
   
   // LOGOUT AND REMOVE LOCAL STORAGE BROWSER
   const handleLogout = () => {
@@ -54,7 +55,12 @@ export default function Profile(props) {
       <div id="profilepage" >
         <div className="row justify-content-center text-center">
           <div className="col-3">
-            <img src={`${urlApi}${data.avatar}`} id="profilpic" />
+            <Image 
+              src={`${props.api}${data.avatar}`} 
+              alt="image"
+              width={90}
+              height={90}
+              id="profilpic" />
           </div>
           <div className="p2 bold text-white pt-3">{data.name}</div>
         </div>
@@ -73,7 +79,7 @@ export default function Profile(props) {
                   Edit Profie
                 </div>
                 <div className="col-2">
-                  <div id="backarrow2">
+                  <div>
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
@@ -89,7 +95,7 @@ export default function Profile(props) {
                   My Recipe
                 </div>
                 <div className="col-2">
-                  <div id="backarrow2">
+                  <div>
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
@@ -105,7 +111,7 @@ export default function Profile(props) {
                   Saved Recipe
                 </div>
                 <div className="col-2">
-                  <div id="backarrow2">
+                  <div>
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
@@ -121,14 +127,14 @@ export default function Profile(props) {
                   Liked Recipe
                 </div>
                 <div className="col-2">
-                  <div id="backarrow2">
+                  <div>
                     <i className="bi bi-chevron-right"></i>
                   </div>
                 </div>
             </div>
           </Link>
 
-          <div className="row pointercursor d-flex align-items-center">
+          <div className="row pointercursor d-flex align-items-center pt-4">
               <div className="col-2" onClick={handleLogout}>
                 <i className="bi bi-power text-danger p2"></i>
               </div>

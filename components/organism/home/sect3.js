@@ -1,5 +1,5 @@
 // import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
 import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -9,29 +9,13 @@ import { FreeMode } from "swiper";
 import Link from 'next/link'
 
 export default function Home3(props) {
+  const urlIdRecipe = 'http://localhost:3000/detail/';
   const datas = props.data3.slice(0, 10);
-  const urlIdRecipe = 'http://localhost:3000/detail/'
-  const urlApi = 'http://localhost:8000/'
-  // console.log("Console Home3 data:", datas); 
-
-  // src="http://localhost:8000/images/food_images/foodImage_12.jpeg"
+  
+  const api = props.api;
   return (
     <>
-
       <div className="p3 bold mb-3">New Recipes</div>
-
-      {/* <div className="col-3" key={index}>
-        <div className="d-flex justify-center">
-          <img
-            src={item?.image}
-            alt="icon"
-            width="70px"
-            height="70px"
-          />
-        </div>
-        <p className="text-center">{item?.name}</p>
-      </div> */}
-
       <Swiper
         slidesPerView={2.4}
         spaceBetween={10}
@@ -52,13 +36,22 @@ export default function Home3(props) {
                   cursor: "pointer",
                 }}
               >
-                <img 
-                  src={`${urlApi}${data.image}`}
-                  alt="search pic"
-                  width="200px"
-                  height="200px"
-                  />
+                <Image 
+                  style={{ borderRadius: "16px"}}
+                  src={`${api}${data.image}`}
+                  width={150}
+                  height={150}
+                  alt="image"
+                />
                 <div className="bottom-left-text p4">{data.name}</div>
+                {/* <Image 
+                  style={{ borderRadius: "16px", position:"relative"}}
+                  src={`${api}${data.image}`}
+                  width={150}
+                  height={150}
+                  alt="image"
+                />
+                <div className="bottom-left-text p4" style={{position:"absolute"}}>{data.name}</div> */}
               </div>
             </Link>
           </SwiperSlide>

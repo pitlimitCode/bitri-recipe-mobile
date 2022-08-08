@@ -1,7 +1,32 @@
 // import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ProfileLikedRecipe() {
+export async function getServerSideProps(context){
+  // const api = 'http://localhost:8000/users/show/myrecipe?id=';
+  const params = context.query.id;
+
+  // const myrecipe = await fetch(`${api}${params}`)
+  //   .then((response) => response.json())
+  //   .catch(() => null);
+
+  // if(!myrecipe){
+  //   return {
+  //     redirect: {
+  //       destination: '/404',
+  //       permanent: false,
+  //     },
+  //   }
+  // }
+  
+  return {
+    props: {
+      // myrecipe,
+      params,
+    }
+  }
+};
+
+export default function ProfileLikedRecipe(props) {
   return (
     <div className="mobile" >
       <main>
@@ -9,13 +34,11 @@ export default function ProfileLikedRecipe() {
 
           <div className='row pb-4 pt-5'> 
             <div className='d-flex align-items-center'>
-              <div className='col-2'>
-                <div id="backarrow2">
-                  <Link href="javascript:history.back()">
-                    <i className="bi bi-chevron-left"></i>
-                  </Link>
+              <Link href={`http://localhost:3000/profile/${props.params}`}>
+                <div className='col-2' id="backarrow2">
+                  <i className="bi bi-chevron-left"></i>
                 </div>
-              </div>
+              </Link>
               <div className='col-8'>
                 <div className='text-center p3 bold main-text-cl'>
                   Liked Recipes
