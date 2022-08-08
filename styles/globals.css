@@ -1,6 +1,6 @@
 
 /* font-family: 'inter'; */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 html,body {
   padding: 0;
@@ -31,7 +31,7 @@ search efefef
 .tes{background-color: red; color: green;}
 
 .mobile {
-  /* font-family: 'inter'; */
+  font-family: 'inter';
   justify-content: center;
   display: flex;
   flex-direction: column;
