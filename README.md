@@ -5,22 +5,22 @@ Recipes sharing web app by Bitri Recipe, for Mobile Device Users.
 API_DOMAIN=http://localhost:8000/
       
 ### Requirements:  
-- [ ] Gunakan Bahasa Inggris untuk nama class, id, fungsi, dan komponen
-- [ ] Buat semirip mungkin sesuai figma
-- [ ] UI
-- [ ] Responsive
-- [ ] Reusable Component
-- [ ] ENV
-- [ ] Next component
-- [ ] Navigation
-- [ ] CRUD
-- [ ] Search, sort, pagination
+- [x] Gunakan Bahasa Inggris untuk nama class, id, fungsi, dan komponen
+- [~] Buat semirip mungkin sesuai figma
+- [~] UI
+- [x] Responsive
+- [~] Reusable Component
+- [x] ENV
+- [x] Next component
+- [x] Navigation
+- [~] CRUD
+- [~] Search, sort, pagination
 - [ ] Deploy, VerCel
-- [ ] Upload/push ke github dan gunakan nama yang profesional
+- [x] Upload/push ke github dan gunakan nama yang profesional
 - [x] Presentasikan
-- [ ] Teori (NextJS, SSR, & CSR)
+- [x] Teori (NextJS, SSR, & CSR) ........
 - [ ] Authentification (optional 1)
-- [ ] SSR (optional 2)
+- [~] SSR (optional 1)
 - [ ] REDUX (opsional 2)
 - [ ] Refresh token (opsional 2)
 - [ ] User activation via email (opsional 2)

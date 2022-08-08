@@ -5,7 +5,15 @@ import axios from "axios";
 
 import Inputs from '../../components/atoms/inputs'
 
+import {useEffect} from "react";
+
 export default function Register() {
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      window.location.href = "/";
+    }
+  }, []);
+  
   const [IsError, setIsError] = useState(false);
 	const [ErrorMsg, setErrorMsg] = useState('');
 

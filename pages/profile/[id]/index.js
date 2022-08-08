@@ -2,6 +2,8 @@ import Image from 'next/image'
 import NavHome from '../../../components/organism/navHome'
 import Link from 'next/link'
 
+import {useEffect} from "react";
+
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
 
@@ -30,6 +32,11 @@ export async function getServerSideProps(context){
 };
 
 export default function Profile(props) {
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/login";
+    }
+  }, []);
 
   // (USER) ID PARAMS
   const userId = props.params;

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Inputs from '../components/atoms/inputs'
 import NavHome from '../components/organism/navHome'
 
+import {useEffect} from "react";
+
 // export async function getServerSideProps(context){
 //   const api = process.env.API_DOMAIN;
 //   const apiAddRecipe = `${api}recipes/add` //////
@@ -18,6 +20,11 @@ import NavHome from '../components/organism/navHome'
 // };
 
 export default function AddRecipe(props) {
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/login";
+    }
+  }, []);
   // console.log(props);
 
 	// const [Name, setName] = useState('');

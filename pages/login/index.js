@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from "axios";
 import Head from 'next/head'
 import Link from 'next/link'
@@ -19,6 +19,12 @@ import Inputs from '../../components/atoms/inputs'
 // };
 
 export default function Login() {
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      window.location.href = "/";
+    }
+  }, []);
+
 	const [Email, setEmail] = useState('');
 	const [Password, setPassword] = useState('');
   const [IsError, setIsError] = useState(false);
