@@ -272,6 +272,27 @@ section {
   color: #EFC81A;
 }
 
+#childNewRecipe{
+  font-size: 12px;
+  position: absolute;
+  left:5%;
+  bottom:5%;
+  max-width: 70%;
+  max-height: 30%;
+  border-radius: 1rem;
+  padding: 2px;
+  border: 0.1rem solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(239, 200, 26, 0.5);
+  color:black;
+
+  /* hidden text who more than 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
 .likensave{
   border: 1px solid #EFC81A;
   border-radius: 1rem;

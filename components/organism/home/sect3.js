@@ -36,22 +36,22 @@ export default function Home3(props) {
                   cursor: "pointer",
                 }}
               >
-                <Image 
+                {/* <Image 
                   style={{ borderRadius: "16px"}}
                   src={`${api}${data.image}`}
                   width={150}
                   height={150}
                   alt="image"
                 />
-                <div className="bottom-left-text p4">{data.name}</div>
-                {/* <Image 
+                <div className="bottom-left-text p4">{data.name}</div> */}
+                <Image 
                   style={{ borderRadius: "16px", position:"relative"}}
                   src={`${api}${data.image}`}
                   width={150}
                   height={150}
                   alt="image"
                 />
-                <div className="bottom-left-text p4" style={{position:"absolute"}}>{data.name}</div> */}
+                <div className="bottom-left-text p4" id="childNewRecipe">{data.name}</div>
               </div>
             </Link>
           </SwiperSlide>

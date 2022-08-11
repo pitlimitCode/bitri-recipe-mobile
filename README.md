@@ -11,8 +11,8 @@ API_DOMAIN=http://localhost:8000/
 - [x] Responsive
 - [~] Reusable Component
 - [x] ENV
-- [x] Next component
-- [x] Navigation
+- [~] Next component
+- [ ] Navigation
 - [~] CRUD
 - [~] Search, sort, pagination
 - [ ] Deploy, VerCel
