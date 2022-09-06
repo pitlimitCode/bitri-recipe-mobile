@@ -1,7 +1,9 @@
 import Head from 'next/head'
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
-import {useRouter} from "next/router";
+
+// import {useRouter} from "next/router";
+
 import Link from 'next/link'
 import Comments from '../../components/organism/commentsinarecipe'
 
@@ -9,11 +11,15 @@ export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
   const params = context.query.id;
 
-  const datauser = await fetch( `${api}recipes/show/id?id=${params}` )
+  const dataRecipe = await fetch( `${api}/recipes/id/${params}` )
     .then((response) => response.json())
     .catch(() => null);
 
-  if(!datauser){
+  const commenOnRecipe = await fetch(`${api}/comments/new?id_recipe=${params}&sort=desc`)
+    .then((response) => response.json());
+  
+
+  if(!dataRecipe){
     return {
       redirect: {
         destination: '/404',
@@ -24,19 +30,18 @@ export async function getServerSideProps(context){
 
   return {
     props: {
-      datauser,
       api,
+      dataRecipe,
+      commenOnRecipe,
     }
   }
 };
 
-// params id not number? invalid url
 export default function DetailRecipe(props) {
-  const data = props.datauser[0];
-  // console.log(data);
-
-  const { query } = useRouter();
-  
+  const api = props?.api;
+  const data = props?.dataRecipe?.data[0]
+  const comments = props?.commenOnRecipe?.result?.data;
+  // console.log(props.dataRecipe);
   return (
     <div className="mobile" >
       <Head>
@@ -47,7 +52,7 @@ export default function DetailRecipe(props) {
       </Head>
       
       <div id='imagesection'>
-        <img src={`${props.api}${data.image}`} id="imagedetailrecipe" />
+        <img src={`${props.api}/${data.image}`} id="imagedetailrecipe" />
       </div>
       
       <div id='descsection' className='bg-white'>
@@ -80,9 +85,9 @@ export default function DetailRecipe(props) {
           {/* NAME RECIPE AND ITS USERS */}
           <div className='text-center detailYlBg'>
             <div className='p3 main-text-cl bold'> {data.name} </div>
-            <Link href={`/profile/${data.id_user}`}>
-              <div className='p4' style={{cursor:"pointer"}}>by <span className='main-text-cl bold'>{data.username}</span> </div>
-            </Link>
+            <div className='p4'>
+              by <span className='main-text-cl bold'>{data.username}</span> 
+            </div>
           </div>
           {/* CONTENT OF INGREDIENTS, STEPS, AND VIDEO STEPS */}
           <div className='my-5'>
@@ -105,7 +110,7 @@ export default function DetailRecipe(props) {
           {/* ALL COMMENT IN THIS RECIPE */}
           <div className='pb-5'>
             <div className='p3'>Comment</div>
-            < Comments sendid={query} />
+            <Comments comments={comments} api={api} />
 
           </div>
         </div>

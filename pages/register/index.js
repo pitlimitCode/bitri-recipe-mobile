@@ -23,10 +23,11 @@ export default function Register() {
 	const [Password1, setPassword1] = useState('');
 	const [Password2, setPassword2] = useState('');
 
+  const api = process.env.API_DOMAIN;
   const handleRegister = async () => {
     // setIsLoading(true);
 
-    axios.post("http://localhost:8000/users/add", {
+    axios.post(`${api}/users/add`, {
       name: Name,
       email: Email,
       phone_number: PhoneNumber,

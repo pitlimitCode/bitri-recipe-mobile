@@ -2,10 +2,8 @@
 import Link from 'next/link'
 
 export async function getServerSideProps(context){
-  // const api = 'http://localhost:8000/users/show/myrecipe?id=';
-  const params = context.query.id;
-
-  // const myrecipe = await fetch(`${api}${params}`)
+  // const api = process.env.API_DOMAIN;
+  // const myrecipe = await fetch(`${api}/users/myrecipes`)
   //   .then((response) => response.json())
   //   .catch(() => null);
 
@@ -26,7 +24,7 @@ export async function getServerSideProps(context){
   }
 };
 
-export default function ProfileSavedRecipe(props) {
+export default function ProfileLikedRecipe(props) {
   return (
     <div className="mobile" >
       <main>
@@ -34,14 +32,14 @@ export default function ProfileSavedRecipe(props) {
 
           <div className='row pb-4 pt-5'> 
             <div className='d-flex align-items-center'>
-              <Link href={`http://localhost:3000/profile/${props.params}`}>
+              <Link href={`${process.env.CLIENT_DOMAIN}/profile/${props.params}`}>
                 <div className='col-2' id="backarrow2">
                   <i className="bi bi-chevron-left"></i>
                 </div>
               </Link>
               <div className='col-8'>
                 <div className='text-center p3 bold main-text-cl'>
-                  Saved Recipes
+                  Liked Recipes
                 </div>
               </div>
               <div className='col-2' />
@@ -98,7 +96,6 @@ export default function ProfileSavedRecipe(props) {
 
         </div>
       </main>
-
     </div>
   )
 }

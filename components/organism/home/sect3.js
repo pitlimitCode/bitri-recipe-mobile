@@ -6,10 +6,10 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Home3(props) {
-  const urlIdRecipe = 'http://localhost:3000/detail/';
+  // console.log(props);
   const datas = props.data3.slice(0, 10);
   
   const api = props.api;
@@ -26,7 +26,7 @@ export default function Home3(props) {
         {datas?.map((data) => (
           <SwiperSlide className="d-flex justify-center" key={data.id} >
 
-            <Link href={`${urlIdRecipe}${data.id}`}>
+            <Link href={`/detail/${data.id}`}>
               <div className="card pic100 mb-1"
                 style={{
                   border: "none",
@@ -38,7 +38,7 @@ export default function Home3(props) {
               >
                 {/* <Image 
                   style={{ borderRadius: "16px"}}
-                  src={`${api}${data.image}`}
+                  src={`${api}/${data.image}`}
                   width={150}
                   height={150}
                   alt="image"
@@ -46,7 +46,7 @@ export default function Home3(props) {
                 <div className="bottom-left-text p4">{data.name}</div> */}
                 <Image 
                   style={{ borderRadius: "16px", position:"relative"}}
-                  src={`${api}${data.image}`}
+                  src={`${api}/${data.image}`}
                   width={150}
                   height={150}
                   alt="image"

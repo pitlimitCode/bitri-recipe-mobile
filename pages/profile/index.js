@@ -9,7 +9,7 @@ export async function getServerSideProps(context){
 
   // PROFILE DATA USER BY ID
   const params = context.query.id;
-  const dataprofile = await fetch(`${api}users/show/id?id=${params}`)
+  const dataprofile = await fetch(`${api}/users/id/${params}`)
     .then((response) => response.json())
     .catch(() => null);
 
@@ -63,7 +63,7 @@ export default function Profile(props) {
         <div className="row justify-content-center text-center">
           <div className="col-3">
             <Image 
-              src={`${props.api}${data.avatar}`} 
+              src={`${props.api}/${data.avatar}`} 
               alt="image"
               width={90}
               height={90}

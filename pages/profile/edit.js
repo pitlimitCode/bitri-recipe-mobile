@@ -5,7 +5,7 @@ export async function getServerSideProps(context){
   // const api = process.env.API_DOMAIN;
   const params = context.query.id;
 
-  // const myrecipe = await fetch(`${api}users/show/myrecipe?id=${params}`)
+  // const myrecipe = await fetch(`${api}/users/show/myrecipe?id=${params}`)
   //   .then((response) => response.json())
   //   .catch(() => null);
 
@@ -41,7 +41,7 @@ export default function EditProfile(props) {
 
           <div className='row pb-4 pt-5'> 
             <div className='d-flex align-items-center'>
-              <Link href={`http://localhost:3000/profile/${props.params}`}>
+              <Link href={`${process.env.CLIENT_DOMAIN}/profile/${props.params}`}>
                 <div className='col-2' id="backarrow2">
                   <i className="bi bi-chevron-left"></i>
                 </div>

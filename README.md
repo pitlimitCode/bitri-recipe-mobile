@@ -1,21 +1,10 @@
-### catatan edit
-- logo utama, urlnya dari cloud sendiri
-- sesuaikan dengan cv
-- semua image Screenshoots
-- deskripsi pada 'About The Project'
-- dokumentasi env di nexsjs? ganti "Setup .env example"
-- contributing?
-- lisence buat apa?
-- link deploy vercel di "View Demo" (FE)
-- url deploy paling akhir untuk "Web Service" (BE) dan "Demo Bitri Recipe Mobile" (FE)
-
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master">
-    <img src="https://lh3.googleusercontent.com/AUnVkYlLiu75LwM_KzpbV5nIq8I4rA6uqoLI-keYPMC6G7p7CAH3aXXsg3U5eaiO63i3uN_PNF3y3nk-0q6CEUT8xAn9fFzkjtvMtuAXDA-ynKrmemFP8oOREsfviSD2nNqbAoEDf-fbI3YzLXbxl1mDccduSLDcsPHaoZuCxC-o36_XPaO485MFoI1lnL2e5mHi-wEUfJpJz1tpzuF2EKZmhjgr3Vdae6Lz8fKT3amZfTSCdjufXBOJMVPVtmKPdD1kuzguty9uFlNVi33SWcpWQ8q_dv1ji1S8Y7K-qzvkO9g-tjuNT93YqlmIDf4K0vj3GhsiGbI6MSwtR5VaIPrbIswsTXGu0Pc0zoFHsVxlSyoNvr8JXXxGnLymENKGxUdZ8dWqEw8zKyim0o4cDMsPySCNQ9Cjd9LXBks_MCjG7pSjHHkZjQbdiMsf4sCNVC9SK0iY9UMjNAwmhuIMH2U0IM84l7bi3mlMpbOsRTdYvdCuQYj011mgaeVqiCzAxlbSPbK_kPyB6M6aUHUuJZLtc3ZQZMGQ0_a12-JyhQRKqHqM_uIPx-5UThleaPZQryGiRDJPZee8MQagbgxDBUPwUolIfT7wyUB0_47izt2oFjssaDjSTZrrI3WGBqZjSbD_viDLT5DVJdhA-pp5anNrTEpUgB1_76W9r-pc_gtQ72V_bEUJCaT0n4AbqDHA1w2oGt7T0XIRIy1MUsoO-HOLIpcCqKczqulGggU1BhfPh3Qemx657hxM8cGztt-p6mZ6zM93WTOPkr01_TkPOtCy4PyF60uSfFMY=w626-h625-no?authuser=1" alt="Logo" width="150px">
+    <img src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659148545/portofolio/recipe/2_kpnvj7.png" alt="Logo" width="150px">
   </a>
 
   <h3 align="center">Bitri Recipe Mobile</h3>
@@ -74,6 +63,7 @@ This app was built with some technologies below:
 - [Javascript](https://www.javascript.com/)
 - [React JS](https://reactjs.org)
 - [Next JS](https://nextjs.org/)
+- [Bootstrap](#)
 - [Axios](https://axios-http.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -111,7 +101,7 @@ npm install
 Create .env file in your root project folder.
 
 ```
-REACT_APP_BE_URL="[YOUR_BACKEND_URL]"????!!!!
+REACT_APP_BE_URL="[YOUR_BACKEND_URL]" ????!!!!
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -177,11 +167,12 @@ Contributions are what make the open source community such an amazing place to b
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Related Project
-:rocket: [`Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)
-:rocket: [`Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)
-:rocket: [`Frontend Bitri Recipe Mobile`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)
-:rocket: [`Web Service`](#)
-:rocket: [`Demo Bitri Recipe Mobile`](#)
+:rocket: [`Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)  
+:rocket: [`Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)  
+:rocket: [`Frontend Bitri Recipe Mobile`](https://github.com/pitlimitCode/bitri-recipe-mobile)  
+:rocket: [`Web Service`](https://bitri-recipe.herokuapp.com)  
+:rocket: [`Demo Bitri Recipe`](https://bitri-recipe.web.app/)  
+:rocket: [`Demo Bitri Recipe Mobile`](#)  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact

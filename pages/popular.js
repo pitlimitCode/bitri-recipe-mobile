@@ -5,7 +5,7 @@ import Link from 'next/link'
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
 
-  const popular = await fetch( `${api}recipes/show/new` ).then((response) => response.json());
+  const popular = await fetch( `${api}/recipes/fivenew` ).then((response) => response.json());
   return {
     props: {
       popular,
@@ -17,7 +17,7 @@ export async function getServerSideProps(context){
 export default function PopularRecipe(props) {
   const datas = props?.popular?.data;
   // console.log(datas);
-  const urlIdRecipe = 'http://localhost:3000/detail/'
+  const urlIdRecipe = `${process.env.CLIENT_DOMAIN}/detail/`
   return (
     <div className="mobile">
       <Head>
@@ -68,10 +68,10 @@ export default function PopularRecipe(props) {
               </ul> */}
                 <div className="row">
 
-                <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+                <Link href={`${urlIdRecipe}/${data.id_recipe}`}>
               <div className="col-3 mt-2">
                     <Image
-                      src={`${props.api}${data.image_recipe}`}
+                      src={`${props.api}/${data.image_recipe}`}
                       alt="image"
                       width={75}
                       height={75}
@@ -80,7 +80,7 @@ export default function PopularRecipe(props) {
                   </div>
                 </Link>
                 
-                <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+                <Link href={`${urlIdRecipe}/${data.id_recipe}`}>
                   <div className="col-5 mt-1">
                     <div className='p4 pb-2'>{data.name_recipe}</div>
                     {/* <div className='p4'>Spicy, Salted, Tasty</div> */}

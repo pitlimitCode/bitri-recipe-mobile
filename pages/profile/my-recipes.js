@@ -5,7 +5,7 @@ export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
   const params = context.query.id;
 
-  const myrecipe = await fetch(`${api}users/show/myrecipe?id=${params}`)
+  const myrecipe = await fetch(`${api}/users/myrecipes`)
     .then((response) => response.json())
     .catch(() => null);
 
@@ -31,7 +31,7 @@ export default function ProfilSelfRecipe(props) {
   const datas = props?.myrecipe?.data;
   // console.log(props.api);
 
-  const urlIdRecipe = 'http://localhost:3000/detail/'
+  const webdomain = process.env.CLIENT_DOMAIN;
   return(
     <div className="mobile" >
       
@@ -40,7 +40,7 @@ export default function ProfilSelfRecipe(props) {
 
           <div className='row pb-4 pt-5'> 
             <div className='d-flex align-items-center'>
-              <Link href={`http://localhost:3000/profile/${props.params}`}>
+              <Link href={`${webdomain}/profile/${props.params}`}>
                 <div className='col-2' id="backarrow2">
                   <i className="bi bi-chevron-left"></i>
                 </div>
@@ -69,11 +69,11 @@ export default function ProfilSelfRecipe(props) {
                   cursor: "pointer",
                 }}
               >
-              <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+              <Link href={`${webdomain}/detail/${data.id_recipe}`}>
                 <div className="row">
                   <div className="col-3 mt-2">
                     <Image
-                      src={`${props.api}${data.image}`}
+                      src={`${props.api}/${data.image}`}
                       alt="image"
                       width={75}
                       height={75}

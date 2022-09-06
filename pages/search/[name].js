@@ -6,10 +6,9 @@ import Link from 'next/link'
 
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
-  const apiSearchRecipe = 'recipes/show/name?name='
   const params = context.query.name;
 
-  const datasearch = await fetch( `${api}${apiSearchRecipe}${params}` )
+  const datasearch = await fetch( `${api}/recipes/name/${params}` )
     .then((response) => response.json())
     .catch(() => null);
 
@@ -24,14 +23,14 @@ export async function getServerSideProps(context){
 export default function SearchRecipe(props) {
   const datas = props?.datasearch?.data;
   
-  const urlIdRecipe = 'http://localhost:3000/detail/'
+  const webdomain = process.env.CLIENT_DOMAIN;
   const api = props.api;
-  // console.log(`${api}${datas[0].image}`);
+  // console.log(`${api}/${datas[0].image}`);
   // console.log(datas);
   
   const [Searching, setSearching] = useState([]);
   const handleSearchingName = () => {
-    window.location.href=`http://localhost:3000/search/${Searching}`
+    window.location.href=`${webdomain}/search/${Searching}`
   };
   
   const { query } = useRouter();
@@ -97,11 +96,11 @@ export default function SearchRecipe(props) {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href={`${urlIdRecipe}${data.recipe_id}`}>
+                  <Link href={`${webdomain}/detail/${data.recipe_id}`}>
                     <div className="row">
                       <div className="col-3 mt-2">
                         <Image
-                          src={`${api}${data.image_recipe}`}
+                          src={`${api}/${data.image_recipe}`}
                           alt="image"
                           width={75}
                           height={75}

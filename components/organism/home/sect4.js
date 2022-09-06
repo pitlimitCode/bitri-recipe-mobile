@@ -7,7 +7,6 @@ import Link from 'next/link'
 export default function Home4(props) {
   const datas = props.data4;
   
-  const urlIdRecipe = 'http://localhost:3000/detail/'
   const api = props.api;
   return (
     <>
@@ -28,11 +27,11 @@ export default function Home4(props) {
             cursor: "pointer",
           }}
         >
-          <Link href={`${urlIdRecipe}${data.id_recipe}`}>
+          <Link href={`/detail/${data.id_recipe}`}>
             <div className="row">
               <div className="col-3 mt-2">
                 <Image
-                  src={`${api}${data.image_recipe}`}
+                  src={`${api}/${data.image_recipe}`}
                   alt="image"
                   width={75}
                   height={75}
