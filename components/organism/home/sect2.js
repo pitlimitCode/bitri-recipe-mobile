@@ -13,7 +13,7 @@ export default function Home2() {
     
     {/* CUSTOM URL POPULAR RECIPE FOR USER, FOR NOW BY OLDER */}
     <div className="d-flex justify-content-between text-center">
-      <div>
+      <div> 
         <Link href="popular">
           <a><Image src={poplogo2} style={{cursor: "pointer"}} alt="popular logo"/></a>
         </Link>
