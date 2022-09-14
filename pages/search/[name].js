@@ -1,39 +1,65 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import {useRouter} from "next/router";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Link from 'next/link'
 
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
-  const params = context.query.name;
+//   const params = context.query.name;
 
-  const datasearch = await fetch( `${api}/recipes/name/${params}` )
-    .then((response) => response.json())
-    .catch(() => null);
+//   // /?name=[name_recipe]&sort=[asc/desc/like]
+//   const datasearch = await fetch( `${api}/recipes/name/${params}` )
+//     .then((response) => response.json())
+//     .catch(() => null);
 
   return {
     props: {
-      datasearch,
+      // datasearch,
       api,
     }
   }
 };
 
+// export default function SearchRecipe() {
 export default function SearchRecipe(props) {
-  const datas = props?.datasearch?.result?.data;
-  console.log(datas);
+  // const datas = props?.datasearch?.result?.data;
+  // console.log(datas);
   
-  const webdomain = process.env.CLIENT_DOMAIN;
+
+  const api = props.api;
+  // console.log(props);
   // const api = props.api;
-  // console.log(`${datas[0].image}`);
+    // /?name=[name_recipe]&sort=[asc/desc/like]
+
+  const {query} = useRouter();
+  const [Searching, setSearching] = useState(query.name);
+  const [Datas, setDatas] = useState('');
   
-  const [Searching, setSearching] = useState([]);
+  const [SortBy, setSortBy] = useState('desc');
+  // console.log(SortBy);
+  useEffect(() => {
+    // ?name=[name_recipe]&sort=[asc/desc/like]
+    fetch( `${api}/recipes/name/?name=${Searching}&sort=${SortBy}` ) // ${sort}
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data);
+      setDatas(data.result.data)
+      // setAvatar(res.data.data?.avatar)
+    }).catch((e) => console.log(e.message));
+  }, [Searching, SortBy]);
+
+  // const webdomain = process.env.CLIENT_DOMAIN;
+
+  // console.log(`${datas[0].image}`);
+  // console.log(Datas);
+  
+  // const [Searching, setSearching] = useState([]);
   // const handleSearchingName = () => {
   //   window.location.href=`${Searching}`
   // };
   
-  const { query } = useRouter();
+
   return (
     <div className="mobile">
       <Head>
@@ -81,9 +107,23 @@ export default function SearchRecipe(props) {
             </form>
           </section>
 
-          {!datas
+          {/* RESULT OF SEARCH */}
+          {!Datas
             ? <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named &quot{query.name}&quot</div>
-            : datas?.map((data) => (
+            : 
+              <div>
+              {/* SEARCH SORT BY */}
+                <select
+                  aria-label="Default select example" 
+                  style={{width:"110px", fontSize:"12px", marginBottom:"10px"}} 
+                  onChange={(e) => setSortBy(e.target.value)}
+                >
+                  <option value="desc">Newest</option>
+                  <option value="asc">Older</option>
+                  <option value="like">Like</option>
+                </select>
+
+              {Datas?.map((data) => (
                 <div
                   key={data?.recipe_id}
                   className="card"
@@ -113,14 +153,15 @@ export default function SearchRecipe(props) {
                         <div className='p4 bold pb-1'>{data.name_recipe}</div>
                         <div className='p4'>Spicy, Salted, Tasty</div>
                         <div className="d-flex gap-1 align-items-center p4">
-                          <i className='bi bi-star-fill text-warning'></i>
-                          <span>4.7</span>
+                          <i className='bi bi-hand-thumbs-up-fill text-warning'></i>
+                          <span>{`${data.total_likes}`}</span>
                         </div>
                       </div>
                     </div>
                   </Link>
                 </div>
-              ))
+              ))}
+              </div>
           } 
 
 

@@ -5,7 +5,7 @@ import Link from 'next/link'
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
 
-  const popular = await fetch( `${api}/recipes/fivenew` ).then((response) => response.json());
+  const popular = await fetch( `${api}/recipes/fivelikes` ).then((response) => response.json());
   return {
     props: {
       popular,
@@ -15,8 +15,8 @@ export async function getServerSideProps(context){
 };
 
 export default function PopularRecipe(props) {
-  const datas = props?.popular?.data;
-  // console.log(datas);
+  const datas = props?.popular?.result?.data;
+  console.log(datas);
   const urlIdRecipe = `${process.env.CLIENT_DOMAIN}/detail/`
   return (
     <div className="mobile">

@@ -31,6 +31,7 @@ export default function Home4(props) {
               <div className="col-3 mt-2">
                 <Image
                   src={`${data.image_recipe}`}
+                  // src='https://res.cloudinary.com/dy3yw6bod/image/upload/v1662711416/bitri_recipe/recipe/vsfl2jqubqz6dialkn5t.jpg'
                   alt="image"
                   width={75}
                   height={75}
@@ -41,8 +42,8 @@ export default function Home4(props) {
                 <div className='p4 bold pb-1'>{data.name_recipe}</div>
                 <div className='p4'>Spicy, Salted, Tasty</div>
                 <div className="d-flex gap-1 align-items-center p4">
-                  <i className='bi bi-star-fill text-warning'></i>
-                  <span>4.7</span>
+                  <i className='bi bi-hand-thumbs-up-fill text-warning'></i>
+                  <span>{`${data.total_likes}`}</span>
                 </div>
               </div>
             </div>
