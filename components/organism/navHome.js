@@ -2,7 +2,7 @@ import Link from 'next/link'
 import {useRouter} from "next/router";
 
 export default function navHome(props) {
-  console.log(props);
+  // console.log(props);
   // let router = useRouter();
   return (
   <nav className='navHome'>

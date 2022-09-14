@@ -13,7 +13,7 @@
     Share Your favorite Recipe to the world.
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://bitri-recipe-mobile.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/pitlimitCode/bitri-recipe-mobile/issues">Report Bug</a>
     ·
@@ -170,9 +170,9 @@ Contributions are what make the open source community such an amazing place to b
 :rocket: [`Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)  
 :rocket: [`Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)  
 :rocket: [`Frontend Bitri Recipe Mobile`](https://github.com/pitlimitCode/bitri-recipe-mobile)  
-:rocket: [`Web Service`](https://bitri-recipe.herokuapp.com)  
-:rocket: [`Demo Bitri Recipe`](https://bitri-recipe.web.app/)  
-:rocket: [`Demo Bitri Recipe Mobile`](#)  
+:rocket: [`Web Service`](https://bitrirecipeweb-production.up.railway.app)  
+:rocket: [`Demo Bitri Recipe`](https://bitri-recipe.web.app)  
+:rocket: [`Demo Bitri Recipe Mobile`](https://bitri-recipe-mobile.vercel.app)  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact

@@ -98,7 +98,7 @@ export default function SearchRecipe(props) {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href={`${webdomain}/detail/${data.recipe_id}`}>
+                  <Link href={`/detail/${data.recipe_id}`}>
                     <div className="row">
                       <div className="col-3 mt-2">
                         <Image
