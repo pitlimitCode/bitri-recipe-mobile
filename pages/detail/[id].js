@@ -51,10 +51,20 @@ export default function DetailRecipe(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
       
-      <div id='imagesection'>
-        {/* <img */}
+      {/* <div id='imagesection'>
         <Image src={`${data.image}`} id="imagedetailrecipe" alt="detailrecipe" />
-      </div>
+      </div> */}
+
+      {/* <div id='imagesection'> */}
+        <Image 
+          src={`${data.image}`} 
+          alt="detailrecipe" 
+          // width= "420px"
+          // height= "400%"
+          width= {420}
+          height= {300}
+        />
+      {/* </div> */}
       
       <div id='descsection' className='bg-white'>
         <div className='container'>
