@@ -11,8 +11,6 @@ import Link from 'next/link';
 export default function Home3(props) {
   // console.log(props);
   const datas = props.data3.slice(0, 10);
-  
-  const api = props.api;
   return (
     <>
       <div className="p3 bold mb-3">New Recipes</div>
@@ -36,17 +34,9 @@ export default function Home3(props) {
                   cursor: "pointer",
                 }}
               >
-                {/* <Image 
-                  style={{ borderRadius: "16px"}}
-                  src={`${api}/${data.image}`}
-                  width={150}
-                  height={150}
-                  alt="image"
-                />
-                <div className="bottom-left-text p4">{data.name}</div> */}
                 <Image 
-                  style={{ borderRadius: "16px", position:"relative"}}
-                  src={`${api}/${data.image}`}
+                  style={{ borderRadius: "16px"}}
+                  src={`${data.image}`}
                   width={150}
                   height={150}
                   alt="image"

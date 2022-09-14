@@ -4,12 +4,13 @@ import Home4 from '../components/organism/home/sect4'
 import NavHome from '../components/organism/navHome'
 
 import Head from 'next/head'
-// import Link from 'next/link'
+import Link from 'next/link'
 import {useState} from "react";
 
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
-  // const idUserActive = await fetch( `${api}/users/getid` ).then((response) => response.json());
+  // if()
+  // const idUserActive = await fetch( `${api}/users/getid` ).then((response) => response.json()).catch((err) => null);
   const dataHome3 = await fetch( `${api}/recipes/all/?sort=desc` ).then((response) => response.json());
   const dataHome4 = await fetch( `${api}/recipes/fivenew` ).then((response) => response.json());
   // console.log(dataHome3);
@@ -28,10 +29,12 @@ export async function getServerSideProps(context){
 export default function Home(props) {
   // console.log(props);
   // console.log(process.env.API_DOMAIN);
+
   const [Searching, setSearching] = useState([]);
-  const handleSearchingName = () => {
-    window.location.href=`${process.env.CLIENT_DOMAIN}/search/${Searching}`
-  };
+  
+  // const handleSearchingName = () => {
+  //   window.location.href=`${process.env.CLIENT_DOMAIN}/search/${Searching}`
+  // };
 
   return (
     <div className="mobile" >
@@ -75,10 +78,12 @@ export default function Home(props) {
                   </div>
                 </div>
                 <div className="col-3">
+                <Link href={`/search/${Searching}`}>
                   <button id="searchbutton"
                     type='button'
-                    onClick={handleSearchingName}
+                    // onClick={handleSearchingName}
                   >Search</button>
+                </Link>
                 </div>
               </div>
             </form>

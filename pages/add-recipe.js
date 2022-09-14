@@ -4,6 +4,7 @@ import Inputs from '../components/atoms/inputs'
 import NavHome from '../components/organism/navHome'
 
 import {useEffect} from "react";
+// import { useNavigate } from "react-router-dom";
 
 // export async function getServerSideProps(context){
 //   const api = process.env.API_DOMAIN;
@@ -20,11 +21,14 @@ import {useEffect} from "react";
 // };
 
 export default function AddRecipe(props) {
-  useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      window.location.href = "/login";
-    }
-  }, []);
+  // let navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     // navigate("/login");
+  //     window.location.href = "/login";
+  //   }
+  // }, []);
   // console.log(props);
 
 	// const [Name, setName] = useState('');

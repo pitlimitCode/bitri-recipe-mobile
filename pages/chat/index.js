@@ -5,11 +5,11 @@ import NavHome from '../../components/organism/navHome'
 import {useEffect} from "react";
 
 export default function Chat() {
-  useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      window.location.href = "/login";
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     window.location.href = "/login";
+  //   }
+  // }, []);
 
   return (
     <div className="mobile" >

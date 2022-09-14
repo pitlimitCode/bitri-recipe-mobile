@@ -6,12 +6,11 @@ import Link from 'next/link'
 
 export default function Home4(props) {
   const datas = props.data4;
-  
-  const api = props.api;
+  // console.log(datas);
   return (
     <>
       <div className="p3 bold mb-3">Popular Recipes</div>
-                
+      
       {datas?.map((data) => (
         <div
           key={data.id_recipe}
@@ -31,7 +30,7 @@ export default function Home4(props) {
             <div className="row">
               <div className="col-3 mt-2">
                 <Image
-                  src={`${api}/${data.image_recipe}`}
+                  src={`${data.image_recipe}`}
                   alt="image"
                   width={75}
                   height={75}

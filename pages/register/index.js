@@ -71,7 +71,7 @@ export default function Register() {
             <br/><br/>
           </div>
           </div>
-              <div className="text-center main-text-cl p2">Let's Get Started</div>
+              <div className="text-center main-text-cl p2">Let&apos;s Get Started</div>
               <div className="text-center text-1-cl p5 pb-4">Create new account to access all features.</div>
 
               {IsError 

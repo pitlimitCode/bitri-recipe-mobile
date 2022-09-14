@@ -1,69 +1,90 @@
 import Image from 'next/image'
-import NavHome from '../../../components/organism/navHome'
+import NavHome from '../../components/organism/navHome'
 import Link from 'next/link'
 
-import {useEffect} from "react";
+import React from 'react';
+import { useEffect, useState} from 'react';
 
-export async function getServerSideProps(context){
-  const api = process.env.API_DOMAIN;
+// export async function getServerSideProps(context){
+//   const api = process.env.API_DOMAIN;
 
-  // PROFILE DATA USER BY ID
-  const params = context.query.id;
-  const dataprofile = await fetch(`${api}/users/id/${params}`)
-    .then((response) => response.json())
-    .catch(() => null);
+//   // const [dataprofile, setdataprofile] = useState("");
 
-  if(!dataprofile){
-    return {
-      redirect: {
-        destination: '/404',
-        permanent: false,
-      },
-    }
-  }
+//   // PROFILE DATA USER BY ID
+//   // useEffect(() => {
+
+//   // const woi = api + "/users/id/" + 2;
+
+//     // const idprofile = await fetch(api + "/users/getid")
+//     //   .then((res) => res.json()
+
+//       const dataprofile = await fetch(api + "/users/id/" + 2)
+//       // .then((response) => response.json())
+//         .then((resprofile) => resprofile.json());
+
+//     // ).catch((err) => err.json());
+
+
+//   // }, []);
+
+//   // const dataprofile = await fetch(`${api}/users/id/2`)
+//   //   .then((response) => response.json())
+//   //   .catch(() => null);
+
+//   // if(!dataprofile){
+//   //   return {
+//   //     redirect: {
+//   //       destination: '/404',
+//   //       permanent: false,
+//   //     },
+//   //   }
+//   // }
   
-  return {
-    props: {
-      dataprofile,
-      params,
-      api,
-    }
-  }
-};
+//   return {
+//     props: {
+//       // idprofile,
+//       dataprofile,
+//       // woi
+//     }
+//   }
+// };
+
+
 
 export default function Profile(props) {
-  useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      window.location.href = "/login";
-    }
-  }, []);
+  console.log(props);
+  // useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     window.location.href = "/login";
+  //   }
+  // }, []);
 
   // (USER) ID PARAMS
-  const userId = props.params;
+  // const userId = props.params;
 
   // USER PROFILE LINK TO 
-  const linkEdit = `${userId}/edit`
-  const linkMy = `${userId}/my-recipes`
-  const linkSaved = `${userId}/saved-recipes`
-  const linkLiked = `${userId}/liked-recipes`
+  // const linkEdit = `${userId}/edit`
+  // const linkMy = `${userId}/my-recipes`
+  // const linkSaved = `${userId}/saved-recipes`
+  // const linkLiked = `${userId}/liked-recipes`
   
   // API IMAGE
-  const data = props.dataprofile.data[0];
+  // const data = props.dataprofile.data[0];
   
-  // LOGOUT AND REMOVE LOCAL STORAGE BROWSER
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("name");
-    window.location.href = "/login";
-  };
+  // // LOGOUT AND REMOVE LOCAL STORAGE BROWSER
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("name");
+  //   window.location.href = "/login";
+  // };
   return (
     <div className="mobile" >  
 
-      <div id="profilepage" >
+      {/* <div id="profilepage" >
         <div className="row justify-content-center text-center">
           <div className="col-3">
             <Image 
-              src={`${props.api}/${data.avatar}`} 
+              src={`${data.avatar}`} 
               alt="image"
               width={90}
               height={90}
@@ -77,7 +98,7 @@ export default function Profile(props) {
       <div className="container">
         <div id="profileopt">
 
-          <Link href={linkEdit}>
+          <Link href="/edit">
             <div className="row pointercursor d-flex align-items-center pt-2 pb-3">
                 <div className="col-2">
                   <i className="bi bi-person main-text-cl p2"></i>
@@ -93,7 +114,7 @@ export default function Profile(props) {
             </div>
           </Link>
             
-          <Link href={linkMy}>
+          <Link href="/my-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-award main-text-cl p2"></i>
@@ -109,7 +130,7 @@ export default function Profile(props) {
             </div>
           </Link>
 
-          <Link href={linkSaved}>
+          <Link href="/saved-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-bookmark main-text-cl p2"></i>
@@ -125,7 +146,7 @@ export default function Profile(props) {
             </div>
           </Link>
 
-          <Link href={linkLiked}>
+          <Link href="/liked-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-hand-thumbs-up main-text-cl p2"></i>
@@ -152,7 +173,7 @@ export default function Profile(props) {
           </div>
 
         </div>
-      </div>
+      </div> */}
 
       <NavHome />
     </div>

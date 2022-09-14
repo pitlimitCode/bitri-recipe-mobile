@@ -21,17 +21,17 @@ export async function getServerSideProps(context){
 };
 
 export default function SearchRecipe(props) {
-  const datas = props?.datasearch?.data;
+  const datas = props?.datasearch?.result?.data;
+  console.log(datas);
   
   const webdomain = process.env.CLIENT_DOMAIN;
-  const api = props.api;
-  // console.log(`${api}/${datas[0].image}`);
-  // console.log(datas);
+  // const api = props.api;
+  // console.log(`${datas[0].image}`);
   
   const [Searching, setSearching] = useState([]);
-  const handleSearchingName = () => {
-    window.location.href=`${webdomain}/search/${Searching}`
-  };
+  // const handleSearchingName = () => {
+  //   window.location.href=`${Searching}`
+  // };
   
   const { query } = useRouter();
   return (
@@ -70,20 +70,22 @@ export default function SearchRecipe(props) {
                   </div>
                 </div>
                 <div className="col-3">
+                <Link href={`/search/${Searching}`}>
                   <button id="searchbutton"
                     type='button'
-                    onClick={handleSearchingName}
+                    // onClick={handleSearchingName}
                   >Search</button>
+                </Link>
                 </div>
               </div>
             </form>
           </section>
 
           {!datas
-            ? <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named "{query.name}"</div>
+            ? <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named &quot{query.name}&quot</div>
             : datas?.map((data) => (
                 <div
-                  key={data.recipe_id}
+                  key={data?.recipe_id}
                   className="card"
                   style={{
                     borderRadius: "15px",
@@ -100,7 +102,7 @@ export default function SearchRecipe(props) {
                     <div className="row">
                       <div className="col-3 mt-2">
                         <Image
-                          src={`${api}/${data.image_recipe}`}
+                          src={`${data.image_recipe}`}
                           alt="image"
                           width={75}
                           height={75}

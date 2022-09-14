@@ -1,5 +1,5 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Home1 from '../../components/organism/home/sect1'
 
 export async function getServerSideProps(context){
@@ -53,7 +53,8 @@ export default function SearchRecipe(props) {
 
                   {/* TIDAK BISA PAKAI NEXT/IMAGE */} {/* CARA GABUNGKAN 2 VARIABEL KEDALAM 1 SRC */}
 
-                  <img
+                  {/* <img */}
+                  <Image
                     src="http://localhost:8000/images/food_images/foodImage_11.jpeg"
                     // src="/images/food_images/foodImage_11.jpeg"
                     // src={data.image_recipe}

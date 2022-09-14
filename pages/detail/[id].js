@@ -1,5 +1,5 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 
 // import {useRouter} from "next/router";
@@ -52,7 +52,8 @@ export default function DetailRecipe(props) {
       </Head>
       
       <div id='imagesection'>
-        <img src={`${props.api}/${data.image}`} id="imagedetailrecipe" />
+        {/* <img */}
+        <Image src={`${data.image}`} id="imagedetailrecipe" alt="detailrecipe" />
       </div>
       
       <div id='descsection' className='bg-white'>

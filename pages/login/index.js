@@ -49,7 +49,7 @@ export default function Login() {
       })
       .catch((e) => {
         setIsError(true);
-        setErrorMsg(e.response.data)
+        setErrorMsg(e.message)
       });
   };
 
@@ -112,7 +112,7 @@ export default function Login() {
             </div>
           </form>
 
-          <div className="text-center text-2-cl p4">Don't have account? 
+          <div className="text-center text-2-cl p4">Don&apos;t have account? 
             <Link href="register">
               <a className="main-text-cl aStyle"> Sign Up</a>
             </Link>

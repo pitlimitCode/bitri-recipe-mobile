@@ -1,6 +1,4 @@
-
 import Image from 'next/image'
-
   
 export default function commentsinarecipe(props) {
   // console.log(props);
@@ -12,11 +10,11 @@ export default function commentsinarecipe(props) {
       <div className='row my-4' key={data.id}>
           <div className='col-2'>
             <Image 
-              // src='images/food_images/foodImage_4.jpeg'
-              src={`${api}/${data.avatar}`}
+              src={`${data.avatar}`}
               width={50}
               height={50}
               style={{borderRadius: "50%"}}
+              alt="avatar"
             />
           </div>
           <div className='col-10'>
@@ -29,15 +27,16 @@ export default function commentsinarecipe(props) {
     <div className='row my-4'>
       <div className='col-2'>
         <Image 
-          src='http://localhost:8000/images/food_images/foodImage_11.jpeg'
+          src='https://res.cloudinary.com/dy3yw6bod/image/upload/v1662711416/bitri_recipe/recipe/vsfl2jqubqz6dialkn5t.jpg'
           width={50}
           height={50}
           style={{borderRadius: "50%"}}
+          alt="avatar dummy"
         />
       </div>
       <div className='col-10'>
-        <div className='bold p4'>Harcode User Dummy</div>
-        <div className='p4'>Comment dummy, Lorem ipsum dolor sit amet</div>
+        <div className='bold p4'>Hardcode User Dummy</div>
+        <div className='p4'>Commenter dummy, Lorem ipsum dolor sit amet.</div>
       </div>
     </div>
     </>
