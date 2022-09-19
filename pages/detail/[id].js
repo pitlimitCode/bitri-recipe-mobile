@@ -47,13 +47,13 @@ export default function DetailRecipe(props) {
   // AXIOS USER - GET ID
   const [IdUser, setIdUser] = useState("");
   useEffect(() => {
-    axios.get(api + "/users/getid")
+    axios.get(`${api}/users/getid`)
       .then( (data) => {
         console.log(data.data);
         setIdUser(data?.data?.id)
       })
       .catch((e) => console.log(e.message));
-  }, [api])
+  }, [])
 
   console.log('data.id_user = ', data.id_user, '. IdUser = ', IdUser) 
 

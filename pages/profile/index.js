@@ -26,7 +26,7 @@ export default function Profile(props) {
   const [Avatar, setAvatar] = useState("");
   useEffect(() => {
     axios
-      .get(api + "/users/getid")
+      .get(`{api}/users/getid`)
       .then((res) => {
         axios
           .get(api + "/users/id/" + res.data.id)

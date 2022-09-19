@@ -51,7 +51,7 @@ export default function SearchRecipe(props) {
       }
       // setAvatar(res.data.data?.avatar)
     }).catch((e) => {console.log(e)});
-  }, [Searching, SortBy]);
+  }, [api, Searching, SortBy]);
 
   // const webdomain = process.env.CLIENT_DOMAIN;
 

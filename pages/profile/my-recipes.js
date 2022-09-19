@@ -16,7 +16,7 @@ export default function ProfilSelfRecipe(props) {
 	const [datas, setDatas] = useState([]);
   useEffect(() => {
     axios
-      .get(api + "/users/myrecipes")
+      .get(`${api}/users/myrecipes`)
       .then((res) => {
         setDatas(res?.data.result.data);
         // console.log("Console IN useEffect:", res?.data.result.data);
