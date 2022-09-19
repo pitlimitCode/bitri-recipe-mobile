@@ -22,7 +22,7 @@ export default function ProfilSelfRecipe(props) {
         // console.log("Console IN useEffect:", res?.data.result.data);
       })
       .catch((err) => console.log(err.message));
-  }, []);
+  }, [api]);
   // console.log("Console OUT OF useEffect:", datas);
 
   return(

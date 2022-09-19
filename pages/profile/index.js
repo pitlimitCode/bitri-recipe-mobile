@@ -37,7 +37,7 @@ export default function Profile(props) {
           .catch((e) => console.log(e.message));
       })
       .catch((err) => console.log(err.message));
-  }, []);
+  }, [api]);
   
   // LOGOUT AND REMOVE LOCAL STORAGE BROWSER
   const handleLogout = () => {
