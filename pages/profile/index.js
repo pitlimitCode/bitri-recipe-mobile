@@ -1,5 +1,5 @@
 import axios from "axios";
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
@@ -58,7 +58,7 @@ export default function Profile(props) {
       <div id="profilepage" >
         <div className="row justify-content-center text-center">
           <div className="col-3">
-            <Image 
+            <img
               src={Avatar} 
               alt="avatar"
               width={90}
@@ -75,7 +75,7 @@ export default function Profile(props) {
         <div id="profileopt">
 
           {/* <Link href="profile/edit">
-            <div className="row pointercursor d-flex align-items-center pt-2 pb-3">
+            <div className="row pointercursor d-flex align-items-center pt-2 pb-4">
                 <div className="col-2">
                   <i className="bi bi-person main-text-cl p2"></i>
                 </div>
@@ -122,7 +122,7 @@ export default function Profile(props) {
             </div>
           </Link> */}
 
-          <Link href="profile/liked-recipes">
+          {/* <Link href="profile/liked-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-hand-thumbs-up main-text-cl p2"></i>
@@ -136,9 +136,9 @@ export default function Profile(props) {
                   </div>
                 </div>
             </div>
-          </Link>
+          </Link> */}
 
-          <div className="row pointercursor d-flex align-items-center pt-4">
+          <div className="row pointercursor d-flex align-items-center pt-5">
               <div className="col-2" onClick={handleLogout}>
                 <i className="bi bi-power text-danger p2"></i>
               </div>
