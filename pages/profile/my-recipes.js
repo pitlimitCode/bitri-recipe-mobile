@@ -1,46 +1,37 @@
+import axios from "axios";
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
 
-export async function getServerSideProps(context){
+export function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
-  const params = context.query.id;
-
-  const myrecipe = await fetch(`${api}/users/myrecipes`)
-    .then((response) => response.json())
-    .catch(() => null);
-
-  if(!myrecipe){
-    return {
-      redirect: {
-        destination: '/404',
-        permanent: false,
-      },
-    }
-  }
-  
-  return {
-    props: {
-      myrecipe,
-      params,
-      api,
-    }
-  }
+  return { props: { api } }
 };
 
 export default function ProfilSelfRecipe(props) {
-  const datas = props?.myrecipe?.data;
-  // console.log(props.api);
+  const api = props.api;
+  // console.log(props);
 
-  const webdomain = process.env.CLIENT_DOMAIN;
+  // PROFILE DATA USER BY ID
+	const [datas, setDatas] = useState([]);
+  useEffect(() => {
+    axios
+      .get(api + "/users/myrecipes")
+      .then((res) => {
+        setDatas(res?.data.result.data);
+        // console.log("Console IN useEffect:", res?.data.result.data);
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
+  // console.log("Console OUT OF useEffect:", datas);
+
   return(
     <div className="mobile" >
-      
       <main>
         <div className="container">
-
           <div className='row pb-4 pt-5'> 
             <div className='d-flex align-items-center'>
-              <Link href={`${webdomain}/profile/${props.params}`}>
+              <Link href={`/profile`}>
                 <div className='col-2' id="backarrow2">
                   <i className="bi bi-chevron-left"></i>
                 </div>
@@ -54,26 +45,26 @@ export default function ProfilSelfRecipe(props) {
             </div>
           </div>
 
-            {datas?.map((data) => (
-              <div
-                key={data.id_recipe}
-                className="card"
-                style={{
-                  borderRadius: "15px",
-                  padding: "10px",
-                  border: "none",
-                  "boxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
-                  "WebkitBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
-                  "MozBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
-                  marginBottom: "20px",
-                  cursor: "pointer",
-                }}
-              >
-              <Link href={`${webdomain}/detail/${data.id_recipe}`}>
+          {datas.map((data) => (
+            <div
+              key={data.id_recipe}
+              className="card"
+              style={{
+                borderRadius: "15px",
+                padding: "10px",
+                border: "none",
+                "boxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                "WebkitBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                "MozBoxShadow": "2px 2px 5px 1px rgba(0,0,0,0.12)",
+                marginBottom: "20px",
+                cursor: "pointer",
+              }}
+            >
+              <Link href={`/detail/${data.id_recipe}`}>
                 <div className="row">
                   <div className="col-3 mt-2">
                     <Image
-                      src={`${props.api}/${data.image}`}
+                      src={data.image}
                       alt="image"
                       width={75}
                       height={75}
@@ -82,20 +73,19 @@ export default function ProfilSelfRecipe(props) {
                   </div>
                   <div className="col-9 mt-1">
                     <div className='p4 bold pb-1'>{data.recipe_name}</div>
-                    <div className='p4'>Spicy, Salted, Tasty</div>
+                    {/* <div className='p4'>Spicy, Salted, Tasty</div>
                     <div className="d-flex gap-1 align-items-center p4">
                       <i className='bi bi-star-fill text-warning'></i>
                       <span>4.7</span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-          </Link>
-              </div>
-            ))}
+              </Link>
+            </div>
+          ))}
 
         </div>
       </main>
-
     </div>
   )
 }

@@ -1,96 +1,72 @@
+import axios from "axios";
 import Image from 'next/image'
-import NavHome from '../../components/organism/navHome'
 import Link from 'next/link'
+import { useRouter } from "next/router";
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import * as Type from "../../redux/auth/type";
 
-import React from 'react';
-import { useEffect, useState} from 'react';
+import NavHome from '../../components/organism/navHome'
 
-// export async function getServerSideProps(context){
-//   const api = process.env.API_DOMAIN;
-
-//   // const [dataprofile, setdataprofile] = useState("");
-
-//   // PROFILE DATA USER BY ID
-//   // useEffect(() => {
-
-//   // const woi = api + "/users/id/" + 2;
-
-//     // const idprofile = await fetch(api + "/users/getid")
-//     //   .then((res) => res.json()
-
-//       const dataprofile = await fetch(api + "/users/id/" + 2)
-//       // .then((response) => response.json())
-//         .then((resprofile) => resprofile.json());
-
-//     // ).catch((err) => err.json());
-
-
-//   // }, []);
-
-//   // const dataprofile = await fetch(`${api}/users/id/2`)
-//   //   .then((response) => response.json())
-//   //   .catch(() => null);
-
-//   // if(!dataprofile){
-//   //   return {
-//   //     redirect: {
-//   //       destination: '/404',
-//   //       permanent: false,
-//   //     },
-//   //   }
-//   // }
-  
-//   return {
-//     props: {
-//       // idprofile,
-//       dataprofile,
-//       // woi
-//     }
-//   }
-// };
-
-
+export async function getServerSideProps(context){
+  const api = process.env.API_DOMAIN;
+  return { props: { api } }
+};
 
 export default function Profile(props) {
-  console.log(props);
-  // useEffect(() => {
-  //   if (!localStorage.getItem("token")) {
-  //     window.location.href = "/login";
-  //   }
-  // }, []);
+	const router = useRouter();
+  const {isLogin} = useSelector(state => state.auth);
+  useEffect(() => { if (!isLogin) {router.push("/login")}}, [])
 
-  // (USER) ID PARAMS
-  // const userId = props.params;
+  const dispatch = useDispatch();  
+  const api = props.api;
 
-  // USER PROFILE LINK TO 
-  // const linkEdit = `${userId}/edit`
-  // const linkMy = `${userId}/my-recipes`
-  // const linkSaved = `${userId}/saved-recipes`
-  // const linkLiked = `${userId}/liked-recipes`
+  // PROFILE DATA USER BY ID
+	const [Name, setName] = useState("");
+  const [Avatar, setAvatar] = useState("");
+  useEffect(() => {
+    axios
+      .get(api + "/users/getid")
+      .then((res) => {
+        axios
+          .get(api + "/users/id/" + res.data.id)
+          .then((profile) => {
+            setName(profile.data.data.name);
+            setAvatar(profile.data.data.avatar);
+          })
+          .catch((e) => console.log(e.message));
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
   
-  // API IMAGE
-  // const data = props.dataprofile.data[0];
+  // LOGOUT AND REMOVE LOCAL STORAGE BROWSER
+  const handleLogout = () => {
+    dispatch({
+      type: Type.SET_ISLOGIN,
+      payload: false
+    }),
+    dispatch({
+      type: Type.SET_TOKEN,
+      payload: ''
+    }),
+    router.push("/login")
+  };
   
-  // // LOGOUT AND REMOVE LOCAL STORAGE BROWSER
-  // const handleLogout = () => {
-  //   localStorage.removeItem("token");
-  //   localStorage.removeItem("name");
-  //   window.location.href = "/login";
-  // };
   return (
     <div className="mobile" >  
 
-      {/* <div id="profilepage" >
+      <div id="profilepage" >
         <div className="row justify-content-center text-center">
           <div className="col-3">
             <Image 
-              src={`${data.avatar}`} 
-              alt="image"
+              src={Avatar} 
+              alt="avatar"
               width={90}
               height={90}
-              id="profilpic" />
+              id="profilpic" 
+            />
           </div>
-          <div className="p2 bold text-white pt-3">{data.name}</div>
+          <div className="p2 bold text-white pt-3">{Name}</div>
         </div>
       </div>
 
@@ -98,7 +74,7 @@ export default function Profile(props) {
       <div className="container">
         <div id="profileopt">
 
-          <Link href="/edit">
+          {/* <Link href="profile/edit">
             <div className="row pointercursor d-flex align-items-center pt-2 pb-3">
                 <div className="col-2">
                   <i className="bi bi-person main-text-cl p2"></i>
@@ -112,9 +88,9 @@ export default function Profile(props) {
                   </div>
                 </div>
             </div>
-          </Link>
+          </Link> */}
             
-          <Link href="/my-recipes">
+          <Link href="/profile/my-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-award main-text-cl p2"></i>
@@ -130,7 +106,7 @@ export default function Profile(props) {
             </div>
           </Link>
 
-          <Link href="/saved-recipes">
+          {/* <Link href="profile/saved-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-bookmark main-text-cl p2"></i>
@@ -144,9 +120,9 @@ export default function Profile(props) {
                   </div>
                 </div>
             </div>
-          </Link>
+          </Link> */}
 
-          <Link href="/liked-recipes">
+          <Link href="profile/liked-recipes">
             <div className="row pointercursor d-flex align-items-center pb-4">
                 <div className="col-2">
                   <i className="bi bi-hand-thumbs-up main-text-cl p2"></i>
@@ -173,7 +149,7 @@ export default function Profile(props) {
           </div>
 
         </div>
-      </div> */}
+      </div>
 
       <NavHome />
     </div>

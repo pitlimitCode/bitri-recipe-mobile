@@ -152,6 +152,18 @@ section {
   color: #EFC81A;
   transition: 1s;
 }
+.buttonRed{
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 2px solid red;
+  background-color: red;
+  color: #ffffff;
+}
+.buttonRed:hover{
+  background-color: #fff;
+  color: red;
+  transition: 1s;
+}
 
 .aStyle{
   text-decoration: none;

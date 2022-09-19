@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master">
+  <a href="#">
     <img src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659148545/portofolio/recipe/2_kpnvj7.png" alt="Logo" width="150px">
   </a>
 
@@ -167,12 +167,12 @@ Contributions are what make the open source community such an amazing place to b
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Related Project
-:rocket: [`Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)  
-:rocket: [`Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)  
-:rocket: [`Frontend Bitri Recipe Mobile`](https://github.com/pitlimitCode/bitri-recipe-mobile)  
+:rocket: [`Repo Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)  
+:rocket: [`Repo Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)  
+:rocket: [`Repo Frontend Bitri Recipe - Mobile`](https://github.com/pitlimitCode/bitri-recipe-mobile)  
 :rocket: [`Web Service`](https://bitrirecipeweb-production.up.railway.app)  
-:rocket: [`Demo Bitri Recipe`](https://bitri-recipe.web.app)  
-:rocket: [`Demo Bitri Recipe Mobile`](https://bitri-recipe-mobile.vercel.app)  
+:rocket: [`Demo Bitri Recipe`](https://bitri-recipe.web.app/)  
+:rocket: [`Demo Bitri Recipe - Mobile`](https://bitri-recipe-mobile.vercel.app) 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact

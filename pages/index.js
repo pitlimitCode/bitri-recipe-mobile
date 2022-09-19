@@ -5,30 +5,19 @@ import NavHome from '../components/organism/navHome'
 
 import Head from 'next/head'
 import Link from 'next/link'
-import {useState} from "react";
+import {useEffect, useState} from "react";
+
 // import { 
 //   useSelector, 
-//   useDispatch 
+//   useDispatch
 // } from "react-redux";
 // import * as Type from "../redux/comps/type";
 
 export async function getServerSideProps(context){
   const api = process.env.API_DOMAIN;
-  // const dispatch = useDispatch(context);
-  // if()
   // const idUserActive = await fetch( `${api}/users/getid` ).then((response) => response.json()).catch((err) => null);
-  const dataHome3 = await fetch( `${api}/recipes/all/?sort=desc` )
-    .then((response) => 
-      // {
-        response.json()
-        // dispatch({
-        //   type: Type.SET_NEWRECIPE,
-        //   payload: response.json()
-        // })
-      // }
-    );
+  const dataHome3 = await fetch( `${api}/recipes/all/?sort=desc` ).then((response) => response.json());
   const dataHome4 = await fetch( `${api}/recipes/fivelikes` ).then((response) => response.json());
-  // console.log(dataHome3);
   
   return {
     props: {
@@ -44,12 +33,9 @@ export async function getServerSideProps(context){
 export default function Home(props) {
   // console.log(props);
   // console.log(process.env.API_DOMAIN);
-
-  // const reduxconst = useSelector(state => state);
-  // console.log(reduxconst);
-
-  const [Searching, setSearching] = useState([]);
   
+  // SEARCHING SECTION
+  const [Searching, setSearching] = useState([]);  
   // const handleSearchingName = () => {
   //   window.location.href=`${process.env.CLIENT_DOMAIN}/search/${Searching}`
   // };
@@ -114,7 +100,7 @@ export default function Home(props) {
           <section> <Home3 data3={props.dataHome3.result.data} api={props.api}/> </section> 
 
           {/* ALL POPULAR RECIPES - HOME */}
-          <section> <Home4 data4={props.dataHome4.result.data} api={props.api} /> </section> 
+          {/* <section> <Home4 data4={props.dataHome4.result.data} api={props.api} /> </section>  */}
           
         </div>
       </main>

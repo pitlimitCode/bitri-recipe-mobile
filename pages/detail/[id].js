@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
-
-// import {useRouter} from "next/router";
-
 import Link from 'next/link'
+// import {useRouter} from "next/router";
+import axios from "axios";
+import React, { useState, useEffect } from 'react';
+
+// import styles from '../styles/Home.module.css'
 import Comments from '../../components/organism/commentsinarecipe'
 
 export async function getServerSideProps(context){
@@ -42,6 +43,20 @@ export default function DetailRecipe(props) {
   const data = props?.dataRecipe?.data[0]
   const comments = props?.commenOnRecipe?.result?.data;
   // console.log(props.dataRecipe);
+
+  // AXIOS USER - GET ID
+  const [IdUser, setIdUser] = useState("");
+  useEffect(() => {
+    axios.get(api + "/users/getid")
+      .then( (data) => {
+        console.log(data.data);
+        setIdUser(data?.data?.id)
+      })
+      .catch((e) => console.log(e.message));
+  }, [])
+
+  console.log('data.id_user = ', data.id_user, '. IdUser = ', IdUser) 
+
   return (
     <div className="mobile" >
       <Head>
@@ -85,13 +100,45 @@ export default function DetailRecipe(props) {
                     <i className="bi bi-bookmark likensave"></i>
                     {/* <i className="bi bi-bookmark-check" id="likensaveY"></i> */}
                   </div>
-                  <div className='col-6'>
+                  <div className='col-3'>
                     <i className="bi bi-hand-thumbs-up likensave"></i>
+                    {/* <div className='p3'>{data.total_likes}</div> */}
+                  </div>
+                  <div className='col-1 p5 main-text-cl bold'>
+                    {data.total_likes}
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* EDIT RECIPE */}
+          {/* <div className="text-right mt-4">
+            <Link href={`edit/${data.id}`}>
+              <a className="btn btn-green">
+                TOMBOL EDIT !!!
+              </a>
+            </Link>
+          </div> */}
+          
+            {/* <Link to={`/edit/${data.id}`}> */}
+          {(data.id_user == IdUser) 
+          ? (
+              <div className='row'>
+                <div className='d-flex justify-content-end'>
+                  <div className="d-grid gap-2 pt-3 pb-1">
+                    <Link href={`edit/${data.id}`}>
+                      <a className="btn btn-green p4">
+                        TOMBOL EDIT !!!
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+          ) : ( null ) }
+            {/* </Link> */}
+          
+          {/* <button className='right' style={{textAlign:'right', backgroundColor:'yellowgreen'}}>hii</button> */}
 
           {/* NAME RECIPE AND ITS USERS */}
           <div className='text-center detailYlBg'>
@@ -103,9 +150,9 @@ export default function DetailRecipe(props) {
           {/* CONTENT OF INGREDIENTS, STEPS, AND VIDEO STEPS */}
           <div className='my-5'>
             <div className='p3'>Ingredients</div>
-              <div className='mb-4 p4 detailYlBg'>{data.ingredients}</div>
+            <div className='mb-4 p4 detailYlBg'>{data.ingredients}</div>
             <div className='p3'>Steps</div>
-              <div className='mb-4 p4 detailYlBg'>{data.step}</div>
+            <div className='mb-4 p4 detailYlBg'>{data.step}</div>
             {/* <div className='p3'>Vidio Steps</div>
               <div className='mb-4 p4'>lorem ipsum</div> */}
           </div>
@@ -122,8 +169,8 @@ export default function DetailRecipe(props) {
           <div className='pb-5'>
             <div className='p3'>Comment</div>
             <Comments comments={comments} api={api} />
-
           </div>
+          
         </div>
       </div>
     </div>

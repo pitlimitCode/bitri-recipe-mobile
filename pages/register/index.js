@@ -106,6 +106,7 @@ export default function Register() {
                   placeholder="Create New Password"
                   onChange={(e) => setPassword1(e.target.value)}
                   value={Password1}
+                  autocomplete="current-password"
                 />
                 <Inputs
                   icon="bi-unlock"
@@ -113,6 +114,7 @@ export default function Register() {
                   placeholder="New Password"
                   onChange={(e) => setPassword2(e.target.value)}
                   value={Password2}
+                  autocomplete="current-password"
                 />
                 {/* <input type="text" className="form-control mb-3" id="name" placeholder="Nama" />
                 <input type="email" className="form-control mb-3" id="email" placeholder="E-Mail" />

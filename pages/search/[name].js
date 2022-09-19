@@ -43,10 +43,14 @@ export default function SearchRecipe(props) {
     fetch( `${api}/recipes/name/?name=${Searching}&sort=${SortBy}` ) // ${sort}
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data);
-      setDatas(data.result.data)
+      console.log(data);
+      if(data.result){
+        setDatas(data.result.data)
+      } else {
+        setDatas('')
+      }
       // setAvatar(res.data.data?.avatar)
-    }).catch((e) => console.log(e.message));
+    }).catch((e) => {console.log(e)});
   }, [Searching, SortBy]);
 
   // const webdomain = process.env.CLIENT_DOMAIN;
@@ -91,6 +95,7 @@ export default function SearchRecipe(props) {
                       type="search"
                       className="form-control"
                       id="searchinput"
+                      defaultValue={query.name}
                       onChange={(e) => setSearching(e.target.value)}
                     />
                   </div>
@@ -109,7 +114,7 @@ export default function SearchRecipe(props) {
 
           {/* RESULT OF SEARCH */}
           {!Datas
-            ? <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named &quot{query.name}&quot</div>
+            ? <div className='text-center alert alert-warning py-1 px-5'>No one recipe has named &quot;{Searching}&quot;</div>
             : 
               <div>
               {/* SEARCH SORT BY */}
