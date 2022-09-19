@@ -53,7 +53,7 @@ export default function DetailRecipe(props) {
         setIdUser(data?.data?.id)
       })
       .catch((e) => console.log(e.message));
-  }, [])
+  }, [api])
 
   console.log('data.id_user = ', data.id_user, '. IdUser = ', IdUser) 
 
