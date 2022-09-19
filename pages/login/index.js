@@ -32,7 +32,7 @@ export async function getServerSideProps(context){
 export default function Login(props) {
 	const router = useRouter();
   const {isLogin} = useSelector(state => state.auth);
-  useEffect(() => { if (isLogin) {router.push("/")}}, [])
+  useEffect(() => { if (isLogin) {router.push("/")}}, [isLogin, router])
 
   const dispatch = useDispatch();
   

@@ -16,7 +16,7 @@ export async function getServerSideProps(context){
 export default function Profile(props) {
 	const router = useRouter();
   const {isLogin} = useSelector(state => state.auth);
-  useEffect(() => { if (!isLogin) {router.push("/login")}}, [])
+  useEffect(() => { if (!isLogin) {router.push("/login")}})
 
   const dispatch = useDispatch();  
   const api = props.api;
