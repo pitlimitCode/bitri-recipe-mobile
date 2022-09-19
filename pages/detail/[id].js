@@ -49,13 +49,13 @@ export default function DetailRecipe(props) {
   useEffect(() => {
     axios.get(`${api}/users/getid`)
       .then( (data) => {
-        console.log(data.data);
+        // console.log(data.data);
         setIdUser(data?.data?.id)
       })
       .catch((e) => console.log(e.message));
   }, [api])
 
-  console.log('data.id_user = ', data.id_user, '. IdUser = ', IdUser) 
+  // console.log('data.id_user = ', data.id_user, '. IdUser = ', IdUser) 
 
   return (
     <div className="mobile" >
@@ -128,8 +128,8 @@ export default function DetailRecipe(props) {
                 <div className='d-flex justify-content-end'>
                   <div className="d-grid gap-2 pt-3 pb-1">
                     <Link href={`edit/${data.id}`}>
-                      <a className="btn btn-green p4">
-                        TOMBOL EDIT !!!
+                      <a className="btn btn-green p4 pb-1">
+                        EDIT / DELETE ?
                       </a>
                     </Link>
                   </div>

@@ -56,7 +56,7 @@ export default function EditRecipe(props) {
         'ingredients' : Ingre,
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data.message == 'jwt expired'){
           // console.log('expire woi');
           setIsErrorDet(true)

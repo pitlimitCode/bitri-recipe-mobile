@@ -1,5 +1,5 @@
 import axios from "axios";
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
@@ -26,13 +26,14 @@ export default function Profile(props) {
   const [Avatar, setAvatar] = useState("");
   useEffect(() => {
     axios
-      .get(`{api}/users/getid`)
+      .get(`${api}/users/getid`)
       .then((res) => {
         axios
           .get(api + "/users/id/" + res.data.id)
           .then((profile) => {
             setName(profile.data.data.name);
             setAvatar(profile.data.data.avatar);
+            console.log(profile.data.data.avatar);
           })
           .catch((e) => console.log(e.message));
       })
@@ -58,7 +59,7 @@ export default function Profile(props) {
       <div id="profilepage" >
         <div className="row justify-content-center text-center">
           <div className="col-3">
-            <img
+            <Image
               src={Avatar} 
               alt="avatar"
               width={90}

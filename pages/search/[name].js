@@ -43,7 +43,7 @@ export default function SearchRecipe(props) {
     fetch( `${api}/recipes/name/?name=${Searching}&sort=${SortBy}` ) // ${sort}
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       if(data.result){
         setDatas(data.result.data)
       } else {
