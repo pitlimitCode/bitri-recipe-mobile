@@ -100,7 +100,7 @@ export default function Home(props) {
           <section> <Home3 data3={props.dataHome3.result.data} api={props.api}/> </section> 
 
           {/* ALL POPULAR RECIPES - HOME */}
-          {/* <section> <Home4 data4={props.dataHome4.result.data} api={props.api} /> </section>  */}
+          <section> <Home4 data4={props.dataHome4.result.data} api={props.api} /> </section> 
           
         </div>
       </main>
