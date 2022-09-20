@@ -53,12 +53,16 @@
 
 ### Built With
 This app was built with some technologies below:
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Javascript](https://www.javascript.com/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Bootstrap](https://getbootstrap.com/)
+- [Bootstrap-icons](icons.getbootstrap.com)
 - [React JS](https://reactjs.org)
+- [React-Redux](https://react-redux.js.org)
 - [Next JS](https://nextjs.org/)
-- [Bootstrap](#)
 - [Axios](https://axios-http.com/)
+- [Swiper JS](https://swiperjs.com)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
