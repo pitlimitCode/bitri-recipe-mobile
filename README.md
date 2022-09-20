@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659148545/portofolio/recipe/2_kpnvj7.png" alt="Logo" width="150px">
+    <img src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208268/bootcamp%20pijarcamp%20project%20cloud%20image/logo_bitri_mini1_xhkqa4.png" alt="Logo" width="150px">
   </a>
 
   <h3 align="center">Bitri Recipe Mobile</h3>
@@ -22,9 +22,7 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-
 ## Table of Contents
-
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -50,28 +48,21 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
-
 ## About The Project
-
 **Bitri Recipe** Bitri Recipe is a web application that has the main feature where users can share their recipes in the form of video tutorials to make it easier for visitors to learn the recipe they are looking for. This website is developed with using PostgreSql, Express JS, Next JS and Node JS technologies.
 
 ### Built With
-
 This app was built with some technologies below:
-
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Javascript](https://www.javascript.com/)
 - [React JS](https://reactjs.org)
 - [Next JS](https://nextjs.org/)
 - [Bootstrap](#)
 - [Axios](https://axios-http.com/)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-
 ## Getting Started
-
 ### Prerequisites
 Before going to the installation stage there are some software that must be installed first.
 - [NodeJs](https://nodejs.org/en/download/)
@@ -98,62 +89,59 @@ npm install
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Setup .env example
-Create .env file in your root project folder.
-
+Create .env.local file in your root project folder.
 ```
-REACT_APP_BE_URL="[YOUR_BACKEND_URL]" ????!!!!
+API_DOMAIN=[YOUR_BACKEND_URL]
+CLIENT_DOMAIN=[YOUR_FRONTEND_URL]
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Screenshoots
 <p align="center" display=flex>
-<table>
- 
-  <tr>
-    <td>Login Page</td>
-    <td>Register Page</td>
-  </tr>
-  <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351592/portofolio/recipe/login_ukszon.png" alt="Login Page" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351587/portofolio/recipe/register_jsv1kj.png" width=100%/></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>Home</td>
-    <td>Profile</td>
-  </tr>
-  <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255590/portofolio/recipe/Home_az4b40.png" alt="Home" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351616/portofolio/recipe/profile_mkvlj8.png" alt="profile" width=100%/></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>Add Recipe</td>
-    <td>Edit Recipe</td>
-  </tr>
-  <tr>
+  <table>
     <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>Detail Recipe</td>
-    <td>Detail Video</td>
-  </tr>
-  <tr>
+      <td>Home</td>
+      <td>Detail Recipe</td>
+      <td>Edit Recipe</td>
+    </tr>
     <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255614/portofolio/recipe/detailRecipe_mgby3w.png" alt="add" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255615/portofolio/recipe/detailVideo_rpajes.png" alt="edit" width=100%/></td>
-  </tr>
-</table>
-      
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650644/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_FULL_home_rxby9e.png" alt="Home" width=100%></td>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650646/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_FULL_detail_iihwto.png" alt="Detail Recipe" width=100%/></td>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650627/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_FULL_editrecipe_bkcjlb.png" alt="Edit Recipe" width=100%/></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td>Register Page</td>
+      <td>Login Page</td>
+    </tr>
+    <tr>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650624/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_register_uqpgti.png" alt="Register Page" width=100%></td>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650623/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_login_bziwfi.png" alt="Login Page"width=100%/></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td>Search Recipe</td>
+      <td>Add Recipe</td>
+    </tr>
+    <tr>
+      <tr>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650626/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app__search_hwpg0b.png" alt="Search Recipe" width=100%></td>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650624/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_add-recipe_hs3oww.png" alt="Add Recipe" width=100%/></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td>Profile</td>
+      <td>My Recipe</td>
+    </tr>
+    <tr>
+      <tr>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650624/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_profile_mexgy1.png" alt="Profile" width=100%></td>
+      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650641/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_profile_myrecipes_turxzs.png" alt="My Recipe" width=100%/></td>
+    </tr>
+  </table> 
 </p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
