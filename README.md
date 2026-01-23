@@ -105,12 +105,10 @@ CLIENT_DOMAIN=[YOUR_FRONTEND_URL]
   <table>
     <tr>
       <td>Home</td>
-      <td>Detail Recipe</td>
       <td>Edit Recipe</td>
     </tr>
     <tr>
       <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650644/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_FULL_home_rxby9e.png" alt="Home" width=100%></td>
-      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650646/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_FULL_detail_iihwto.png" alt="Detail Recipe" width=100%/></td>
       <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650627/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_FULL_editrecipe_bkcjlb.png" alt="Edit Recipe" width=100%/></td>
     </tr>
   </table>
@@ -128,24 +126,15 @@ CLIENT_DOMAIN=[YOUR_FRONTEND_URL]
     <tr>
       <td>Search Recipe</td>
       <td>Add Recipe</td>
+      <td>My Recipe</td>
     </tr>
     <tr>
       <tr>
       <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650626/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app__search_hwpg0b.png" alt="Search Recipe" width=100%></td>
       <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650624/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_add-recipe_hs3oww.png" alt="Add Recipe" width=100%/></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td>Profile</td>
-      <td>My Recipe</td>
-    </tr>
-    <tr>
-      <tr>
-      <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650624/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_profile_mexgy1.png" alt="Profile" width=100%></td>
       <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663650641/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20mobile/bitri-recipe-mobile.vercel.app_profile_myrecipes_turxzs.png" alt="My Recipe" width=100%/></td>
     </tr>
-  </table> 
+  </table>
 </p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
